@@ -72,21 +72,21 @@
 
     <build>
         <plugins>
-            <!--<plugin>-->
-                <!--<groupId>org.apache.maven.plugins</groupId>-->
-                <!--<artifactId>maven-compiler-plugin</artifactId>-->
-                <!--&lt;!&ndash; since 2.0 &ndash;&gt;-->
-                <!--<version>3.7.0</version>-->
-                <!--<configuration>-->
-                    <!--&lt;!&ndash; use the Java 8 language features &ndash;&gt;-->
-                    <!--<source>1.8</source>-->
-                    <!--&lt;!&ndash; want the compiled classes to be compatible with JVM 1.8 &ndash;&gt;-->
-                    <!--<target>1.8</target>-->
-                    <!--&lt;!&ndash; The -encoding argument for the Java compiler. &ndash;&gt;-->
-                    <!--<encoding>UTF8</encoding>-->
-                    <!--<forceJavacCompilerUse>true</forceJavacCompilerUse>-->
-                <!--</configuration>-->
-            <!--</plugin>-->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <!-- since 2.0 -->
+                <version>3.7.0</version>
+                <configuration>
+                    <!-- use the Java 8 language features -->
+                    <source>1.8</source>
+                    <!-- want the compiled classes to be compatible with JVM 1.8 -->
+                    <target>1.8</target>
+                    <!-- The -encoding argument for the Java compiler. -->
+                    <encoding>UTF8</encoding>
+                    <forceJavacCompilerUse>true</forceJavacCompilerUse>
+                </configuration>
+            </plugin>
 
             <plugin>
                 <groupId>org.sonatype.plugins</groupId>
