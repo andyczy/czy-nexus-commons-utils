@@ -5,8 +5,18 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.github.andyczy</groupId>
-    <artifactId>github.com.andyczy.java.excel</artifactId>
+    <artifactId>com.github.andyczy.java.excel</artifactId>
     <version>1.0-SNAPSHOT</version>
+
+
+
+    <name>com.github.andyczy:com.github.andyczy.java.excel</name>
+    <url>https://github.com/andyczy/czy-nexus-commons-utils</url>
+    <description></description>
+
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    </properties>
 
     <dependencies>
         <!--servlet-->
@@ -29,8 +39,7 @@
         </dependency>
     </dependencies>
 
-    <name>github.com.andyczy:github.com.andyczy.java.excel</name>
-    <url>https://github.com/andyczy/czy-nexus-commons-utils/tree/master</url>
+
 
 
 
@@ -53,18 +62,17 @@
     <scm>
         <connection>scm:git:https://github.com/andyczy/czy-nexus-commons-utils.git</connection>
         <developerConnection>scm:https://github.com/andyczy/czy-nexus-commons-utils.git</developerConnection>
-        <url>https://github.com/andyczy/czy-nexus-commons-utils/tree/master</url>
+        <url>https://github.com/andyczy/czy-nexus-commons-utils</url>
         <tag>v1.0</tag>
     </scm>
 
     <distributionManagement>
         <snapshotRepository>
-            <id>ossrh</id>
+            <id>snapshots</id>
             <url>https://oss.sonatype.org/content/repositories/snapshots</url>
         </snapshotRepository>
         <repository>
-            <id>ossrh</id>
-            <name>Maven Central Staging Repository</name>
+            <id>snapshots</id>
             <url>https://oss.sonatype.org/service/local/staging/deploy/maven2/</url>
         </repository>
     </distributionManagement>
@@ -72,6 +80,15 @@
 
     <build>
         <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-release-plugin</artifactId>
+                <version>2.5.3</version>
+                <configuration>
+                    <tagNameFormat>v@{project.version}</tagNameFormat>
+                    <autoVersionSubmodules>true</autoVersionSubmodules>
+                </configuration>
+            </plugin>
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>

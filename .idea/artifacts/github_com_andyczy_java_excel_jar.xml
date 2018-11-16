@@ -2,7 +2,7 @@
   <artifact type="jar" build-on-make="true" name="github.com.andyczy.java.excel:jar">
     <output-path>$PROJECT_DIR$</output-path>
     <root id="archive" name="github.com.andyczy.java.excel.jar">
-      <element id="module-output" name="github.com.andyczy.java.excel" />
+      <element id="module-output" name="com.github.andyczy.java.excel" />
       <element id="extracted-dir" path="E:/MavenRespository/respository/com/github/virtuald/curvesapi/1.04/curvesapi-1.04.jar" path-in-jar="/" />
       <element id="extracted-dir" path="E:/MavenRespository/respository/org/apache/poi/poi/3.17/poi-3.17.jar" path-in-jar="/" />
       <element id="extracted-dir" path="E:/MavenRespository/respository/commons-codec/commons-codec/1.10/commons-codec-1.10.jar" path-in-jar="/" />
