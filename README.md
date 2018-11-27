@@ -1,3 +1,18 @@
+# czy-nexus-commons-utils
+        是发布到 https://search.maven.org/（https://mvnrepository.com/）仓库的管理库
+        
+   已发布：
+   
+        1、java-excel-utils
+        
+        <dependency>        
+            <groupId>com.github.andyczy</groupId>       
+            <artifactId>java-excel-utils</artifactId>       
+            <version>2.0</version>      
+        </dependency> 
+        
+        
+        
 ## java-excel-utils
         是JAVA操作Excel导入导出的工具类，目的是简化逻辑操作、可拓展Excel导入导出配置。     
             
@@ -5,14 +20,7 @@
    (工具类集库)[https://github.com/andyczy/czy-study-java-commons-utils]
  
         maven 使用可能源代码没有注释（maven仓库自动去掉了，每一次发布都没有注释）、部分注释就是下面的数据格式。
-            
-### maven 使用
-
-        <dependency>        
-            <groupId>com.github.andyczy</groupId>       
-            <artifactId>java-excel-utils</artifactId>       
-            <version>2.0</version>      
-        </dependency> 
+ 
     
       
 ### 导出配置 ExcelUtils.exportForExcel(...)
