@@ -90,7 +90,7 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="java" value="88" />
-          <entry key="md" value="723" />
+          <entry key="md" value="774" />
           <entry key="txt" value="15" />
           <entry key="xml" value="84" />
         </counts>
@@ -98,7 +98,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="88" />
-          <entry key="Markdown" value="723" />
+          <entry key="Markdown" value="774" />
           <entry key="PLAIN_TEXT" value="15" />
           <entry key="XML" value="84" />
         </counts>
@@ -130,7 +130,7 @@
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="22">
-                <caret line="1" column="12" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
+                <caret line="1" column="20" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
               </first_editor>
               <second_editor />
             </state>
@@ -265,7 +265,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543303238284" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1543303342264" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -310,7 +310,7 @@
       <workItem from="1542958870524" duration="7016000" />
       <workItem from="1543282593137" duration="10000" />
       <workItem from="1543286598396" duration="4641000" />
-      <workItem from="1543299473765" duration="3703000" />
+      <workItem from="1543299473765" duration="4502000" />
     </task>
     <task id="LOCAL-00001" summary="Excel工具类">
       <created>1542254161477</created>
@@ -452,17 +452,23 @@
       <option name="project" value="LOCAL" />
       <updated>1543303010020</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="version 2.0.1">
+      <created>1543303334072</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1543303334072</updated>
+    </task>
+    <option name="localTasksCounter" value="22" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="41597000" />
+    <option name="totallyTimeSpent" value="42396000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.26476908" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.26476908" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -581,7 +587,7 @@
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="22">
-            <caret line="1" column="12" selection-start-line="1" selection-start-column="12" selection-end-line="1" selection-end-column="12" />
+            <caret line="1" column="20" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
           </first_editor>
           <second_editor />
         </state>
