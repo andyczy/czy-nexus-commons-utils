@@ -36,8 +36,8 @@ public class ExcelUtils {
 
     private static final ThreadLocal<DecimalFormat> df = new ThreadLocal<>();
     private static final String MESSAGE_FORMAT_df = "#.###";
-    private static final String DataValidationError1 = "本系统提醒信息！";
-    private static final String DataValidationError2 = "数据不规范，请选择表格列表中的数据！";
+    private static final String DataValidationError1 = "表格数据填写不规范！";
+    private static final String DataValidationError2 = "请选择表格列表中的数据！";
 
     private static final SimpleDateFormat getDateFormat() {
         SimpleDateFormat format = fmt.get();

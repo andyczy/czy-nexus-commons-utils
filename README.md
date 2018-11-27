@@ -30,13 +30,13 @@
         
 ### 数据格式
 
-   controller
+   controller：伪代码
     
         @RequestMapping(value = "/exportBill")
         @ResponseBody
         public void exportBill(HttpServletResponse response){
             ExcelUtils.exportForExcel(response,dataLists,notBorderMap,regionMap,columnMap,styles,paneMap,fileName,
-                                       sheetName,labelName,rowStyles,columnStyles,dropDownMap);
+                                      sheetName,labelName,rowStyles,columnStyles,dropDownMap);
         }
     
    导出数据：参数 dataLists
@@ -131,6 +131,10 @@
        cellStyles.put(1, list);                                              //第一个表格所有自定义单元格样式 
              
    
+   自定义忽略边框：参数 notBorderMap
+   
+       HashMap notBorderMap = new HashMap();
+       notBorderMap.put(1, new Integer[]{1, 5});   //忽略边框（1行、5行）、默认是数据是全部加边框
    
    导入配置：
         
