@@ -29,6 +29,16 @@
     </dependency>   
         
 ### 数据格式
+
+   controller
+    
+        @RequestMapping(value = "/exportBill")
+        @ResponseBody
+        public void exportBill(HttpServletResponse response){
+            ExcelUtils.exportForExcel(response,dataLists,notBorderMap,regionMap,columnMap,styles,paneMap,fileName,
+                                       sheetName,labelName,rowStyles,columnStyles,dropDownMap);
+        }
+    
    导出数据：参数 dataLists
    
         @Override
