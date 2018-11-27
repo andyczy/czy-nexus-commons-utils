@@ -21,14 +21,16 @@
 
 ### maven使用
 
-        <dependency>        
-            <groupId>com.github.andyczy</groupId>       
-            <artifactId>java-excel-utils</artifactId>       
-            <version>2.0</version>      
-        </dependency>   
+    <dependency>        
+        <groupId>com.github.andyczy</groupId>       
+        <artifactId>java-excel-utils</artifactId>       
+        <version>2.0</version>      
+    </dependency>   
         
 ### 依赖第三方
-    Apache POI 
+    Apache POI   
+    javax.servlet       
+   
     
                     
 ### License
