@@ -1,8 +1,20 @@
 ## java-excel-utils
-    是JAVA操作Excel导入导出的工具类，目的是简化逻辑操作、可拓展Excel导入导出配置。         
+    是JAVA操作Excel导入导出的工具类，目的是简化逻辑操作、可拓展Excel导入导出配置。     
+        
    (教程博客)[https://blog.csdn.net/JavaWebRookie/article/details/80843653]     
    (工具类集库)[https://github.com/andyczy/czy-study-java-commons-utils]
-   
+ 
+    maven 使用可能源代码没有注释（maven仓库自动去掉了，每一次发布都没有注释）、部分注释就是下面的数据格式。
+            
+### maven 使用
+
+    <dependency>        
+        <groupId>com.github.andyczy</groupId>       
+        <artifactId>java-excel-utils</artifactId>       
+        <version>2.0</version>      
+    </dependency> 
+    
+      
 ### 导出配置 ExcelUtils.exportForExcel(...)
       
     * 可提供模板下载           
@@ -19,17 +31,26 @@
     * 自定义：多单元从第几行开始获取数据            
     * 自定义：多单元根据那些列为空来忽略行数据         
 
-
-### maven使用
-
-    <dependency>        
-        <groupId>com.github.andyczy</groupId>       
-        <artifactId>java-excel-utils</artifactId>       
-        <version>2.0</version>      
-    </dependency>   
+  
         
 ### 数据格式
 
+   所有参数：
+   
+         * @param response
+         * @param dataLists    导出的数据(不可为空：如果只有标题就导出模板)
+         * @param sheetName    sheet名称（不可为空）
+         * @param columnMap    自定义：对每个单元格自定义列宽（可为空）
+         * @param dropDownMap  自定义：对每个单元格自定义下拉列表（可为空）
+         * @param styles       自定义：每一个单元格样式（可为空）
+         * @param rowStyles    自定义：某一行样式（可为空）
+         * @param columnStyles 自定义：某一列样式（可为空）
+         * @param regionMap    自定义：单元格合并（可为空）
+         * @param paneMap      固定表头（可为空）
+         * @param labelName    每个表格的大标题（可为空）
+         * @param fileName     文件名称(可为空，默认是：sheet 第一个名称)
+         * @param notBorderMap 忽略边框(默认是有边框)
+             
    controller：伪代码
     
         @RequestMapping(value = "/exportBill")
