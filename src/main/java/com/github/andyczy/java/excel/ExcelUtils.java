@@ -36,7 +36,7 @@ public class ExcelUtils {
 
     private static final ThreadLocal<DecimalFormat> df = new ThreadLocal<>();
     private static final String MESSAGE_FORMAT_df = "#.###";
-    private static final String DataValidationError1 = "本系统——提醒您！";
+    private static final String DataValidationError1 = "本系统提醒信息！";
     private static final String DataValidationError2 = "数据不规范，请选择表格列表中的数据！";
 
     private static final SimpleDateFormat getDateFormat() {
@@ -48,7 +48,7 @@ public class ExcelUtils {
         return format;
     }
 
-    public static final DecimalFormat getDecimalFormat() {
+    private static final DecimalFormat getDecimalFormat() {
         DecimalFormat format = df.get();
         if (format == null) {
             format = new DecimalFormat(MESSAGE_FORMAT_df);
@@ -169,7 +169,7 @@ public class ExcelUtils {
             response.setHeader("Charset", "UTF-8");
             response.setHeader("Content-Type", "application/force-download");
             response.setHeader("Content-Type", "application/vnd.ms-excel");
-            response.setHeader("Content-disposition", "attachment; filename=" + URLEncoder.encode(fileName == null ? "Excel数据信息表" : sheetName[0], "utf8") + ".xlsx");
+            response.setHeader("Content-disposition", "attachment; filename=" + URLEncoder.encode(fileName == null ? sheetName[0] : fileName, "utf8") + ".xlsx");
             response.flushBuffer();
             outputStream = response.getOutputStream();
             sxssfWorkbook.write(outputStream);
@@ -600,7 +600,7 @@ public class ExcelUtils {
      * @param cellStyle
      * @param isBorder
      */
-    public static void setBorder(CellStyle cellStyle, Boolean isBorder) {
+    private static void setBorder(CellStyle cellStyle, Boolean isBorder) {
         if (isBorder) {
             cellStyle.setBorderBottom(BorderStyle.THIN);
             cellStyle.setBorderLeft(BorderStyle.THIN);

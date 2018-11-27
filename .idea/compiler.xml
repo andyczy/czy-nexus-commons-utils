@@ -9,5 +9,8 @@
         <module name="com.github.andyczy.java.excel" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="java-excel-utils" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
 </project>
