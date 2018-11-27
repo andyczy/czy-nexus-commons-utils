@@ -1,7 +1,7 @@
 ## java-excel-utils
     是JAVA操作Excel导入导出的工具类，目的是简化逻辑操作、可拓展Excel导入导出配置。         
-   (教程博客)[https://blog.csdn.net/JavaWebRookie/article/details/80843653]
-   
+   (教程博客)[https://blog.csdn.net/JavaWebRookie/article/details/80843653]     
+   (工具类集库)[https://github.com/andyczy/czy-study-java-commons-utils]
    
 ### 导出配置 ExcelUtils.exportForExcel(...)
       
