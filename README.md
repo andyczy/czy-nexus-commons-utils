@@ -1,5 +1,5 @@
 # czy-nexus-commons-utils
-   是发布到(search.maven)[https://search.maven.org/]、(mvnrepository)[https://mvnrepository.com/]仓库的管理库
+   是发布到 [search.maven](https://search.maven.org/)  、 [mvnrepository](https://mvnrepository.com/)仓库的管理库
         
    已发布：
    
