@@ -1,35 +1,34 @@
 ## java-excel-utils
-    是JAVA操作Excel导入导出的工具类，目的是简化逻辑操作、可拓展Excel导入导出配置。     
-        
+        是JAVA操作Excel导入导出的工具类，目的是简化逻辑操作、可拓展Excel导入导出配置。     
+            
    (教程博客)[https://blog.csdn.net/JavaWebRookie/article/details/80843653]     
    (工具类集库)[https://github.com/andyczy/czy-study-java-commons-utils]
  
-    maven 使用可能源代码没有注释（maven仓库自动去掉了，每一次发布都没有注释）、部分注释就是下面的数据格式。
+        maven 使用可能源代码没有注释（maven仓库自动去掉了，每一次发布都没有注释）、部分注释就是下面的数据格式。
             
 ### maven 使用
 
-    <dependency>        
-        <groupId>com.github.andyczy</groupId>       
-        <artifactId>java-excel-utils</artifactId>       
-        <version>2.0</version>      
-    </dependency> 
+        <dependency>        
+            <groupId>com.github.andyczy</groupId>       
+            <artifactId>java-excel-utils</artifactId>       
+            <version>2.0</version>      
+        </dependency> 
     
       
 ### 导出配置 ExcelUtils.exportForExcel(...)
-      
-    * 可提供模板下载           
-    * 自定义下拉列表：对每个单元格自定义下拉列表         
-    * 自定义列宽：对每个单元格自定义列宽         
-    * 自定义样式：对每个单元格自定义样式  
-    * 自定义样式：单元格自定义某一列或者某一行样式            
-    * 自定义单元格合并：对每个单元格合并 
-    * 自定义：每个表格的大标题          
-    * 自定义：对每个单元格固定表头          
+        * 可提供模板下载           
+        * 自定义下拉列表：对每个单元格自定义下拉列表         
+        * 自定义列宽：对每个单元格自定义列宽         
+        * 自定义样式：对每个单元格自定义样式  
+        * 自定义样式：单元格自定义某一列或者某一行样式            
+        * 自定义单元格合并：对每个单元格合并 
+        * 自定义：每个表格的大标题          
+        * 自定义：对每个单元格固定表头          
  
 ### 导入配置 ExcelUtils.importForExcelData(...)
-    * 获取多单元数据         
-    * 自定义：多单元从第几行开始获取数据            
-    * 自定义：多单元根据那些列为空来忽略行数据         
+        * 获取多单元数据         
+        * 自定义：多单元从第几行开始获取数据            
+        * 自定义：多单元根据那些列为空来忽略行数据         
 
   
         
