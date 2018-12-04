@@ -134,9 +134,9 @@
         参数说明：
         HashMap hashMap = new HashMap();
         List list = new ArrayList();
-        list.add(new Boolean[]{true, false, false, false, true});                //1、样式
+        list.add(new Boolean[]{true, false, false, false, true});                //1、样式（是否居中？，是否右对齐？，是否左对齐？， 是否加粗？，是否有边框？ ）
         list.add(new Integer[]{1, 3});                                           //2、第几行或者是第几列
-        list.add(new Integer[]{10,14,null});                                     //3、颜色值（8是黑色、10红色等） 、字体大小、行高（可不设置）
+        list.add(new Integer[]{10,14,null});                                     //3、颜色值（8是黑色、10红色等） 、颜色、字体、行高？（可不设置）
         hashMap.put(1,list);                                                     //第一表格
         
    自定义每一个单元格样式：参数 styles
@@ -146,13 +146,13 @@
        List< List<Object[]>> list = new ArrayList<>();
        List<Object[]> objectsList = new ArrayList<>();
        List<Object[]> objectsListTwo = new ArrayList<>();
-       objectsList.add(new Boolean[]{true, false, false, false, true});      //1、样式一（必须放第一）
+       objectsList.add(new Boolean[]{true, false, false, false, true});      //1、样式一（是否居中？，是否右对齐？，是否左对齐？， 是否加粗？，是否有边框？ ）
        objectsList.add(new Integer[]{10, 12});                               //1、颜色值 、字体大小、行高（必须放第二）
        objectsList.add(new Integer[]{5, 1});                                 //1、第五行第一列
        objectsList.add(new Integer[]{6, 1});                                 //1、第六行第一列
        
        objectsListTwo.add(new Boolean[]{false, false, false, true, true});   //2、样式二（必须放第一）
-       objectsListTwo.add(new Integer[]{10, 12,null});                       //2、颜色值 、字体大小、行高（必须放第二）
+       objectsListTwo.add(new Integer[]{10, 12,null});                       //2、颜色值（8是黑色、10红色等） 、颜色、字体、行高？（可不设置）（必须放第二）
        objectsListTwo.add(new Integer[]{2, 1});                              //2、第二行第一列
        
        list.add(objectsList);
