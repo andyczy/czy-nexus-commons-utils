@@ -12,16 +12,18 @@
         </dependency> 
         
         
-   [版本-2.0教程](https://github.com/andyczy/czy-nexus-commons-utils/blob/master/README.md)   
+   [版本-2.0之前教程](https://github.com/andyczy/czy-nexus-commons-utils/blob/master/README.md)   
          
               
 ## 版本 3.0 说明
     1、导出函数式编程换成对象编程             
     2、可保存到指定本地路径        
+    3、保存2.0版本之前的 exportForExcel(...) 函数[2.0之前版本]。
+    4、新增 exportForExcelsOptimize()  函数[3.0版本]。
         
     
       
-### 导出配置 ExcelUtils.exportForExcel(...)
+### 3.0版本--导出配置 ExcelUtils.exportForExcelsOptimize()
         ExcelPojo excelPojo = new ExcelPojo();
         // 必填项
         excelPojo.setDataLists(lists);
@@ -39,7 +41,18 @@
         // 执行
         ExcelUtils excelUtils = ExcelUtils.setExcelUtils(excelPojo);
         excelUtils.exportForExcelsOptimize();       
- 
+        
+### 2.0之前版本--导出配置 ExcelUtils.exportForExcel(...)
+        * 可提供模板下载           
+        * 自定义下拉列表：对每个单元格自定义下拉列表         
+        * 自定义列宽：对每个单元格自定义列宽         
+        * 自定义样式：对每个单元格自定义样式  
+        * 自定义样式：单元格自定义某一列或者某一行样式            
+        * 自定义单元格合并：对每个单元格合并 
+        * 自定义：每个表格的大标题          
+        * 自定义：对每个单元格固定表头    
+        
+        
 ### 导入配置 ExcelUtils.importForExcelData(...)
         * 获取多单元数据         
         * 自定义：多单元从第几行开始获取数据            
