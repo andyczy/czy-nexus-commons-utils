@@ -303,7 +303,13 @@ public class ExcelUtils {
      */
     private static void setDataList(SXSSFWorkbook sxssfWorkbook, SXSSFRow sxssfRow, List<List<String[]>> dataLists, HashMap notBorderMap,
                                     HashMap regionMap, HashMap columnMap, HashMap styles, HashMap paneMap,
-                                    String[] sheetName, String[] labelName, HashMap rowStyles, HashMap columnStyles, HashMap dropDownMap) {
+                                    String[] sheetName, String[] labelName, HashMap rowStyles, HashMap columnStyles, HashMap dropDownMap)throws Exception {
+        if (dataLists == null) {
+            throw new IOException("Andyczy ExcelUtils Exception Message：Export data(type:List<List<String[]>>) cannot be empty ！");
+        }
+        if (sheetName == null) {
+            throw new IOException("Andyczy ExcelUtils Exception Message：Export sheet(type:String[]) name cannot be empty ！");
+        }
         int k = 0;
         for (List<String[]> list : dataLists) {
             SXSSFSheet sxssfSheet = sxssfWorkbook.createSheet();
