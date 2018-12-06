@@ -379,25 +379,24 @@ public class ExcelUtils {
      * @throws Exception
      */
     private static void setIo(SXSSFWorkbook sxssfWorkbook, OutputStream outputStream, String fileName, String[] sheetName, HttpServletResponse response, String filePath) throws Exception {
-        if (response != null && filePath == null) {
-            //  设置响应头信息。
-            response.setHeader("Charset", "UTF-8");
-            response.setHeader("Content-Type", "application/force-download");
-            response.setHeader("Content-Type", "application/vnd.ms-excel");
-            response.setHeader("Content-disposition", "attachment; filename=" + URLEncoder.encode(fileName == null ? sheetName[0] : fileName, "utf8") + ".xlsx");
-            response.flushBuffer();
-            outputStream = response.getOutputStream();
-        } else {
-            new Exception("response and filePath parameter Not empty !");
+        try {
+            if (response != null) {
+                //  设置响应头信息。
+                response.setHeader("Charset", "UTF-8");
+                response.setHeader("Content-Type", "application/force-download");
+                response.setHeader("Content-Type", "application/vnd.ms-excel");
+                response.setHeader("Content-disposition", "attachment; filename=" + URLEncoder.encode(fileName == null ? sheetName[0] : fileName, "utf8") + ".xlsx");
+                response.flushBuffer();
+                outputStream = response.getOutputStream();
+            } else if (filePath != null) {
+                outputStream = new FileOutputStream(filePath);
+            }
+            sxssfWorkbook.write(outputStream);
+            //  处理在磁盘上支持此工作簿的临时文件。
+            sxssfWorkbook.dispose();
+        } catch (Exception e) {
+            e.getSuppressed();
         }
-        if (response == null && filePath != null) {
-            outputStream = new FileOutputStream(filePath);
-        } else {
-            new Exception("response and filePath parameter Not empty !");
-        }
-        sxssfWorkbook.write(outputStream);
-        //  处理在磁盘上支持此工作簿的临时文件。
-        sxssfWorkbook.dispose();
     }
 
 
