@@ -77,7 +77,7 @@
                                       sheetName,labelName,rowStyles,columnStyles,dropDownMap);
         }
     
-   导出数据：参数 dataLists
+   导出数据：参数 dataLists 
    
         @Override
            public List<List<String[]>> exportBill(String deviceNo,String snExt,Integer parentInstId,String startDate, String endDate){
@@ -99,6 +99,10 @@
                return listArray;
            }       
    
+   表格sheet名称： （必填）
+   
+       String[] sheetNameList = new String[]{"今日交易记录","今日交易明细"};
+        
    自定义列宽：参数 columnMap
    
        参数说明：
