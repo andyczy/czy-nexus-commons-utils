@@ -1,5 +1,5 @@
 # czy-nexus-commons-utils
-   是发布到 [search.maven](https://search.maven.org/)  、 [mvnrepository](https://mvnrepository.com/)仓库的管理库
+   是发布到 [search.maven](https://search.maven.org/)  、 [mvnrepository](https://mvnrepository.com/)公共仓库的管理库
         
    maven 使用：
 
@@ -14,14 +14,14 @@
          
               
 ## 版本 3 说明
-    1、导出函数式编程换成对象编程             
-    2、可保存到指定本地路径        
+    1、导出函数式编程换成对象编程。             
+    2、可保存到指定本地路径。        
     3、保存2.0版本之前的 exportForExcel(...) 函数[2.0之前版本]。
-    4、新增 exportForExcelsOptimize()  函数[3.0版本]。
+    4、新增 exportForExcelsOptimize()  函数[版本3系]。
         
     
       
-### 版本 3 --导出配置 ExcelUtils.exportForExcelsOptimize()
+### 版本 3 -- 导出配置 ExcelUtils.exportForExcelsOptimize()
         ExcelPojo excelPojo = new ExcelPojo();
         // 必填项--导出数据
         excelPojo.setDataLists(lists);  
@@ -30,9 +30,9 @@
         // 文件名称(可为空，默认是：sheet 第一个名称)
         excelPojo.setFileName(excelName);
         
-        // 输出流：response 响应（输出流：二选一）
+        // 输出流：response 响应（输出流：必须选一、可两个都设置）
         excelPojo.setResponse(response);
-        // 输出流：可直接输出本地路径（输出流：二选一）
+        // 输出流：可直接输出本地路径（输出流：必须选一、可两个都设置）
         // excelPojo.setFilePath("F:\\test.xlsx"); 
  
         // 每个表格的大标题（可为空）
@@ -60,7 +60,7 @@
         ExcelUtils excelUtils = ExcelUtils.setExcelUtils(excelPojo);
         excelUtils.exportForExcelsOptimize();       
         
-### 2.0之前版本--导出配置 ExcelUtils.exportForExcel(...)
+### 2.0之前版本 -- 导出配置 ExcelUtils.exportForExcel(...)
         * 可提供模板下载           
         * 自定义下拉列表：对每个单元格自定义下拉列表         
         * 自定义列宽：对每个单元格自定义列宽         
