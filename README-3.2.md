@@ -6,7 +6,7 @@
         <dependency>        
             <groupId>com.github.andyczy</groupId>       
             <artifactId>java-excel-utils</artifactId>       
-            <version>3.1</version>      
+            <version>3.2</version>      
         </dependency> 
         
         
@@ -15,53 +15,46 @@
   [版本-3.1教程](https://github.com/andyczy/czy-nexus-commons-utils/blob/master/README-3.0.md)   
      
   [版本-3.2教程](https://github.com/andyczy/czy-nexus-commons-utils/blob/master/README-3.2.md)     
-         
-              
-## 版本 3 说明
-    1、导出函数式编程换成对象编程。             
-    2、可保存到指定本地路径。        
-    3、保存2.0版本之前的 exportForExcel(...) 函数[2.0之前版本]。
-    4、新增 exportForExcelsOptimize()  函数[版本3系]。
-        
+ 
     
       
-### 版本 3.1 -- 导出配置 ExcelUtils.exportForExcelsOptimize()
-        ExcelPojo excelPojo = new ExcelPojo();
+### 版本 3.2 -- 导出配置 ExcelUtils.exportForExcelsOptimize()
+             
+        ExcelUtils excelUtils = ExcelUtils.setExcelUtils();
         // 必填项--导出数据
-        excelPojo.setDataLists(lists);  
+        excelUtils.setDataLists(lists);  
         // 必填项--sheet名称
-        excelPojo.setSheetName(sheetNameList);
+        excelUtils.setSheetName(sheetNameList);
         // 文件名称(可为空，默认是：sheet 第一个名称)
-        excelPojo.setFileName(excelName);
+        excelUtils.setFileName(excelName);
         
         // 输出流：response 响应（输出流：必须选一）
-        excelPojo.setResponse(response);
+        excelUtils.setResponse(response);
         // 输出流：可直接输出本地路径（输出流：必须选一）
-        // excelPojo.setFilePath("F:\\test.xlsx"); 
+        // excelUtils.setFilePath("F:\\test.xlsx"); 
  
         // 每个表格的大标题（可为空）
-        excelPojo.setLabelName(labelName);
+        excelUtils.setLabelName(labelName);
         // 自定义：固定表头（可为空）
-        excelPojo.setPaneMap(setPaneMap);
+        excelUtils.setPaneMap(setPaneMap);
         // 自定义：单元格合并（可为空）
-        excelPojo.setRegionMap(regionMap);
+        excelUtils.setRegionMap(regionMap);
         
         // 自定义：对每个单元格自定义列宽（可为空）
-        excelPojo.setColumnMap(mapColumnWidth);
+        excelUtils.setColumnMap(mapColumnWidth);
         // 自定义：某一行样式（可为空）
-        excelPojo.setRowStyles(stylesRow);
+        excelUtils.setRowStyles(stylesRow);
         // 自定义：某一列样式（可为空）
-        excelPojo.setColumnStyles(columnStyles);
+        excelUtils.setColumnStyles(columnStyles);
         // 自定义：每一个单元格样式（可为空）
-        excelPojo.setStyles(styles);
+        excelUtils.setStyles(styles);
                 
         // 自定义：对每个单元格自定义下拉列表（可为空）
-        excelPojo.setDropDownMap(dropDownMap);
+        excelUtils.setDropDownMap(dropDownMap);
         // 自定义：忽略边框(可为空：默认是有边框)
-        excelPojo.setNotBorderMap(notBorderMap);       
-         
+        excelUtils.setNotBorderMap(notBorderMap);       
+            
         // 执行导出
-        ExcelUtils excelUtils = ExcelUtils.setExcelUtils(excelPojo);
         excelUtils.exportForExcelsOptimize();       
         
 ### 2.0之前版本 -- 导出配置 ExcelUtils.exportForExcel(...)

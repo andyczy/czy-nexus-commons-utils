@@ -28,6 +28,7 @@ import static org.apache.poi.ss.util.CellUtil.createCell;
  */
 public class ExcelUtils {
 
+
     private static final ThreadLocal<SimpleDateFormat> fmt = new ThreadLocal<>();
     private static final String MESSAGE_FORMAT = "yyyy-MM-dd";
     private static final String DataValidationError1 = "提示信息：";
@@ -57,45 +58,30 @@ public class ExcelUtils {
 
     private static final ThreadLocal<ExcelUtils> UTILS_THREAD_LOCAL = new ThreadLocal<>();
 
-    public static final ExcelUtils setExcelUtils(ExcelPojo excelPojo) {
+    public static final ExcelUtils setExcelUtils() {
         ExcelUtils excelUtils = UTILS_THREAD_LOCAL.get();
         if (excelUtils == null) {
-            excelUtils = new ExcelUtils(excelPojo);
+            excelUtils = new ExcelUtils();
             UTILS_THREAD_LOCAL.set(excelUtils);
         }
         return excelUtils;
     }
 
-    private static String filePath = null;
-    private static List<List<String[]>> dataLists = null;
-    private static HttpServletResponse response = null;
-    private static HashMap notBorderMap = null;
-    private static HashMap regionMap = null;
-    private static HashMap columnMap = null;
-    private static HashMap styles = null;
-    private static HashMap paneMap = null;
-    private static String fileName = null;
-    private static String[] sheetName = null;
-    private static String[] labelName = null;
-    private static HashMap rowStyles = null;
-    private static HashMap columnStyles = null;
-    private static HashMap dropDownMap = null;
-
-    public ExcelUtils(ExcelPojo excelPojo) {
-        filePath = excelPojo.getFilePath();
-        dataLists = excelPojo.getDataLists();
-        response = excelPojo.getResponse();
-        notBorderMap = excelPojo.getNotBorderMap();
-        regionMap = excelPojo.getRegionMap();
-        columnMap = excelPojo.getColumnMap();
-        styles = excelPojo.getStyles();
-        paneMap = excelPojo.getPaneMap();
-        fileName = excelPojo.getFileName();
-        sheetName = excelPojo.getSheetName();
-        labelName = excelPojo.getLabelName();
-        rowStyles = excelPojo.getRowStyles();
-        columnStyles = excelPojo.getColumnStyles();
-        dropDownMap = excelPojo.getDropDownMap();
+    public ExcelUtils() {
+        filePath = this.getFilePath();
+        dataLists = this.getDataLists();
+        response = this.getResponse();
+        notBorderMap = this.getNotBorderMap();
+        regionMap = this.getRegionMap();
+        columnMap = this.getColumnMap();
+        styles = this.getStyles();
+        paneMap = this.getPaneMap();
+        fileName = this.getFileName();
+        sheetName = this.getSheetName();
+        labelName = this.getLabelName();
+        rowStyles = this.getRowStyles();
+        columnStyles = this.getColumnStyles();
+        dropDownMap = this.getDropDownMap();
     }
 
 
@@ -126,7 +112,7 @@ public class ExcelUtils {
                 e.printStackTrace();
             }
         }
-        System.out.println("======= Excel 工具类导出运行时间:  " + (System.currentTimeMillis() - startTime) + " ms");
+        System.out.println("======= Excel tool class export run time :  " + (System.currentTimeMillis() - startTime) + " ms");
         return true;
     }
 
@@ -190,10 +176,11 @@ public class ExcelUtils {
                     outputStream.close();
                 }
             } catch (IOException e) {
+                System.out.println("======= Andyczy ExcelUtils Exception Message：Excel tool class export exception !");
                 e.printStackTrace();
             }
         }
-        System.out.println("======= Excel 工具类导出运行时间:  " + (System.currentTimeMillis() - startTime) + " ms");
+        System.out.println("======= Excel tool class export run time :  " + (System.currentTimeMillis() - startTime) + " ms");
         return true;
     }
 
@@ -271,10 +258,10 @@ public class ExcelUtils {
                 }
                 returnDataList.add(rowListValue);
             }
-            System.out.println("======= Excel 工具类导入运行时间:  " + (System.currentTimeMillis() - startTime) + " ms");
+            System.out.println("======= Excel tool class import runtime :  " + (System.currentTimeMillis() - startTime) + " ms");
             return returnDataList;
         } catch (Exception e) {
-            System.out.println("======= Excel 工具类导入异常");
+            System.out.println("======= Andyczy ExcelUtils Exception Message：Excel tool class import exception !");
             e.printStackTrace();
             return null;
         }
@@ -301,10 +288,10 @@ public class ExcelUtils {
                                     HashMap regionMap, HashMap columnMap, HashMap styles, HashMap paneMap,
                                     String[] sheetName, String[] labelName, HashMap rowStyles, HashMap columnStyles, HashMap dropDownMap) throws Exception {
         if (dataLists == null) {
-            throw new IOException("Andyczy ExcelUtils Exception Message：Export data(type:List<List<String[]>>) cannot be empty ！");
+            throw new IOException("======= Andyczy ExcelUtils Exception Message：Export data(type:List<List<String[]>>) cannot be empty ！");
         }
         if (sheetName == null) {
-            throw new IOException("Andyczy ExcelUtils Exception Message：Export sheet(type:String[]) name cannot be empty ！");
+            throw new IOException("======= Andyczy ExcelUtils Exception Message：Export sheet(type:String[]) name cannot be empty ！");
         }
         int k = 0;
         for (List<String[]> list : dataLists) {
@@ -391,14 +378,18 @@ public class ExcelUtils {
                 outputStream = response.getOutputStream();
             } else if (filePath != null) {
                 outputStream = new FileOutputStream(filePath);
+
             }
-            if (sxssfWorkbook != null) {
+            if (outputStream != null) {
                 sxssfWorkbook.write(outputStream);
                 sxssfWorkbook.dispose();
             }
-        } catch (Exception e) {
+        } catch (
+                Exception e) {
+            System.out.println("======= Andyczy ExcelUtils Exception Message：Output stream is not empty !");
             e.getSuppressed();
         }
+
     }
 
 
@@ -787,6 +778,177 @@ public class ExcelUtils {
             val = "";
         }
         return val;
+    }
+
+
+    /**
+     * 导出数据必填
+     */
+    private List<List<String[]>> dataLists;
+    /**
+     * sheet名称必填
+     */
+    private String[] sheetName;
+    /**
+     * 每个表格的大标题
+     */
+    private String[] labelName;
+    /**
+     * 页面响应
+     */
+    private HttpServletResponse response;
+    /**
+     * 忽略边框(默认是有边框)
+     */
+    private HashMap notBorderMap;
+    /**
+     * 自定义：单元格合并
+     */
+    private HashMap regionMap;
+    /**
+     * 自定义：对每个单元格自定义列宽
+     */
+    private HashMap columnMap;
+    /**
+     * 自定义：每一个单元格样式
+     */
+    private HashMap styles;
+    /**
+     * 自定义：固定表头
+     */
+    private HashMap paneMap;
+    /**
+     * 自定义：某一行样式
+     */
+    private HashMap rowStyles;
+    /**
+     * 自定义：某一列样式
+     */
+    private HashMap columnStyles;
+    /**
+     * 自定义：对每个单元格自定义下拉列表
+     */
+    private HashMap dropDownMap;
+    /**
+     * 文件名称
+     */
+    private String fileName;
+    /**
+     * 导出本地路径
+     */
+    private String filePath;
+
+
+    public List<List<String[]>> getDataLists() {
+        return dataLists;
+    }
+
+    public void setDataLists(List<List<String[]>> dataLists) {
+        this.dataLists = dataLists;
+    }
+
+    public String[] getSheetName() {
+        return sheetName;
+    }
+
+    public void setSheetName(String[] sheetName) {
+        this.sheetName = sheetName;
+    }
+
+    public String[] getLabelName() {
+        return labelName;
+    }
+
+    public void setLabelName(String[] labelName) {
+        this.labelName = labelName;
+    }
+
+    public HttpServletResponse getResponse() {
+        return response;
+    }
+
+    public void setResponse(HttpServletResponse response) {
+        this.response = response;
+    }
+
+    public HashMap getNotBorderMap() {
+        return notBorderMap;
+    }
+
+    public void setNotBorderMap(HashMap notBorderMap) {
+        this.notBorderMap = notBorderMap;
+    }
+
+    public HashMap getRegionMap() {
+        return regionMap;
+    }
+
+    public void setRegionMap(HashMap regionMap) {
+        this.regionMap = regionMap;
+    }
+
+    public HashMap getColumnMap() {
+        return columnMap;
+    }
+
+    public void setColumnMap(HashMap columnMap) {
+        this.columnMap = columnMap;
+    }
+
+    public HashMap getStyles() {
+        return styles;
+    }
+
+    public void setStyles(HashMap styles) {
+        this.styles = styles;
+    }
+
+    public HashMap getPaneMap() {
+        return paneMap;
+    }
+
+    public void setPaneMap(HashMap paneMap) {
+        this.paneMap = paneMap;
+    }
+
+    public HashMap getRowStyles() {
+        return rowStyles;
+    }
+
+    public void setRowStyles(HashMap rowStyles) {
+        this.rowStyles = rowStyles;
+    }
+
+    public HashMap getColumnStyles() {
+        return columnStyles;
+    }
+
+    public void setColumnStyles(HashMap columnStyles) {
+        this.columnStyles = columnStyles;
+    }
+
+    public HashMap getDropDownMap() {
+        return dropDownMap;
+    }
+
+    public void setDropDownMap(HashMap dropDownMap) {
+        this.dropDownMap = dropDownMap;
+    }
+
+    public String getFileName() {
+        return fileName;
+    }
+
+    public void setFileName(String fileName) {
+        this.fileName = fileName;
+    }
+
+    public String getFilePath() {
+        return filePath;
+    }
+
+    public void setFilePath(String filePath) {
+        this.filePath = filePath;
     }
 
 }

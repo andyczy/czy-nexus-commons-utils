@@ -6,9 +6,14 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="70f792b6-87df-4c03-84b6-a38696c014ec" name="Default Changelist" comment="">
+    <list default="true" id="70f792b6-87df-4c03-84b6-a38696c014ec" name="Default Changelist" comment="版本 3.2 更新说明">
+      <change afterPath="$PROJECT_DIR$/README-2.0.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/README-3.2.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README-3.0.md" beforeDir="false" afterPath="$PROJECT_DIR$/README-3.0.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/andyczy/java/excel/ExcelUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/andyczy/java/excel/ExcelUtils.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -64,18 +69,20 @@
     <session id="-550198201">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="14" />
-          <entry key="project.open.time.0" value="6" />
-          <entry key="project.open.time.1" value="6" />
+          <entry key="project.closed" value="20" />
+          <entry key="project.open.time.0" value="8" />
+          <entry key="project.open.time.1" value="7" />
+          <entry key="project.open.time.10" value="1" />
+          <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.2" value="2" />
-          <entry key="project.open.time.7" value="1" />
-          <entry key="project.opened" value="15" />
+          <entry key="project.open.time.7" value="2" />
+          <entry key="project.opened" value="21" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="java" value="1" />
-          <entry key="md" value="2" />
+          <entry key="md" value="4" />
           <entry key="png" value="1" />
           <entry key="pom" value="1" />
           <entry key="properties" value="2" />
@@ -87,7 +94,7 @@
         <counts>
           <entry key="Image" value="1" />
           <entry key="JAVA" value="1" />
-          <entry key="Markdown" value="2" />
+          <entry key="Markdown" value="4" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="Properties" value="2" />
           <entry key="XML" value="1" />
@@ -95,18 +102,18 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="295" />
-          <entry key="md" value="1226" />
+          <entry key="java" value="327" />
+          <entry key="md" value="1381" />
           <entry key="txt" value="28" />
-          <entry key="xml" value="91" />
+          <entry key="xml" value="92" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="295" />
-          <entry key="Markdown" value="1226" />
+          <entry key="JAVA" value="327" />
+          <entry key="Markdown" value="1381" />
           <entry key="PLAIN_TEXT" value="28" />
-          <entry key="XML" value="91" />
+          <entry key="XML" value="92" />
         </counts>
       </usages-collector>
     </session>
@@ -116,8 +123,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+            <state relative-caret-position="-88">
+              <caret line="11" column="43" lean-forward="true" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -135,8 +142,20 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="69">
-                <caret line="79" column="21" selection-start-line="79" selection-start-column="21" selection-end-line="79" selection-end-column="21" />
+              <first_editor relative-caret-position="66">
+                <caret line="30" column="4" lean-forward="true" selection-start-line="30" selection-start-column="4" selection-end-line="39" selection-end-column="22" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README-2.0.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="57">
+                <caret line="18" column="93" selection-start-line="18" selection-start-column="93" selection-end-line="18" selection-end-column="93" />
               </first_editor>
               <second_editor />
             </state>
@@ -147,8 +166,20 @@
         <entry file="file://$PROJECT_DIR$/README-3.0.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
+              <first_editor relative-caret-position="-242">
+                <caret line="16" column="93" selection-start-line="16" selection-start-column="93" selection-end-line="16" selection-end-column="93" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README-3.2.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
               <first_editor relative-caret-position="352">
-                <caret line="19" column="43" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="43" />
+                <caret line="16" column="93" selection-start-line="16" selection-start-column="93" selection-end-line="16" selection-end-column="93" />
               </first_editor>
               <second_editor />
             </state>
@@ -167,10 +198,67 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/github/andyczy/java/excel/ExcelUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-823">
-              <caret line="164" column="41" lean-forward="true" selection-start-line="164" selection-start-column="41" selection-end-line="164" selection-end-column="41" />
+            <state relative-caret-position="543">
+              <caret line="260" column="23" selection-start-line="260" selection-start-column="23" selection-end-line="260" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
+                <element signature="e#7197#7243#0" expanded="true" />
+                <element signature="e#31012#31013#0" expanded="true" />
+                <element signature="e#31044#31045#0" expanded="true" />
+                <element signature="e#31108#31109#0" expanded="true" />
+                <element signature="e#31150#31151#0" expanded="true" />
+                <element signature="e#31188#31189#0" expanded="true" />
+                <element signature="e#31220#31221#0" expanded="true" />
+                <element signature="e#31272#31273#0" expanded="true" />
+                <element signature="e#31314#31315#0" expanded="true" />
+                <element signature="e#31352#31353#0" expanded="true" />
+                <element signature="e#31384#31385#0" expanded="true" />
+                <element signature="e#31436#31437#0" expanded="true" />
+                <element signature="e#31478#31479#0" expanded="true" />
+                <element signature="e#31526#31527#0" expanded="true" />
+                <element signature="e#31557#31558#0" expanded="true" />
+                <element signature="e#31618#31619#0" expanded="true" />
+                <element signature="e#31658#31659#0" expanded="true" />
+                <element signature="e#31698#31699#0" expanded="true" />
+                <element signature="e#31733#31734#0" expanded="true" />
+                <element signature="e#31790#31791#0" expanded="true" />
+                <element signature="e#31838#31839#0" expanded="true" />
+                <element signature="e#31875#31876#0" expanded="true" />
+                <element signature="e#31907#31908#0" expanded="true" />
+                <element signature="e#31958#31959#0" expanded="true" />
+                <element signature="e#32000#32001#0" expanded="true" />
+                <element signature="e#32037#32038#0" expanded="true" />
+                <element signature="e#32069#32070#0" expanded="true" />
+                <element signature="e#32120#32121#0" expanded="true" />
+                <element signature="e#32162#32163#0" expanded="true" />
+                <element signature="e#32196#32197#0" expanded="true" />
+                <element signature="e#32225#32226#0" expanded="true" />
+                <element signature="e#32270#32271#0" expanded="true" />
+                <element signature="e#32306#32307#0" expanded="true" />
+                <element signature="e#32341#32342#0" expanded="true" />
+                <element signature="e#32371#32372#0" expanded="true" />
+                <element signature="e#32418#32419#0" expanded="true" />
+                <element signature="e#32456#32457#0" expanded="true" />
+                <element signature="e#32493#32494#0" expanded="true" />
+                <element signature="e#32525#32526#0" expanded="true" />
+                <element signature="e#32576#32577#0" expanded="true" />
+                <element signature="e#32618#32619#0" expanded="true" />
+                <element signature="e#32658#32659#0" expanded="true" />
+                <element signature="e#32693#32694#0" expanded="true" />
+                <element signature="e#32750#32751#0" expanded="true" />
+                <element signature="e#32798#32799#0" expanded="true" />
+                <element signature="e#32837#32838#0" expanded="true" />
+                <element signature="e#32871#32872#0" expanded="true" />
+                <element signature="e#32926#32927#0" expanded="true" />
+                <element signature="e#32972#32973#0" expanded="true" />
+                <element signature="e#33007#33008#0" expanded="true" />
+                <element signature="e#33038#33039#0" expanded="true" />
+                <element signature="e#33086#33087#0" expanded="true" />
+                <element signature="e#33126#33127#0" expanded="true" />
+                <element signature="e#33161#33162#0" expanded="true" />
+                <element signature="e#33192#33193#0" expanded="true" />
+                <element signature="e#33240#33241#0" expanded="true" />
+                <element signature="e#33280#33281#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -179,8 +267,12 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/github/andyczy/java/excel/ExcelPojo.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1452">
-              <caret line="68" column="27" selection-start-line="68" selection-start-column="19" selection-end-line="68" selection-end-column="27" />
+            <state relative-caret-position="198">
+              <caret line="11" column="22" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="22" />
+              <folding>
+                <element signature="e#1281#1282#0" expanded="true" />
+                <element signature="e#1321#1322#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -215,7 +307,9 @@
         <option value="$PROJECT_DIR$/src/main/java/com/github/andyczy/java/excel/ExcelPojo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/andyczy/java/excel/ExcelUtils.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
+        <option value="$PROJECT_DIR$/README-2.0.md" />
         <option value="$PROJECT_DIR$/README-3.0.md" />
+        <option value="$PROJECT_DIR$/README-3.2.md" />
         <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
@@ -269,9 +363,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="AndroidView" />
+      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -305,20 +398,17 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="excel" type="462c0819:PsiDirectoryNode" />
             </path>
-            <path>
-              <item name="github.com.andyczy.java.excel" type="b2602c69:ProjectViewProjectNode" />
-              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
-            </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544164843986" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1544494187828" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -377,7 +467,13 @@
       <workItem from="1544067066271" duration="121000" />
       <workItem from="1544067667844" duration="1133000" />
       <workItem from="1544076307661" duration="555000" />
-      <workItem from="1544151798309" duration="4478000" />
+      <workItem from="1544151798309" duration="6656000" />
+      <workItem from="1544402315589" duration="151000" />
+      <workItem from="1544406464656" duration="1204000" />
+      <workItem from="1544434341951" duration="44000" />
+      <workItem from="1544434585091" duration="550000" />
+      <workItem from="1544435366963" duration="67000" />
+      <workItem from="1544488533021" duration="3163000" />
     </task>
     <task id="LOCAL-00001" summary="Excel工具类">
       <created>1542254161477</created>
@@ -617,16 +713,23 @@
       <option name="project" value="LOCAL" />
       <updated>1544152912960</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="版本-3.1-- 修复异常bug">
+      <created>1544165140332</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1544165140332</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="54835000" />
+    <option name="totallyTimeSpent" value="62192000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27604726" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28464016" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -642,7 +745,7 @@
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" weight="0.32960895" />
       <window_info anchor="bottom" id="Database Changes" order="8" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4989259" weight="0.45139664" />
+      <window_info anchor="bottom" id="Terminal" order="9" sideWeight="0.4989259" visible="true" weight="0.45139664" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.50107414" side_tool="true" weight="0.50502795" />
       <window_info anchor="bottom" id="Messages" order="11" weight="0.32960895" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -656,7 +759,7 @@
       <window_info anchor="right" id="Maven Projects" order="8" weight="0.23845327" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.27604726" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.28464016" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -729,45 +832,126 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/andyczy/java/excel/ExcelPojo.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="8" column="16" selection-start-line="8" selection-start-column="16" selection-end-line="8" selection-end-column="16" />
+        <state relative-caret-position="198">
+          <caret line="11" column="22" selection-start-line="11" selection-start-column="13" selection-end-line="11" selection-end-column="22" />
+          <folding>
+            <element signature="e#1281#1282#0" expanded="true" />
+            <element signature="e#1321#1322#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/andyczy/java/excel/ExcelPojo.java">
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/andyczy/java/excel/ExcelUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1452">
-          <caret line="68" column="27" selection-start-line="68" selection-start-column="19" selection-end-line="68" selection-end-column="27" />
+        <state relative-caret-position="543">
+          <caret line="260" column="23" selection-start-line="260" selection-start-column="23" selection-end-line="260" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#7197#7243#0" expanded="true" />
+            <element signature="e#31012#31013#0" expanded="true" />
+            <element signature="e#31044#31045#0" expanded="true" />
+            <element signature="e#31108#31109#0" expanded="true" />
+            <element signature="e#31150#31151#0" expanded="true" />
+            <element signature="e#31188#31189#0" expanded="true" />
+            <element signature="e#31220#31221#0" expanded="true" />
+            <element signature="e#31272#31273#0" expanded="true" />
+            <element signature="e#31314#31315#0" expanded="true" />
+            <element signature="e#31352#31353#0" expanded="true" />
+            <element signature="e#31384#31385#0" expanded="true" />
+            <element signature="e#31436#31437#0" expanded="true" />
+            <element signature="e#31478#31479#0" expanded="true" />
+            <element signature="e#31526#31527#0" expanded="true" />
+            <element signature="e#31557#31558#0" expanded="true" />
+            <element signature="e#31618#31619#0" expanded="true" />
+            <element signature="e#31658#31659#0" expanded="true" />
+            <element signature="e#31698#31699#0" expanded="true" />
+            <element signature="e#31733#31734#0" expanded="true" />
+            <element signature="e#31790#31791#0" expanded="true" />
+            <element signature="e#31838#31839#0" expanded="true" />
+            <element signature="e#31875#31876#0" expanded="true" />
+            <element signature="e#31907#31908#0" expanded="true" />
+            <element signature="e#31958#31959#0" expanded="true" />
+            <element signature="e#32000#32001#0" expanded="true" />
+            <element signature="e#32037#32038#0" expanded="true" />
+            <element signature="e#32069#32070#0" expanded="true" />
+            <element signature="e#32120#32121#0" expanded="true" />
+            <element signature="e#32162#32163#0" expanded="true" />
+            <element signature="e#32196#32197#0" expanded="true" />
+            <element signature="e#32225#32226#0" expanded="true" />
+            <element signature="e#32270#32271#0" expanded="true" />
+            <element signature="e#32306#32307#0" expanded="true" />
+            <element signature="e#32341#32342#0" expanded="true" />
+            <element signature="e#32371#32372#0" expanded="true" />
+            <element signature="e#32418#32419#0" expanded="true" />
+            <element signature="e#32456#32457#0" expanded="true" />
+            <element signature="e#32493#32494#0" expanded="true" />
+            <element signature="e#32525#32526#0" expanded="true" />
+            <element signature="e#32576#32577#0" expanded="true" />
+            <element signature="e#32618#32619#0" expanded="true" />
+            <element signature="e#32658#32659#0" expanded="true" />
+            <element signature="e#32693#32694#0" expanded="true" />
+            <element signature="e#32750#32751#0" expanded="true" />
+            <element signature="e#32798#32799#0" expanded="true" />
+            <element signature="e#32837#32838#0" expanded="true" />
+            <element signature="e#32871#32872#0" expanded="true" />
+            <element signature="e#32926#32927#0" expanded="true" />
+            <element signature="e#32972#32973#0" expanded="true" />
+            <element signature="e#33007#33008#0" expanded="true" />
+            <element signature="e#33038#33039#0" expanded="true" />
+            <element signature="e#33086#33087#0" expanded="true" />
+            <element signature="e#33126#33127#0" expanded="true" />
+            <element signature="e#33161#33162#0" expanded="true" />
+            <element signature="e#33192#33193#0" expanded="true" />
+            <element signature="e#33240#33241#0" expanded="true" />
+            <element signature="e#33280#33281#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README-2.0.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="57">
+            <caret line="18" column="93" selection-start-line="18" selection-start-column="93" selection-end-line="18" selection-end-column="93" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README-3.2.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="352">
+            <caret line="16" column="93" selection-start-line="16" selection-start-column="93" selection-end-line="16" selection-end-column="93" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README-3.0.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="352">
-            <caret line="19" column="43" selection-start-line="19" selection-start-column="39" selection-end-line="19" selection-end-column="43" />
+          <first_editor relative-caret-position="-242">
+            <caret line="16" column="93" selection-start-line="16" selection-start-column="93" selection-end-line="16" selection-end-column="93" />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/andyczy/java/excel/ExcelUtils.java">
+    <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-823">
-          <caret line="164" column="41" lean-forward="true" selection-start-line="164" selection-start-column="41" selection-end-line="164" selection-end-column="41" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="-88">
+          <caret line="11" column="43" lean-forward="true" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="69">
-            <caret line="79" column="21" selection-start-line="79" selection-start-column="21" selection-end-line="79" selection-end-column="21" />
+          <first_editor relative-caret-position="66">
+            <caret line="30" column="4" lean-forward="true" selection-start-line="30" selection-start-column="4" selection-end-line="39" selection-end-column="22" />
           </first_editor>
           <second_editor />
         </state>
