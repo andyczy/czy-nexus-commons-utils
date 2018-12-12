@@ -22,7 +22,7 @@
              
         ExcelUtils excelUtils = ExcelUtils.setExcelUtils();
         // 必填项--导出数据
-        excelUtils.setDataLists(lists);  
+        excelUtils.setDataLists(dataLists);      //   参数请看下面的格式 
         // 必填项--sheet名称
         excelUtils.setSheetName(sheetNameList);
         // 文件名称(可为空，默认是：sheet 第一个名称)

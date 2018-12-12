@@ -28,7 +28,7 @@
 ### 版本 3.1 -- 导出配置 ExcelUtils.exportForExcelsOptimize()
         ExcelPojo excelPojo = new ExcelPojo();
         // 必填项--导出数据
-        excelPojo.setDataLists(lists);  
+        excelPojo.setDataLists(dataLists);    //   参数请看下面的格式 
         // 必填项--sheet名称
         excelPojo.setSheetName(sheetNameList);
         // 文件名称(可为空，默认是：sheet 第一个名称)
