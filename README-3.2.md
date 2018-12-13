@@ -107,7 +107,7 @@
    
         @Override
            public List<List<String[]>> exportBill(String deviceNo,String snExt,Integer parentInstId,String startDate, String endDate){
-               List<List<String[]>> listArray = new ArrayList<>();
+               List<List<String[]>> dataLists = new ArrayList<>();
                List<String[]> stringList = new ArrayList<>();
                PageInfo<BillInfo> pagePageInfo = getBillPage(1,10000,null,snExt,deviceNo,parentInstId,startDate,endDate);
                String[] valueString = null;
@@ -122,27 +122,27 @@
                    stringList.add(valueString);
                }
                listArray.add(stringList);
-               return listArray;
+               return dataLists;
            }       
    
    自定义列宽：参数 columnMap
    
        参数说明：
-       HashMap<Integer, HashMap<Integer, Integer>> mapColumnWidth = new HashMap<>();
+       HashMap<Integer, HashMap<Integer, Integer>> columnMap = new HashMap<>();
        HashMap<Integer, Integer> mapColumn = new HashMap<>();
        //自定义列宽
        mapColumn.put(0, 3);  //第一列、宽度为3
        mapColumn.put(1, 20);
        mapColumn.put(2, 15);
        //第一个单元格列宽
-       mapColumnWidth.put(1, mapColumn);
+       columnMap.put(1, mapColumn);
        
    自定义固定表头：参数 paneMap
    
        参数说明：
-       HashMap setPaneMap = new HashMap();
+       HashMap paneMap = new HashMap();
        //第一个表格、第三行开始固定表头
-       setPaneMap.put(1, 1); 
+       paneMap.put(1, 1); 
        
    
    自定义合并单元格：参数 regionMap
@@ -156,28 +156,28 @@
    自定义下拉列表值：参数 dropDownMap
    
         参数说明：
-        HashMap hashMap = new HashMap();
+        HashMap dropDownMap = new HashMap();
         List<String[]> sheet1 = new ArrayList<>();                  //第一个表格设置。
         String[] sheetColumn1 = new String[]{"1", "2", "4"};        //必须放第一：设置下拉列表的列（excel从零行开始数）
         String[] sex = {"男,女"};                                   //下拉的值放在 sheetColumn1 后面。
         sheet1.add(sheetColumn1);
         sheet1.add(sex);
-        hashMap.put(1,sheet1);                                      //第一个表格的下拉列表值   
+        dropDownMap.put(1,sheet1);                                      //第一个表格的下拉列表值   
         
    自定义每个表格第几行或者是第几列的样式：参数 rowStyles / columnStyles
            
         参数说明：
-        HashMap hashMap = new HashMap();
+        HashMap columnStyles = new HashMap();
         List list = new ArrayList();
         list.add(new Boolean[]{true, false, false, false, true});                //1、样式（是否居中？，是否右对齐？，是否左对齐？， 是否加粗？，是否有边框？ ）
         list.add(new Integer[]{1, 3});                                           //2、第几行或者是第几列
         list.add(new Integer[]{10,14,null});                                     //3、颜色值（8是黑色、10红色等） 、颜色、字体、行高？（可不设置）
-        hashMap.put(1,list);                                                     //第一表格
+        columnStyles.put(1,list);                                                     //第一表格
         
    自定义每一个单元格样式：参数 styles
         
        参数说明：
-       HashMap cellStyles = new HashMap();
+       HashMap styles = new HashMap();
        List< List<Object[]>> list = new ArrayList<>();
        List<Object[]> objectsList = new ArrayList<>();
        List<Object[]> objectsListTwo = new ArrayList<>();
@@ -192,7 +192,7 @@
        
        list.add(objectsList);
        list.add(objectsListTwo);
-       cellStyles.put(1, list);                                              //第一个表格所有自定义单元格样式 
+       styles.put(1, list);                                              //第一个表格所有自定义单元格样式 
              
    
    自定义忽略边框：参数 notBorderMap
