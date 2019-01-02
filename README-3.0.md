@@ -1,6 +1,9 @@
 # czy-nexus-commons-utils
-   是发布到 [search.maven](https://search.maven.org/)  、 [mvnrepository](https://mvnrepository.com/)公共仓库的管理库
-        
+   本库是发布到 [search.maven](https://search.maven.org/)  、 [mvnrepository](https://mvnrepository.com/)公共仓库的管理库。        
+   (教程博客)[https://blog.csdn.net/JavaWebRookie/article/details/80843653]、可通过maven方式下载源码查看注释。                
+   (工具类集库)[https://github.com/andyczy/czy-study-java-commons-utils]      
+   (开源中国)[https://www.oschina.net/]         
+      
    maven 使用：
 
         <dependency>        
@@ -95,32 +98,8 @@
   
         
 ### 数据格式
-   [javadoc 文档](https://oss.sonatype.org/service/local/repositories/releases/archive/com/github/andyczy/java-excel-utils/2.0.1/java-excel-utils-2.0.1-javadoc.jar/!/com/github/andyczy/java/excel/ExcelUtils.html)
+   [javadoc 文档](https://oss.sonatype.org/service/local/repositories/releases/archive/com/github/andyczy/java-excel-utils/3.2/java-excel-utils-3.2-javadoc.jar/!/com/github/andyczy/java/excel/ExcelUtils.html)
 
-   所有参数：
-   
-         * @param response
-         * @param dataLists    导出的数据(不可为空：如果只有标题就导出模板)
-         * @param sheetName    sheet名称（不可为空）
-         * @param columnMap    自定义：对每个单元格自定义列宽（可为空）
-         * @param dropDownMap  自定义：对每个单元格自定义下拉列表（可为空）
-         * @param styles       自定义：每一个单元格样式（可为空）
-         * @param rowStyles    自定义：某一行样式（可为空）
-         * @param columnStyles 自定义：某一列样式（可为空）
-         * @param regionMap    自定义：单元格合并（可为空）
-         * @param paneMap      自定义：固定表头（可为空）
-         * @param labelName    自定义：每个表格的大标题（可为空）
-         * @param fileName     文件名称(可为空，默认是：sheet 第一个名称)
-         * @param notBorderMap 自定义：忽略边框(可为空，默认是有边框)
-             
-   controller：伪代码
-    
-        @RequestMapping(value = "/exportBill")
-        @ResponseBody
-        public void exportBill(HttpServletResponse response){
-            ExcelUtils.exportForExcel(response,dataLists,notBorderMap,regionMap,columnMap,styles,paneMap,fileName,
-                                      sheetName,labelName,rowStyles,columnStyles,dropDownMap);
-        }
     
    导出数据：参数 dataLists
     
@@ -130,8 +109,12 @@
                 List<String[]> stringList = new ArrayList<>();
                 PageInfo<BillInfo> pagePageInfo = getBillPage(1,10000,null,snExt,deviceNo,parentInstId,startDate,endDate);
                 String[] valueString = null;
-                String[] headers = {"序号","标题一","标题二","标题三","标题四","标题五","标题六"};
+ 
+                String[] headers = {"序号","标题一","标题一","标题二","标题三","标题四","标题五","标题六"};
+                String[] headersTwo = {" ","标题一小标题（合并用）","标题一小标题（合并用）"," "," "," "," "};
                 stringList.add(headers);
+                stringList.add(headersTwo);
+                
                 for (int i = 0; i < pagePageInfo.getList().size(); i++) {
                     valueString = new String[]{(i + 1) + "", pagePageInfo.getList().get(i).getSnExt(),
                             getNeededDateStyle(pagePageInfo.getList().get(i).getPayTime(),"yyyy-MM-dd hh:mm:ss"),

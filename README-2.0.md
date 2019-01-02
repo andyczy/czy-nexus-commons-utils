@@ -1,7 +1,11 @@
 # czy-nexus-commons-utils
-   是发布到 [search.maven](https://search.maven.org/)  、 [mvnrepository](https://mvnrepository.com/)公共仓库的管理库
-        
-   已发布：
+   本库是发布到 [search.maven](https://search.maven.org/)  、 [mvnrepository](https://mvnrepository.com/)公共仓库的管理库。        
+   (教程博客)[https://blog.csdn.net/JavaWebRookie/article/details/80843653]、可通过maven方式下载源码查看注释。                
+   (工具类集库)[https://github.com/andyczy/czy-study-java-commons-utils]       
+   (开源中国)[https://www.oschina.net/]         
+   
+   
+   已发布：     
    
         1、java-excel-utils
         
@@ -32,22 +36,10 @@
          excelUtils.setDataLists(dataList);
          excelUtils.setFileName(excelName);
          excelUtils.setResponse(response);
-    
          excelUtils.exportForExcelsOptimize();
          
        2、修复输出流为空异常bug。
-           
-           
-            
-## java-excel-utils
-        是JAVA操作Excel导入导出的工具类，目的是简化逻辑操作、可拓展Excel导入导出配置。     
-            
-   (教程博客)[https://blog.csdn.net/JavaWebRookie/article/details/80843653]     
-   (工具类集库)[https://github.com/andyczy/czy-study-java-commons-utils]
  
-        maven 使用可能源代码没有注释（maven仓库自动去掉了，每一次发布都没有注释）、部分注释就是下面的数据格式。
- 
-    
       
 ### 导出配置 ExcelUtils.exportForExcel(...)
         * 可提供模板下载           
@@ -67,8 +59,9 @@
   
         
 ### 数据格式
-   [javadoc 文档](https://oss.sonatype.org/service/local/repositories/releases/archive/com/github/andyczy/java-excel-utils/2.0.1/java-excel-utils-2.0.1-javadoc.jar/!/com/github/andyczy/java/excel/ExcelUtils.html)
+   [javadoc 文档](https://oss.sonatype.org/service/local/repositories/releases/archive/com/github/andyczy/java-excel-utils/3.2/java-excel-utils-3.2-javadoc.jar/!/com/github/andyczy/java/excel/ExcelUtils.html)
 
+    
    所有参数：
    
          * @param response     
@@ -84,26 +77,23 @@
          * @param labelName    每个表格的大标题（可为空）
          * @param fileName     文件名称(可为空，默认是：sheet 第一个名称)
          * @param notBorderMap 忽略边框(默认是有边框)
-             
-   controller：伪代码
-     
-        @RequestMapping(value = "/exportBill")
-        @ResponseBody
-        public void exportBill(HttpServletResponse response){
-            ExcelUtils.exportForExcel(response,dataLists,notBorderMap,regionMap,columnMap,styles,paneMap,fileName,
-                                      sheetName,labelName,rowStyles,columnStyles,dropDownMap);
-        }
-    
+
+   
    导出数据：参数 dataLists
     
          @Override
             public List<List<String[]>> exportBill(String deviceNo,String snExt,Integer parentInstId,String startDate, String endDate){
                 List<List<String[]>> dataLists = new ArrayList<>();
                 List<String[]> stringList = new ArrayList<>();
+                
                 PageInfo<BillInfo> pagePageInfo = getBillPage(1,10000,null,snExt,deviceNo,parentInstId,startDate,endDate);
                 String[] valueString = null;
-                String[] headers = {"序号","标题一","标题二","标题三","标题四","标题五","标题六"};
+ 
+                String[] headers = {"序号","标题一","标题一","标题二","标题三","标题四","标题五","标题六"};
+                String[] headersTwo = {" ","标题一小标题（合并用）","标题一小标题（合并用）"," "," "," "," "};
                 stringList.add(headers);
+                stringList.add(headersTwo);
+                
                 for (int i = 0; i < pagePageInfo.getList().size(); i++) {
                     valueString = new String[]{(i + 1) + "", pagePageInfo.getList().get(i).getSnExt(),
                             getNeededDateStyle(pagePageInfo.getList().get(i).getPayTime(),"yyyy-MM-dd hh:mm:ss"),
