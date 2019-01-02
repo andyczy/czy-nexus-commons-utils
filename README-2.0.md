@@ -61,25 +61,8 @@
 ### 数据格式
    [javadoc 文档](https://oss.sonatype.org/service/local/repositories/releases/archive/com/github/andyczy/java-excel-utils/3.2/java-excel-utils-3.2-javadoc.jar/!/com/github/andyczy/java/excel/ExcelUtils.html)
 
-    
-   所有参数：
    
-         * @param response     
-         * @param dataLists    导出的数据(不可为空：如果只有标题就导出模板)
-         * @param sheetName    sheet名称（不可为空）
-         * @param columnMap    自定义：对每个单元格自定义列宽（可为空）
-         * @param dropDownMap  自定义：对每个单元格自定义下拉列表（可为空）
-         * @param styles       自定义：每一个单元格样式（可为空）
-         * @param rowStyles    自定义：某一行样式（可为空）
-         * @param columnStyles 自定义：某一列样式（可为空）
-         * @param regionMap    自定义：单元格合并（可为空）
-         * @param paneMap      固定表头（可为空）
-         * @param labelName    每个表格的大标题（可为空）
-         * @param fileName     文件名称(可为空，默认是：sheet 第一个名称)
-         * @param notBorderMap 忽略边框(默认是有边框)
-
-   
-   导出数据：参数 dataLists
+   1、导出数据：参数 dataLists
     
          @Override
             public List<List<String[]>> exportBill(String deviceNo,String snExt,Integer parentInstId,String startDate, String endDate){
@@ -181,7 +164,7 @@
         HashMap notBorderMap = new HashMap();
         notBorderMap.put(1, new Integer[]{1, 5});   //忽略边框（1行、5行）、默认是数据是全部加边框
    
-   导入配置：
+   2、导入配置：
         
        @param indexMap 多单元从第几行开始获取数据，默认从第二行开始获取（可为空，如 hashMapIndex.put(1,3); 第一个表格从第三行开始获取）
        @param continueRowMap 多单元根据那些列为空来忽略行数据（可为空，如 mapContinueRow.put(1,new Integer[]{1, 3}); 第一个表格从1、3列为空就忽略）

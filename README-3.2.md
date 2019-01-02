@@ -84,17 +84,8 @@
 ### 数据格式
    [javadoc 文档](https://oss.sonatype.org/service/local/repositories/releases/archive/com/github/andyczy/java-excel-utils/3.2/java-excel-utils-3.2-javadoc.jar/!/com/github/andyczy/java/excel/ExcelUtils.html)
 
-             
-   controller：伪代码
     
-        @RequestMapping(value = "/exportBill")
-        @ResponseBody
-        public void exportBill(HttpServletResponse response){
-            ExcelUtils.exportForExcel(response,dataLists,notBorderMap,regionMap,columnMap,styles,paneMap,fileName,
-                                      sheetName,labelName,rowStyles,columnStyles,dropDownMap);
-        }
-    
-   导出数据：参数 dataLists
+   1、导出数据：参数 dataLists
    
         @Override
            public List<List<String[]>> exportBill(String deviceNo,String snExt,Integer parentInstId,String startDate, String endDate){
@@ -195,7 +186,9 @@
        HashMap notBorderMap = new HashMap();
        notBorderMap.put(1, new Integer[]{1, 5});   //忽略边框（1行、5行）、默认是数据是全部加边框
    
-   导入配置：
+   
+   
+   2、导入配置：
         
        @param indexMap 多单元从第几行开始获取数据，默认从第二行开始获取（可为空，如 hashMapIndex.put(1,3); 第一个表格从第三行开始获取）
        @param continueRowMap 多单元根据那些列为空来忽略行数据（可为空，如 mapContinueRow.put(1,new Integer[]{1, 3}); 第一个表格从1、3列为空就忽略）
