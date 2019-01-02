@@ -84,16 +84,7 @@
 ### 数据格式
    [javadoc 文档](https://oss.sonatype.org/service/local/repositories/releases/archive/com/github/andyczy/java-excel-utils/3.2/java-excel-utils-3.2-javadoc.jar/!/com/github/andyczy/java/excel/ExcelUtils.html)
 
-             
-   controller：伪代码
-    
-        @RequestMapping(value = "/exportBill")
-        @ResponseBody
-        public void exportBill(HttpServletResponse response){
-            ExcelUtils.exportForExcel(response,dataLists,notBorderMap,regionMap,columnMap,styles,paneMap,fileName,
-                                      sheetName,labelName,rowStyles,columnStyles,dropDownMap);
-        }
-    
+
    导出数据：参数 dataLists
    
         @Override
