@@ -568,7 +568,58 @@ public class ExcelUtils {
         setExcelStyles(cell, wb, sxssfRow, null, null, true, border, false, false, null, null);
     }
 
-    /**
+	private static ThreadLocal<Map<StylesModel, CellStyle>> cellStyleCache = new ThreadLocal<>();
+
+	private static CellStyle getCellStyle(SXSSFWorkbook wb, SXSSFRow sxssfRow, Integer fontSize, Boolean bold, Boolean center, Boolean isBorder, Boolean leftBoolean,
+	                                      Boolean rightBoolean, Integer fontColor, Integer height) {
+		StylesModel stylesModel = new StylesModel(fontSize,bold,center,isBorder,leftBoolean,rightBoolean,fontColor,height);
+		if (cellStyleCache.get() == null) {
+			cellStyleCache.set(new HashMap<>());
+		}
+
+		if (!cellStyleCache.get().containsKey(stylesModel)) {
+			CellStyle cellStyle = wb.createCellStyle();
+			// 左右居中、上下居中
+			if (center != null && center) {
+				cellStyle.setAlignment(HorizontalAlignment.CENTER);
+				cellStyle.setVerticalAlignment(VerticalAlignment.CENTER);
+			}
+			// 右对齐
+			if (rightBoolean != null && rightBoolean) {
+				cellStyle.setVerticalAlignment(VerticalAlignment.CENTER);
+				cellStyle.setAlignment(HorizontalAlignment.RIGHT);
+			}
+			// 左对齐
+			if (leftBoolean != null && leftBoolean) {
+				cellStyle.setVerticalAlignment(VerticalAlignment.CENTER);
+				cellStyle.setAlignment(HorizontalAlignment.LEFT);
+			}
+			// 边框
+			if (isBorder != null && isBorder) {
+				setBorder(cellStyle, isBorder);
+			}
+			// 设置单元格字体样式
+			XSSFFont font = (XSSFFont) wb.createFont();
+			if (bold != null && bold) {
+				font.setBold(bold);
+			}
+
+			font.setFontName("宋体");
+			font.setFontHeight(fontSize == null ? 12 : fontSize);
+			cellStyle.setFont(font);
+			// 点击可查看颜色对应的值： BLACK(8), WHITE(9), RED(10),
+			font.setColor(IndexedColors.fromInt(fontColor == null ? 8 : fontColor).index);
+			cellStyleCache.get().put(stylesModel, cellStyle);
+		}
+		// 行高
+		if (height != null) {
+			sxssfRow.setHeight((short) (height * 2));
+		}
+		return cellStyleCache.get().get(stylesModel);
+	}
+
+
+	/**
      * @param cell         Cell对象。
      * @param wb           SXSSFWorkbook对象。
      * @param fontSize     字体大小。
@@ -581,40 +632,7 @@ public class ExcelUtils {
      */
     private static void setExcelStyles(Cell cell, SXSSFWorkbook wb, SXSSFRow sxssfRow, Integer fontSize, Boolean bold, Boolean center, Boolean isBorder, Boolean leftBoolean,
                                        Boolean rightBoolean, Integer fontColor, Integer height) {
-        CellStyle cellStyle = wb.createCellStyle();
-        //左右居中、上下居中
-        if (center != null && center) {
-            cellStyle.setAlignment(HorizontalAlignment.CENTER);
-            cellStyle.setVerticalAlignment(VerticalAlignment.CENTER);
-        }
-        //右对齐
-        if (rightBoolean != null && rightBoolean) {
-            cellStyle.setVerticalAlignment(VerticalAlignment.CENTER);
-            cellStyle.setAlignment(HorizontalAlignment.RIGHT);
-        }
-        //左对齐
-        if (leftBoolean != null && leftBoolean) {
-            cellStyle.setVerticalAlignment(VerticalAlignment.CENTER);
-            cellStyle.setAlignment(HorizontalAlignment.LEFT);
-        }
-        //边框
-        if (isBorder != null && isBorder) {
-            setBorder(cellStyle, isBorder);
-        }
-        //设置单元格字体样式
-        XSSFFont font = (XSSFFont) wb.createFont();
-        if (bold != null && bold) {
-            font.setBold(bold);
-        }
-        //行高
-        if (height != null) {
-            sxssfRow.setHeight((short) (height * 2));
-        }
-        font.setFontName("宋体");
-        font.setFontHeight(fontSize == null ? 12 : fontSize);
-        cellStyle.setFont(font);
-        //   点击可查看颜色对应的值： BLACK(8), WHITE(9), RED(10),
-        font.setColor(IndexedColors.fromInt(fontColor == null ? 8 : fontColor).index);
+        CellStyle cellStyle = getCellStyle(wb,sxssfRow,fontSize,bold,center,isBorder,leftBoolean,rightBoolean,fontColor,height);
         cell.setCellStyle(cellStyle);
     }
 
@@ -950,6 +968,172 @@ public class ExcelUtils {
     public void setFilePath(String filePath) {
         this.filePath = filePath;
     }
+
+}
+
+
+class StylesModel {
+	private Integer fontSize;
+	private Boolean bold;
+	private Boolean center;
+	private Boolean isBorder;
+	private Boolean leftBoolean;
+	private Boolean rightBoolean;
+	private Integer fontColor;
+	private Integer height;
+
+	@Override
+	public boolean equals(Object o) {
+		if (this == o) return true;
+		if (!(o instanceof StylesModel)) return false;
+		StylesModel that = (StylesModel) o;
+		return Objects.equals(getFontSize(), that.getFontSize()) && Objects.equals(getBold(), that.getBold()) &&
+		       Objects.equals(getCenter(), that.getCenter()) && Objects.equals(getIsBorder(), that.getIsBorder()) &&
+		       Objects.equals(getLeftBoolean(), that.getLeftBoolean()) &&
+		       Objects.equals(getRightBoolean(), that.getRightBoolean()) &&
+		       Objects.equals(getFontColor(), that.getFontColor()) && Objects.equals(getHeight(), that.getHeight());
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(getFontSize(), getBold(), getCenter(), getIsBorder(), getLeftBoolean(), getRightBoolean(),
+		                    getFontColor(), getHeight());
+	}
+
+	@Override
+	public String toString() {
+		return "StylesModel{" + "fontSize=" + fontSize + ", bold=" + bold + ", center=" + center + ", isBorder=" +
+		       isBorder + ", leftBoolean=" + leftBoolean + ", rightBoolean=" + rightBoolean + ", fontColor=" +
+		       fontColor + ", height=" + height + '}';
+	}
+
+	public StylesModel() {
+	}
+
+	public StylesModel(Integer fontSize, Boolean bold, Boolean center, Boolean isBorder, Boolean leftBoolean,
+	                   Boolean rightBoolean, Integer fontColor, Integer height) {
+		this.fontSize = fontSize;
+		this.bold = bold;
+		this.center = center;
+		this.isBorder = isBorder;
+		this.leftBoolean = leftBoolean;
+		this.rightBoolean = rightBoolean;
+		this.fontColor = fontColor;
+		this.height = height;
+	}
+
+	/**
+	 * @return the fontSize
+	 */
+	public Integer getFontSize() {
+		return fontSize;
+	}
+
+	/**
+	 * @param fontSize the fontSize to set
+	 */
+	public void setFontSize(Integer fontSize) {
+		this.fontSize = fontSize;
+	}
+
+	/**
+	 * @return the bold
+	 */
+	public Boolean getBold() {
+		return bold;
+	}
+
+	/**
+	 * @param bold the bold to set
+	 */
+	public void setBold(Boolean bold) {
+		this.bold = bold;
+	}
+
+	/**
+	 * @return the center
+	 */
+	public Boolean getCenter() {
+		return center;
+	}
+
+	/**
+	 * @param center the center to set
+	 */
+	public void setCenter(Boolean center) {
+		this.center = center;
+	}
+
+	/**
+	 * @return the isBorder
+	 */
+	public Boolean getIsBorder() {
+		return isBorder;
+	}
+
+	/**
+	 * @param isBorder the isBorder to set
+	 */
+	public void setIsBorder(Boolean isBorder) {
+		this.isBorder = isBorder;
+	}
+
+	/**
+	 * @return the leftBoolean
+	 */
+	public Boolean getLeftBoolean() {
+		return leftBoolean;
+	}
+
+	/**
+	 * @param leftBoolean the leftBoolean to set
+	 */
+	public void setLeftBoolean(Boolean leftBoolean) {
+		this.leftBoolean = leftBoolean;
+	}
+
+	/**
+	 * @return the rightBoolean
+	 */
+	public Boolean getRightBoolean() {
+		return rightBoolean;
+	}
+
+	/**
+	 * @param rightBoolean the rightBoolean to set
+	 */
+	public void setRightBoolean(Boolean rightBoolean) {
+		this.rightBoolean = rightBoolean;
+	}
+
+	/**
+	 * @return the fontColor
+	 */
+	public Integer getFontColor() {
+		return fontColor;
+	}
+
+	/**
+	 * @param fontColor the fontColor to set
+	 */
+	public void setFontColor(Integer fontColor) {
+		this.fontColor = fontColor;
+	}
+
+	/**
+	 * @return the height
+	 */
+	public Integer getHeight() {
+		return height;
+	}
+
+	/**
+	 * @param height the height to set
+	 */
+	public void setHeight(Integer height) {
+		this.height = height;
+	}
+
 
 }
 
