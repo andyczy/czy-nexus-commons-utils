@@ -17,18 +17,16 @@
        
   [版本-2.0之前教程](https://github.com/andyczy/czy-nexus-commons-utils/blob/master/README-2.0.md)   
         
-  [版本-3.1教程](https://github.com/andyczy/czy-nexus-commons-utils/blob/master/README-3.0.md)   
-     
   [版本-3.2教程](https://github.com/andyczy/czy-nexus-commons-utils/blob/master/README-3.2.md)   
   
   亲自测试：WPS、office 08、10、16 能正常打开。
     
       
-### 版本 3.2 -- 导出配置 ExcelUtils.exportForExcelsOptimize()
+### 版本 3.2 :导出配置 ExcelUtils.exportForExcelsOptimize()
              
         ExcelUtils excelUtils = ExcelUtils.setExcelUtils();
-        // 必填项--导出数据
-        excelUtils.setDataLists(dataLists);      //   参数请看下面的格式 
+        // 必填项--导出数据（参数请看下面的格式）
+        excelUtils.setDataLists(dataLists);   
         // 必填项--sheet名称
         excelUtils.setSheetName(sheetNameList);
         // 文件名称(可为空，默认是：sheet 第一个名称)
@@ -63,7 +61,7 @@
         // 执行导出
         excelUtils.exportForExcelsOptimize();       
         
-### 2.0之前版本 -- 导出配置 ExcelUtils.exportForExcel(...)
+### 2.0之前版本 :导出配置 ExcelUtils.exportForExcel(...)
         * 可提供模板下载           
         * 自定义下拉列表：对每个单元格自定义下拉列表         
         * 自定义列宽：对每个单元格自定义列宽         
@@ -111,84 +109,103 @@
                return dataLists;
            }       
    
-   自定义列宽：参数 columnMap
+   2、自定义列宽：参数 columnMap
    
        参数说明：
        HashMap<Integer, HashMap<Integer, Integer>> columnMap = new HashMap<>();
        HashMap<Integer, Integer> mapColumn = new HashMap<>();
-       //自定义列宽
-       mapColumn.put(0, 3);  //第一列、宽度为3
+       //第一列、宽度为 3[3的大小就是两个12号字体刚刚好的列宽]（注意：excel从零行开始数）
+       mapColumn.put(0, 3);  
        mapColumn.put(1, 20);
        mapColumn.put(2, 15);
        //第一个单元格列宽
        columnMap.put(1, mapColumn);
        
-   自定义固定表头：参数 paneMap
+   3、自定义固定表头：参数 paneMap
    
        参数说明：
        HashMap paneMap = new HashMap();
-       //第一个表格、第三行开始固定表头
+       //第一个表格、第一行开始固定表头
        paneMap.put(1, 1); 
        
    
-   自定义合并单元格：参数 regionMap
+   4、自定义合并单元格：参数 regionMap
    
         参数说明：
-        List<List<Integer[]>> setMergedRegion = new ArrayList<>();
-        List<Integer[]> sheet1 = new ArrayList<>();                  //第一个表格设置。
-        Integer[] sheetColumn1 = new Integer[]{0, 1, 0, 2}         //代表起始行号，终止行号， 起始列号，终止列号进行合并。（excel从零行开始数）
-        setMergedRegion.add(sheet1);
-       
-   自定义下拉列表值：参数 dropDownMap
-   
-        参数说明：
-        HashMap dropDownMap = new HashMap();
-        List<String[]> sheet1 = new ArrayList<>();                  //第一个表格设置。
-        String[] sheetColumn1 = new String[]{"1", "2", "4"};        //必须放第一：设置下拉列表的列（excel从零行开始数）
-        String[] sex = {"男,女"};                                   //下拉的值放在 sheetColumn1 后面。
-        sheet1.add(sheetColumn1);
-        sheet1.add(sex);
-        dropDownMap.put(1,sheet1);                                      //第一个表格的下拉列表值   
+        List<List<Integer[]>> regionMap = new ArrayList<>();
+        List<Integer[]> regionList = new ArrayList<>();                  
+        //代表起始行号，终止行号， 起始列号，终止列号进行合并。（注意：excel从零行开始数）
+        regionList.add(new Integer[]{1, 1, 0, 10});
+        regionList.add(new Integer[]{2, 3, 1, 1});
+        //第一个表格设置。
+        regionMap.put(1, regionList);
+                                      
         
-   自定义每个表格第几行或者是第几列的样式：参数 rowStyles / columnStyles
+   5、自定义每个表格第几行或者是第几列的样式：参数 rowStyles / columnStyles
            
         参数说明：
         HashMap columnStyles = new HashMap();
         List list = new ArrayList();
-        list.add(new Boolean[]{true, false, false, false, true});                //1、样式（是否居中？，是否右对齐？，是否左对齐？， 是否加粗？，是否有边框？ ）
-        list.add(new Integer[]{1, 3});                                           //2、第几行或者是第几列
-        list.add(new Integer[]{10,14,null});                                     //3、颜色值（8是黑色、10红色等） 、颜色、字体、行高？（可不设置）
-        columnStyles.put(1,list);                                                     //第一表格
+        //1、样式（是否居中？，是否右对齐？，是否左对齐？， 是否加粗？，是否有边框？ ）
+        list.add(new Boolean[]{true, false, false, false, true}); 
+        //2、第几行或者是第几列（注意：excel从零行开始数）       
+        list.add(new Integer[]{1, 3});   
+        //3、颜色值（8是黑色、10红色等） 、颜色、字体、行高？（可不设置）                                        
+        list.add(new Integer[]{10,14,null});    
+        //第一表格                                 
+        columnStyles.put(1,list);                                                     
         
-   自定义每一个单元格样式：参数 styles
+   6、自定义每一个单元格样式：参数 styles
         
        参数说明：
        HashMap styles = new HashMap();
-       List< List<Object[]>> list = new ArrayList<>();
-       List<Object[]> objectsList = new ArrayList<>();
-       List<Object[]> objectsListTwo = new ArrayList<>();
-       objectsList.add(new Boolean[]{true, false, false, false, true});      //1、样式一（是否居中？，是否右对齐？，是否左对齐？， 是否加粗？，是否有边框？ ）
-       objectsList.add(new Integer[]{10, 12});                               //1、颜色值 、字体大小、行高（必须放第二）
-       objectsList.add(new Integer[]{5, 1});                                 //1、第五行第一列
-       objectsList.add(new Integer[]{6, 1});                                 //1、第六行第一列
+       List< List<Object[]>> stylesList = new ArrayList<>();
+       List<Object[]> stylesObj = new ArrayList<>();
+       List<Object[]> stylesObjTwo = new ArrayList<>();
        
-       objectsListTwo.add(new Boolean[]{false, false, false, true, true});   //2、样式二（必须放第一）
-       objectsListTwo.add(new Integer[]{10, 12,null});                       //2、颜色值（8是黑色、10红色等） 、颜色、字体、行高？（可不设置）（必须放第二）
-       objectsListTwo.add(new Integer[]{2, 1});                              //2、第二行第一列
+       //1、样式一（是否居中？，是否右对齐？，是否左对齐？， 是否加粗？，是否有边框？ ）
+       stylesObj.add(new Boolean[]{true, false, false, false, true});      
+       //1、颜色值（8是黑色、10红色等） 、颜色、字体、行高？（可不设置）（必须放第二）
+       stylesObj.add(new Integer[]{10, 12});                             
+       //1、第五行、第一列（注意：excel从一开始算）
+       stylesObj.add(new Integer[]{5, 1});                                  
+       stylesObj.add(new Integer[]{6, 1});                                
        
-       list.add(objectsList);
-       list.add(objectsListTwo);
-       styles.put(1, list);                                              //第一个表格所有自定义单元格样式 
+       //2、样式二（必须放第一）
+       stylesObjTwo.add(new Boolean[]{false, false, false, true, true}); 
+       //2、颜色值（8是黑色、10红色等） 、颜色、字体、行高？（可不设置）（必须放第二）  
+       stylesObjTwo.add(new Integer[]{10, 12,null});    
+       //2、第二行第一列（注意：excel从一开始算）                 
+       stylesObjTwo.add(new Integer[]{2, 1});                              
+       
+       stylesList.add(stylesObj);
+       stylesList.add(stylesObjTwo);
+       //第一个表格所有自定义单元格样式 
+       styles.put(1, stylesList);                                             
              
    
-   自定义忽略边框：参数 notBorderMap
+   7、自定义忽略边框：参数 notBorderMap
    
        HashMap notBorderMap = new HashMap();
-       notBorderMap.put(1, new Integer[]{1, 5});   //忽略边框（1行、5行）、默认是数据是全部加边框
+       //忽略边框（1行、5行）、默认是数据（除大标题外）是全部加边框的。
+       notBorderMap.put(1, new Integer[]{1, 5});   
    
    
+   8、自定义下拉列表值：参数 dropDownMap
+      
+       参数说明：
+       HashMap dropDownMap = new HashMap();
+       List<String[]> dropList = new ArrayList<>();                  
+       //必须放第一：设置下拉列表的列（excel从零行开始数）
+       String[] sheetDropData = new String[]{"1", "2", "4"};
+       //下拉的值放在 sheetDropData 后面。        
+       String[] sex = {"男,女"};                                   
+       dropList.add(sheetDropData);
+       dropList.add(sex);
+       //第一个表格设置。
+       dropDownMap.put(1,dropList); 
    
-   2、导入配置：
+   9、导入配置：
         
        @param indexMap 多单元从第几行开始获取数据，默认从第二行开始获取（可为空，如 hashMapIndex.put(1,3); 第一个表格从第三行开始获取）
        @param continueRowMap 多单元根据那些列为空来忽略行数据（可为空，如 mapContinueRow.put(1,new Integer[]{1, 3}); 第一个表格从1、3列为空就忽略）
