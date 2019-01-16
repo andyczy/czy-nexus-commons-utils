@@ -22,7 +22,7 @@
   亲自测试：WPS、office 08、10、11、12、16 能正常打开。
     
       
-### 版本 3.2 :导出配置 ExcelUtils.exportForExcelsOptimize()
+### 版本 3.2 【推荐使用】:导出配置 ExcelUtils.exportForExcelsOptimize()
              
         ExcelUtils excelUtils = ExcelUtils.setExcelUtils();
         // 必填项--导出数据
