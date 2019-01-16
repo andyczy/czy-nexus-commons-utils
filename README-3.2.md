@@ -21,8 +21,8 @@
   
   亲自测试：WPS、office 08、10、16 能正常打开。
     
-      
-### 版本 3.2 :导出配置 ExcelUtils.exportForExcelsOptimize()
+## 更新日志【版本 3.2】    
+###  方式一：导出使用函数【推荐使用该方式】  ExcelUtils.exportForExcelsOptimize()
              
         ExcelUtils excelUtils = ExcelUtils.setExcelUtils();
         // 必填项--导出数据（参数请看下面的格式）
@@ -61,7 +61,7 @@
         // 执行导出
         excelUtils.exportForExcelsOptimize();       
         
-### 2.0之前版本 :导出配置 ExcelUtils.exportForExcel(...)
+###  方式二:导出配置 ExcelUtils.exportForExcel(......)
         * 可提供模板下载           
         * 自定义下拉列表：对每个单元格自定义下拉列表         
         * 自定义列宽：对每个单元格自定义列宽         
@@ -72,7 +72,7 @@
         * 自定义：对每个单元格固定表头    
         
         
-### 导入配置 ExcelUtils.importForExcelData(...)
+### 导入使用函数： ExcelUtils.importForExcelData(......)
         * 获取多单元数据         
         * 自定义：多单元从第几行开始获取数据            
         * 自定义：多单元根据那些列为空来忽略行数据         

@@ -21,48 +21,8 @@
   [版本-3.2教程](https://github.com/andyczy/czy-nexus-commons-utils/blob/master/README-3.2.md)   
   
        
-## 更新日志       
-      
-### 版本 3.2 :导出配置 ExcelUtils.exportForExcelsOptimize()
-             
-        ExcelUtils excelUtils = ExcelUtils.setExcelUtils();
-        // 必填项--导出数据（参数请看下面的格式）
-        excelUtils.setDataLists(dataLists);   
-        // 必填项--sheet名称
-        excelUtils.setSheetName(sheetNameList);
-        // 文件名称(可为空，默认是：sheet 第一个名称)
-        excelUtils.setFileName(excelName);
-        
-        // 输出流：response 响应（输出流：必须选一）
-        excelUtils.setResponse(response);
-        // 输出流：可直接输出本地路径（输出流：必须选一）
-        // excelUtils.setFilePath("F:\\test.xlsx"); 
- 
-        // 每个表格的大标题（可为空）
-        excelUtils.setLabelName(labelName);
-        // 自定义：固定表头（可为空）
-        excelUtils.setPaneMap(setPaneMap);
-        // 自定义：单元格合并（可为空）
-        excelUtils.setRegionMap(regionMap);
-        
-        // 自定义：对每个单元格自定义列宽（可为空）
-        excelUtils.setColumnMap(mapColumnWidth);
-        // 自定义：某一行样式（可为空）
-        excelUtils.setRowStyles(stylesRow);
-        // 自定义：某一列样式（可为空）
-        excelUtils.setColumnStyles(columnStyles);
-        // 自定义：每一个单元格样式（可为空）
-        excelUtils.setStyles(styles);
-                
-        // 自定义：对每个单元格自定义下拉列表（可为空）
-        excelUtils.setDropDownMap(dropDownMap);
-        // 自定义：忽略边框(可为空：默认是有边框)
-        excelUtils.setNotBorderMap(notBorderMap);       
-            
-        // 执行导出
-        excelUtils.exportForExcelsOptimize();       
-        
-### 2.0之前版本 :导出配置 ExcelUtils.exportForExcel(...)
+## 更新日志【2.0之前版本】       
+###  导出使用函数: ExcelUtils.exportForExcel(......)
         * 可提供模板下载           
         * 自定义下拉列表：对每个单元格自定义下拉列表         
         * 自定义列宽：对每个单元格自定义列宽         
@@ -73,7 +33,7 @@
         * 自定义：对每个单元格固定表头    
         
         
-### 导入配置 ExcelUtils.importForExcelData(...)
+### 导入配置使用函数： ExcelUtils.importForExcelData(......)
         * 获取多单元数据         
         * 自定义：多单元从第几行开始获取数据            
         * 自定义：多单元根据那些列为空来忽略行数据         
