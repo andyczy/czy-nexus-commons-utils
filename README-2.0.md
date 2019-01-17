@@ -1,8 +1,8 @@
 # czy-nexus-commons-utils
    本库是发布到 [search.maven](https://search.maven.org/)  、 [mvnrepository](https://mvnrepository.com/)公共仓库的管理库。        
-   (教程博客)[https://blog.csdn.net/JavaWebRookie/article/details/80843653]、可通过maven方式下载源码查看注释。                
-   (工具类集库)[https://github.com/andyczy/czy-study-java-commons-utils]       
-   (开源中国)[https://www.oschina.net/]         
+   (csdn教程博客)[https://blog.csdn.net/JavaWebRookie/article/details/80843653]、可通过maven方式下载源码查看注释。                
+   (github工具类集库)[https://github.com/andyczy/czy-study-java-commons-utils]       
+   (开源中国)[https://www.oschina.net/p/java-excel-utils]         
    
    
    2.0.1 版本：【推荐使用最新版本】       
