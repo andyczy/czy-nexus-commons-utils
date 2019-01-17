@@ -5,13 +5,18 @@
    (开源中国)[https://www.oschina.net/]          
    
    
-   最新 maven 版本：        
+   3.2 版本：【推荐使用最新版本】         
         
+         <!--
+            maven：https://mvnrepository.com/artifact/com.github.andyczy/java-excel-utils
+            教程文档：https://github.com/andyczy/czy-nexus-commons-utils/blob/master/README-3.2.md
+         -->
         <dependency>        
             <groupId>com.github.andyczy</groupId>       
             <artifactId>java-excel-utils</artifactId>       
             <version>3.2</version>      
         </dependency> 
+   
    
   [javadoc 文档](https://oss.sonatype.org/service/local/repositories/releases/archive/com/github/andyczy/java-excel-utils/3.2/java-excel-utils-3.2-javadoc.jar/!/com/github/andyczy/java/excel/ExcelUtils.html)
        
