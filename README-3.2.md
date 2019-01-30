@@ -26,8 +26,13 @@
   
   亲自测试：WPS、office 08、10、16 能正常打开。
     
-## 更新日志【版本 3.2】    
-###  方式一：导出使用函数【推荐使用该方式】  ExcelUtils.exportForExcelsOptimize()
+### 更新日志
+##### 3.2.1 
+    因导出百万数据设置样式导致内存溢出等问题，临时解决方案新增exportForExcelsNoStyle()方法（暂时去掉（行、列、单元格样式））。                  
+    修改输出流（只能输出一次、如 response 响应输出，则不会输出到本地路径的。）                           
+    修改注释（和GitHub注释一样）   
+            
+##### 3.2  方式一：导出使用函数【推荐使用该方式】  ExcelUtils.exportForExcelsOptimize()
              
         ExcelUtils excelUtils = ExcelUtils.setExcelUtils();
         // 必填项--导出数据（参数请看下面的格式）
@@ -66,7 +71,7 @@
         // 执行导出
         excelUtils.exportForExcelsOptimize();       
         
-###  方式二:导出配置 ExcelUtils.exportForExcel(......)
+#####  方式二:导出配置 ExcelUtils.exportForExcel(......)
         * 可提供模板下载           
         * 自定义下拉列表：对每个单元格自定义下拉列表         
         * 自定义列宽：对每个单元格自定义列宽         

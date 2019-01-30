@@ -23,8 +23,13 @@
   [版本-3.2教程](https://github.com/andyczy/czy-nexus-commons-utils/blob/master/README-3.2.md)   
   
        
-## 更新日志【2.0之前版本】       
-###  导出使用函数: ExcelUtils.exportForExcel(......)
+### 更新日志
+##### 3.2.1 
+    因导出百万数据设置样式导致内存溢出等问题，临时解决方案新增exportForExcelsNoStyle()方法（暂时去掉（行、列、单元格样式））。                  
+    修改输出流（只能输出一次、如 response 响应输出，则不会输出到本地路径的。）                           
+    修改注释（和GitHub注释一样）   
+           
+##### 2.0之前版本  导出使用函数: ExcelUtils.exportForExcel(......)
         * 可提供模板下载           
         * 自定义下拉列表：对每个单元格自定义下拉列表         
         * 自定义列宽：对每个单元格自定义列宽         
@@ -35,7 +40,7 @@
         * 自定义：对每个单元格固定表头    
         
         
-### 导入配置使用函数： ExcelUtils.importForExcelData(......)
+#####  导入配置使用函数： ExcelUtils.importForExcelData(......)
         * 获取多单元数据         
         * 自定义：多单元从第几行开始获取数据            
         * 自定义：多单元根据那些列为空来忽略行数据         
