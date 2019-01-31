@@ -5,7 +5,7 @@
    (开源中国)[https://www.oschina.net/p/java-excel-utils]          
    
    
-   3.2 版本：【推荐使用最新版本】         
+   3.2.2 版本：【推荐使用最新版本】         
         
          <!--
             maven：https://mvnrepository.com/artifact/com.github.andyczy/java-excel-utils
@@ -14,7 +14,7 @@
         <dependency>        
             <groupId>com.github.andyczy</groupId>       
             <artifactId>java-excel-utils</artifactId>       
-            <version>3.2</version>      
+            <version>3.2.2</version>      
         </dependency> 
    
    
@@ -34,7 +34,7 @@
             
 ##### 3.2  方式一：导出使用函数【推荐使用该方式】  ExcelUtils.exportForExcelsOptimize()
              
-        ExcelUtils excelUtils = ExcelUtils.setExcelUtils();
+        ExcelUtils excelUtils = ExcelUtils.initialization();
         // 必填项--导出数据（参数请看下面的格式）
         excelUtils.setDataLists(dataLists);   
         // 必填项--sheet名称
@@ -55,7 +55,7 @@
         excelUtils.setRegionMap(regionMap);
         
         // 自定义：对每个单元格自定义列宽（可为空）
-        excelUtils.setColumnMap(mapColumnWidth);
+        excelUtils.setMapColumnWidth(mapColumnWidth);
         // 自定义：某一行样式（可为空）
         excelUtils.setRowStyles(stylesRow);
         // 自定义：某一列样式（可为空）
