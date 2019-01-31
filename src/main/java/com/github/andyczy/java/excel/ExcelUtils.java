@@ -203,6 +203,75 @@ public class ExcelUtils {
 
 
     /**
+     * 功能描述: excel 数据导出、导出模板
+     * <p>
+     * 更新日志:
+     * 1.response.reset();注释掉reset，否在会出现跨域错误。[2018-05-18]
+     * 2.新增导出多个单元。[2018-08-08]
+     * 3.poi官方建议大数据量解决方案：SXSSFWorkbook。[2018-08-08]
+     * 4.自定义下拉列表：对每个单元格自定义下拉列表。[2018-08-08]
+     * 5.数据遍历方式换成数组(效率较高)。[2018-08-08]
+     * 6.可提供模板下载。[2018-08-08]
+     * 7.每个表格的大标题[2018-09-14]
+     * 8.自定义列宽：对每个单元格自定义列宽[2018-09-18]
+     * 9.自定义样式：对每个单元格自定义样式[2018-10-22]
+     * 10.自定义单元格合并：对每个单元格合并[2018-10-22]
+     * 11.固定表头[2018-10-23]
+     * 12.自定义样式：单元格自定义某一列或者某一行样式[2018-11-12]
+     * 13.忽略边框(默认是有边框)[2018-11-15]
+     * 14.函数式编程换成面向对象编程[2018-12-06-5]
+     * 15.单表百万数据量导出时样式设置过多，导致速度慢（行、列、单元格样式暂时去掉）[2019-01-30]
+     * <p>
+     * 版  本:
+     * 1.apache poi 3.17
+     * 2.apache poi-ooxml  3.17
+     *
+     * @param response
+     * @param dataLists    导出的数据(不可为空：如果只有标题就导出模板)
+     * @param sheetName    sheet名称（不可为空）
+     * @param columnMap    自定义：对每个单元格自定义列宽（可为空）
+     * @param dropDownMap  自定义：对每个单元格自定义下拉列表（可为空）
+     * @param styles       自定义：每一个单元格样式（可为空）
+     * @param rowStyles    自定义：某一行样式（可为空）
+     * @param columnStyles 自定义：某一列样式（可为空）
+     * @param regionMap    自定义：单元格合并（可为空）
+     * @param paneMap      固定表头（可为空）
+     * @param labelName    每个表格的大标题（可为空）
+     * @param fileName     文件名称(可为空，默认是：sheet 第一个名称)
+     * @param notBorderMap 忽略边框(默认是有边框)
+     * @return
+     */
+    public static Boolean exportForExcel(HttpServletResponse response, List<List<String[]>> dataLists, HashMap notBorderMap,
+                                         HashMap regionMap, HashMap columnMap, HashMap styles, HashMap paneMap, String fileName,
+                                         String[] sheetName, String[] labelName, HashMap rowStyles, HashMap columnStyles, HashMap dropDownMap) {
+        long startTime = System.currentTimeMillis();
+        log.info("Excel tool class export start run!");
+        SXSSFWorkbook sxssfWorkbook = new SXSSFWorkbook(1000);
+        OutputStream outputStream = null;
+        SXSSFRow sxssfRow = null;
+        try {
+            // 设置数据
+            setDataList(sxssfWorkbook, sxssfRow, dataLists, notBorderMap, regionMap, columnMap, styles, paneMap, sheetName, labelName, rowStyles, columnStyles, dropDownMap);
+            // io 响应
+            setIo(sxssfWorkbook, outputStream, fileName, sheetName, response);
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                if (outputStream != null) {
+                    outputStream.close();
+                }
+            } catch (IOException e) {
+                log.debug("Andyczy ExcelUtils Exception Message：Excel tool class export exception !");
+                e.printStackTrace();
+            }
+        }
+        log.info("Excel tool class export run time:" + (System.currentTimeMillis() - startTime) + " ms!");
+        return true;
+    }
+
+    /**
      * 功能描述:
      * 1.excel 模板数据导入。
      * <p>

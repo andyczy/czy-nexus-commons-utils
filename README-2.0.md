@@ -4,7 +4,7 @@
    (github工具类集库)[https://github.com/andyczy/czy-study-java-commons-utils]    
    (开源中国)[https://www.oschina.net/p/java-excel-utils]          
    
-   2.0.1 版本：【推荐使用最新版本】       
+   推荐使用最新版本：        
           
          <!--
             maven：https://mvnrepository.com/artifact/com.github.andyczy/java-excel-utils
@@ -13,7 +13,7 @@
         <dependency>        
             <groupId>com.github.andyczy</groupId>       
             <artifactId>java-excel-utils</artifactId>       
-            <version>2.0.1</version>      
+            <version>3.2.4</version>      
         </dependency> 
         
    

@@ -8,9 +8,14 @@
   <component name="ChangeListManager">
     <list default="true" id="70f792b6-87df-4c03-84b6-a38696c014ec" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README-2.0.md" beforeDir="false" afterPath="$PROJECT_DIR$/README-2.0.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README-3.2.md" beforeDir="false" afterPath="$PROJECT_DIR$/README-3.2.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/andyczy/java/excel/ExcelUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/andyczy/java/excel/ExcelUtils.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/andyczy/java/excel/ExcelUtils$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/andyczy/java/excel/ExcelUtils$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/github/andyczy/java/excel/ExcelUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/andyczy/java/excel/ExcelUtils.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -66,28 +71,28 @@
     <session id="-550198201">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="34" />
-          <entry key="project.open.time.0" value="9" />
+          <entry key="project.closed" value="35" />
+          <entry key="project.open.time.0" value="10" />
           <entry key="project.open.time.1" value="12" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.2" value="9" />
           <entry key="project.open.time.3" value="1" />
           <entry key="project.open.time.7" value="2" />
-          <entry key="project.opened" value="35" />
+          <entry key="project.opened" value="36" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
         <counts>
           <entry key="class" value="3" />
           <entry key="java" value="17" />
-          <entry key="md" value="12" />
+          <entry key="md" value="13" />
           <entry key="png" value="2" />
           <entry key="pom" value="1" />
-          <entry key="properties" value="2" />
+          <entry key="properties" value="3" />
           <entry key="txt" value="1" />
           <entry key="versionsBackup" value="1" />
-          <entry key="xml" value="2" />
+          <entry key="xml" value="3" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.open">
@@ -95,109 +100,63 @@
           <entry key="CLASS" value="3" />
           <entry key="Image" value="2" />
           <entry key="JAVA" value="17" />
-          <entry key="Markdown" value="12" />
+          <entry key="Markdown" value="13" />
           <entry key="PLAIN_TEXT" value="2" />
-          <entry key="Properties" value="2" />
-          <entry key="XML" value="3" />
+          <entry key="Properties" value="3" />
+          <entry key="XML" value="4" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="java" value="572" />
-          <entry key="md" value="2504" />
-          <entry key="txt" value="36" />
-          <entry key="xml" value="107" />
+          <entry key="java" value="576" />
+          <entry key="md" value="2556" />
+          <entry key="txt" value="37" />
+          <entry key="xml" value="110" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="572" />
-          <entry key="Markdown" value="2504" />
-          <entry key="PLAIN_TEXT" value="36" />
-          <entry key="XML" value="107" />
+          <entry key="JAVA" value="576" />
+          <entry key="Markdown" value="2556" />
+          <entry key="PLAIN_TEXT" value="37" />
+          <entry key="XML" value="110" />
         </counts>
       </usages-collector>
     </session>
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/github/andyczy/java/excel/ExcelUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state>
-              <caret column="38" selection-start-column="38" selection-end-column="38" />
+            <state relative-caret-position="235">
+              <caret line="245" column="141" selection-start-line="245" selection-start-column="141" selection-end-line="245" selection-end-column="141" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#7614#7660#0" expanded="true" />
-                <element signature="e#36867#36868#0" expanded="true" />
-                <element signature="e#36899#36900#0" expanded="true" />
-                <element signature="e#36963#36964#0" expanded="true" />
-                <element signature="e#37005#37006#0" expanded="true" />
-                <element signature="e#37043#37044#0" expanded="true" />
-                <element signature="e#37075#37076#0" expanded="true" />
-                <element signature="e#37127#37128#0" expanded="true" />
-                <element signature="e#37169#37170#0" expanded="true" />
-                <element signature="e#37207#37208#0" expanded="true" />
-                <element signature="e#37239#37240#0" expanded="true" />
-                <element signature="e#37291#37292#0" expanded="true" />
-                <element signature="e#37333#37334#0" expanded="true" />
-                <element signature="e#37381#37382#0" expanded="true" />
-                <element signature="e#37412#37413#0" expanded="true" />
-                <element signature="e#37473#37474#0" expanded="true" />
-                <element signature="e#37513#37514#0" expanded="true" />
-                <element signature="e#37553#37554#0" expanded="true" />
-                <element signature="e#37588#37589#0" expanded="true" />
-                <element signature="e#37645#37646#0" expanded="true" />
-                <element signature="e#37693#37694#0" expanded="true" />
-                <element signature="e#37730#37731#0" expanded="true" />
-                <element signature="e#37762#37763#0" expanded="true" />
-                <element signature="e#37813#37814#0" expanded="true" />
-                <element signature="e#37855#37856#0" expanded="true" />
-                <element signature="e#37897#37898#0" expanded="true" />
-                <element signature="e#37934#37935#0" expanded="true" />
+                <element signature="e#37963#37964#0" expanded="true" />
                 <element signature="e#37995#37996#0" expanded="true" />
-                <element signature="e#38047#38048#0" expanded="true" />
-                <element signature="e#37750#37751#0" expanded="true" />
-                <element signature="e#37779#37780#0" expanded="true" />
-                <element signature="e#37824#37825#0" expanded="true" />
-                <element signature="e#37860#37861#0" expanded="true" />
-                <element signature="e#37895#37896#0" expanded="true" />
-                <element signature="e#37925#37926#0" expanded="true" />
-                <element signature="e#37972#37973#0" expanded="true" />
-                <element signature="e#38010#38011#0" expanded="true" />
-                <element signature="e#38047#38048#0" expanded="true" />
-                <element signature="e#38079#38080#0" expanded="true" />
-                <element signature="e#38130#38131#0" expanded="true" />
-                <element signature="e#38172#38173#0" expanded="true" />
-                <element signature="e#38212#38213#0" expanded="true" />
-                <element signature="e#38247#38248#0" expanded="true" />
-                <element signature="e#38304#38305#0" expanded="true" />
-                <element signature="e#38352#38353#0" expanded="true" />
-                <element signature="e#38391#38392#0" expanded="true" />
-                <element signature="e#38425#38426#0" expanded="true" />
-                <element signature="e#38480#38481#0" expanded="true" />
-                <element signature="e#38526#38527#0" expanded="true" />
-                <element signature="e#38561#38562#0" expanded="true" />
-                <element signature="e#38592#38593#0" expanded="true" />
-                <element signature="e#38640#38641#0" expanded="true" />
-                <element signature="e#38680#38681#0" expanded="true" />
-                <element signature="e#38715#38716#0" expanded="true" />
-                <element signature="e#38746#38747#0" expanded="true" />
-                <element signature="e#38794#38795#0" expanded="true" />
-                <element signature="e#38834#38835#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="421">
-                <caret line="37" column="32" selection-start-line="37" selection-start-column="32" selection-end-line="37" selection-end-column="32" />
+              <first_editor relative-caret-position="179">
+                <caret line="53" column="60" lean-forward="true" selection-start-line="53" selection-start-column="60" selection-end-line="53" selection-end-column="60" />
               </first_editor>
               <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/release.properties">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="264">
+              <caret line="12" selection-start-line="12" selection-end-line="12" />
             </state>
           </provider>
         </entry>
@@ -206,8 +165,29 @@
         <entry file="file://$PROJECT_DIR$/README-3.2.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="153">
-                <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+              <first_editor relative-caret-position="297">
+                <caret line="142" column="65" selection-start-line="142" selection-start-column="65" selection-end-line="142" selection-end-column="65" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pom.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="176">
+              <caret line="8" column="18" selection-start-line="8" selection-start-column="18" selection-end-line="8" selection-end-column="18" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README-2.0.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="352">
+                <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
               </first_editor>
               <second_editor />
             </state>
@@ -266,11 +246,11 @@
         <option value="$PROJECT_DIR$/src/main/java/com/github/andyczy/java/excel/ExportExcel.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/andyczy/java/excel/ExcelExportUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/andyczy/java/excel/ExportExcel(1).java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/andyczy/java/excel/ExcelUtils.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/README-2.0.md" />
-        <option value="$PROJECT_DIR$/README-3.2.md" />
         <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/andyczy/java/excel/ExcelUtils.java" />
+        <option value="$PROJECT_DIR$/README-3.2.md" />
       </list>
     </option>
   </component>
@@ -324,6 +304,8 @@
     </navigator>
     <panes>
       <pane id="PackagesPane" />
+      <pane id="AndroidView" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -361,15 +343,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548920586342" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548920841748" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../czy-study-java-commons-utils" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -500,14 +480,8 @@
       <workItem from="1548815817257" duration="10433000" />
       <workItem from="1548840657332" duration="1213000" />
       <workItem from="1548895123811" duration="601000" />
-      <workItem from="1548918179084" duration="2256000" />
-    </task>
-    <task id="LOCAL-00001" summary="Excel工具类">
-      <created>1542254161477</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1542254161477</updated>
+      <workItem from="1548918179084" duration="2669000" />
+      <workItem from="1548922594562" duration="889000" />
     </task>
     <task id="LOCAL-00002" summary="Excel工具类">
       <created>1542267606684</created>
@@ -838,16 +812,30 @@
       <option name="project" value="LOCAL" />
       <updated>1548841716558</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="3.2.2">
+      <created>1548920462487</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1548920462487</updated>
+    </task>
+    <task id="LOCAL-00050" summary="3.2.2">
+      <created>1548920643504</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1548920643505</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="90960000" />
+    <option name="totallyTimeSpent" value="92262000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18796992" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19065522" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -877,7 +865,7 @@
       <window_info anchor="right" id="Maven Projects" order="8" weight="0.23845327" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18796992" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.19065522" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -892,7 +880,7 @@
       <window_info anchor="bottom" id="TODO" order="5" />
       <window_info anchor="bottom" id="Version Control" order="6" show_stripe_button="false" weight="0.32960895" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4989259" weight="0.45139664" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4989259" visible="true" weight="0.45139664" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50107414" side_tool="true" weight="0.50502795" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32960895" />
       <window_info anchor="bottom" id="Run" order="11" weight="0.4" />
@@ -926,7 +914,8 @@
     <MESSAGE value="版本 3.2 更新说明：   &#10;1、去除 ExcelPojo 对象、把属性写到 ExcelUtils 类中。&#10; &#10;2、修复输出流为空异常bug。" />
     <MESSAGE value="修改md注释" />
     <MESSAGE value="3.2.1" />
-    <option name="LAST_COMMIT_MESSAGE" value="3.2.1" />
+    <MESSAGE value="3.2.2" />
+    <option name="LAST_COMMIT_MESSAGE" value="3.2.2" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/plugins" />
@@ -940,13 +929,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="484">
           <caret line="22" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/release.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="264">
-          <caret line="12" selection-start-line="12" selection-end-line="12" />
         </state>
       </provider>
     </entry>
@@ -994,6 +976,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/release.properties">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="264">
+          <caret line="12" selection-start-line="12" selection-end-line="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/andyczy/java/excel/ExcelUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="235">
+          <caret line="245" column="141" selection-start-line="245" selection-start-column="141" selection-end-line="245" selection-end-column="141" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#37963#37964#0" expanded="true" />
+            <element signature="e#37995#37996#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
@@ -1004,8 +1005,8 @@
     <entry file="file://$PROJECT_DIR$/README-2.0.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="396">
-            <caret line="18" selection-start-line="18" selection-end-line="21" selection-end-column="8" />
+          <first_editor relative-caret-position="352">
+            <caret line="16" column="22" selection-start-line="16" selection-start-column="22" selection-end-line="16" selection-end-column="22" />
           </first_editor>
           <second_editor />
         </state>
@@ -1014,8 +1015,8 @@
     <entry file="file://$PROJECT_DIR$/README-3.2.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="153">
-            <caret line="7" column="8" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="8" />
+          <first_editor relative-caret-position="297">
+            <caret line="142" column="65" selection-start-line="142" selection-start-column="65" selection-end-line="142" selection-end-column="65" />
           </first_editor>
           <second_editor />
         </state>
@@ -1024,77 +1025,10 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="421">
-            <caret line="37" column="32" selection-start-line="37" selection-start-column="32" selection-end-line="37" selection-end-column="32" />
+          <first_editor relative-caret-position="179">
+            <caret line="53" column="60" lean-forward="true" selection-start-line="53" selection-start-column="60" selection-end-line="53" selection-end-column="60" />
           </first_editor>
           <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/andyczy/java/excel/ExcelUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state>
-          <caret column="38" selection-start-column="38" selection-end-column="38" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#7614#7660#0" expanded="true" />
-            <element signature="e#36867#36868#0" expanded="true" />
-            <element signature="e#36899#36900#0" expanded="true" />
-            <element signature="e#36963#36964#0" expanded="true" />
-            <element signature="e#37005#37006#0" expanded="true" />
-            <element signature="e#37043#37044#0" expanded="true" />
-            <element signature="e#37075#37076#0" expanded="true" />
-            <element signature="e#37127#37128#0" expanded="true" />
-            <element signature="e#37169#37170#0" expanded="true" />
-            <element signature="e#37207#37208#0" expanded="true" />
-            <element signature="e#37239#37240#0" expanded="true" />
-            <element signature="e#37291#37292#0" expanded="true" />
-            <element signature="e#37333#37334#0" expanded="true" />
-            <element signature="e#37381#37382#0" expanded="true" />
-            <element signature="e#37412#37413#0" expanded="true" />
-            <element signature="e#37473#37474#0" expanded="true" />
-            <element signature="e#37513#37514#0" expanded="true" />
-            <element signature="e#37553#37554#0" expanded="true" />
-            <element signature="e#37588#37589#0" expanded="true" />
-            <element signature="e#37645#37646#0" expanded="true" />
-            <element signature="e#37693#37694#0" expanded="true" />
-            <element signature="e#37730#37731#0" expanded="true" />
-            <element signature="e#37762#37763#0" expanded="true" />
-            <element signature="e#37813#37814#0" expanded="true" />
-            <element signature="e#37855#37856#0" expanded="true" />
-            <element signature="e#37897#37898#0" expanded="true" />
-            <element signature="e#37934#37935#0" expanded="true" />
-            <element signature="e#37995#37996#0" expanded="true" />
-            <element signature="e#38047#38048#0" expanded="true" />
-            <element signature="e#37750#37751#0" expanded="true" />
-            <element signature="e#37779#37780#0" expanded="true" />
-            <element signature="e#37824#37825#0" expanded="true" />
-            <element signature="e#37860#37861#0" expanded="true" />
-            <element signature="e#37895#37896#0" expanded="true" />
-            <element signature="e#37925#37926#0" expanded="true" />
-            <element signature="e#37972#37973#0" expanded="true" />
-            <element signature="e#38010#38011#0" expanded="true" />
-            <element signature="e#38047#38048#0" expanded="true" />
-            <element signature="e#38079#38080#0" expanded="true" />
-            <element signature="e#38130#38131#0" expanded="true" />
-            <element signature="e#38172#38173#0" expanded="true" />
-            <element signature="e#38212#38213#0" expanded="true" />
-            <element signature="e#38247#38248#0" expanded="true" />
-            <element signature="e#38304#38305#0" expanded="true" />
-            <element signature="e#38352#38353#0" expanded="true" />
-            <element signature="e#38391#38392#0" expanded="true" />
-            <element signature="e#38425#38426#0" expanded="true" />
-            <element signature="e#38480#38481#0" expanded="true" />
-            <element signature="e#38526#38527#0" expanded="true" />
-            <element signature="e#38561#38562#0" expanded="true" />
-            <element signature="e#38592#38593#0" expanded="true" />
-            <element signature="e#38640#38641#0" expanded="true" />
-            <element signature="e#38680#38681#0" expanded="true" />
-            <element signature="e#38715#38716#0" expanded="true" />
-            <element signature="e#38746#38747#0" expanded="true" />
-            <element signature="e#38794#38795#0" expanded="true" />
-            <element signature="e#38834#38835#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
