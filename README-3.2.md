@@ -14,7 +14,7 @@
         <dependency>        
             <groupId>com.github.andyczy</groupId>       
             <artifactId>java-excel-utils</artifactId>       
-            <version>3.2.4</version>      
+            <version>3.2.5</version>      
         </dependency> 
    
    
