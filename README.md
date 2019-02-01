@@ -20,7 +20,8 @@
  
   [版本-3.X 教程](https://github.com/andyczy/czy-nexus-commons-utils/blob/master/README-3.2.md)   
   
-  亲自测试：WPS、office 08、10、11、12、16 能正常打开。
+  亲自测试：WPS、office 07、08、09、10、11、12、16 能正常打开。其他版本待测试！
+  注:POI SXSSFWorkbook 最高限制1048576行,16384列
 
 ### 更新日志
 ### 3.2.5 
@@ -28,8 +29,9 @@
     大数据量情况下一般不会每个单元格设置样式、不然很难解决内存溢出等问题。                 
     修改输出流（只能输出一次、如 response 响应输出，则不会输出到本地路径的。）                                   
     修改注释                            
-    新增函数【本地测试：输出到本地路径、testLocalNoStyleNoResponse 】                  
-    新增函数【无样式（行、列、单元格样式）、exportForExcelsNoStyle 】                
+    新增函数【ExcelUtils.testLocalNoStyleNoResponse() 、本地测试：输出到本地路径】                  
+    新增函数【ExcelUtils.exportForExcelsNoStyle()、无样式（行、列、单元格样式）推荐使用这个函数、提高速度】                
+    ExcelUtils.setExcelUtils() 更改为 ExcelUtils.initialization()          
     初始化函数：ExcelUtils.setExcelUtils() 更改为 ExcelUtils.initialization()          
     属性：columnMap 更改为 setMapColumnWidth
     

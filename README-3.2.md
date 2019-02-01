@@ -22,7 +22,8 @@
        
   [版本-3.X教程](https://github.com/andyczy/czy-nexus-commons-utils/blob/master/README-3.2.md)   
   
-  亲自测试：WPS、office 08、10、16 能正常打开。
+  亲自测试：WPS、office 07、08、09、10、11、12、16 能正常打开。其他版本待测试！
+  注:POI SXSSFWorkbook 最高限制1048576行,16384列
     
 ### 更新日志
 ### 3.2.5 
@@ -30,12 +31,11 @@
     大数据量情况下一般不会每个单元格设置样式、不然很难解决内存溢出等问题。                 
     修改输出流（只能输出一次、如 response 响应输出，则不会输出到本地路径的。）                                   
     修改注释                            
-    新增函数【本地测试：输出到本地路径、testLocalNoStyleNoResponse 】                  
-    新增函数【无样式（行、列、单元格样式）、exportForExcelsNoStyle 】                
+    新增函数【ExcelUtils.testLocalNoStyleNoResponse() 、本地测试：输出到本地路径】                  
+    新增函数【ExcelUtils.exportForExcelsNoStyle()、无样式（行、列、单元格样式）推荐使用这个函数、提高速度】                
     ExcelUtils.setExcelUtils() 更改为 ExcelUtils.initialization()          
     初始化函数：ExcelUtils.setExcelUtils() 更改为 ExcelUtils.initialization()          
     属性：columnMap 更改为 setMapColumnWidth
-        
         
     目前导出速度：
     （单表）1万行、20列：1.6秒            
@@ -55,16 +55,17 @@
         ExcelUtils excelUtils = ExcelUtils.initialization();
         // 必填项--导出数据（参数请看下面的格式）
         excelUtils.setDataLists(dataLists);   
-        // 必填项--sheet名称
+        // 必填项--sheet名称（如果是多表格导出、sheetName也要是多个值！）
         excelUtils.setSheetName(sheetNameList);
         // 文件名称(可为空，默认是：sheet 第一个名称)
         excelUtils.setFileName(excelName);
         
-        // 输出流：response 响应（输出流：必须选一）
+        // web项目response响应输出流：必须填、有本地测试方法:ExcelUtils.testLocalNoStyleNoResponse()、输出地址为本地！
         excelUtils.setResponse(response);
-        // 输出流：可直接输出本地路径（输出流：必须选一）
-        // excelUtils.setFilePath("F:\\test.xlsx"); 
- 
+        
+        // 有本地测试方法:ExcelUtils.testLocalNoStyleNoResponse()、输出地址为本地！
+        // excelUtils.setFilePath("F://test.xlsx");
+
         // 每个表格的大标题（可为空）
         excelUtils.setLabelName(labelName);
         // 自定义：固定表头（可为空）
@@ -116,14 +117,14 @@
         @Override
            public List<List<String[]>> exportBill(String deviceNo,String snExt,Integer parentInstId,String startDate, String endDate){
                List<List<String[]>> dataLists = new ArrayList<>();
-               List<String[]> stringList = new ArrayList<>();
+               List<String[]> oneList = new ArrayList<>();  // 表格一数据
                PageInfo<BillInfo> pagePageInfo = getBillPage(1,10000,null,snExt,deviceNo,parentInstId,startDate,endDate);
                String[] valueString = null;
  
                String[] headers = {"序号","标题一","标题一","标题二","标题三","标题四","标题五","标题六"};
                String[] headersTwo = {" ","标题一小标题（合并用）","标题一小标题（合并用）"," "," "," "," "};
-               stringList.add(headers);
-               stringList.add(headersTwo);
+               oneList.add(headers);
+               oneList.add(headersTwo);
                 
                for (int i = 0; i < pagePageInfo.getList().size(); i++) {
                    valueString = new String[]{(i + 1) + "", pagePageInfo.getList().get(i).getSnExt(),
@@ -131,12 +132,26 @@
                            pagePageInfo.getList().get(i).getInstName(),pagePageInfo.getList().get(i).getStatisticsPrice()+"",
                            pagePageInfo.getList().get(i).getDeviceNo(),
                            pagePageInfo.getList().get(i).getWarning()==1?"是":"否"};
-                   stringList.add(valueString);
+                   oneList.add(valueString);
                }
-               listArray.add(stringList);
+               
+               List<String[]> twoList = new ArrayList<>();  // 表格二数据（和表一相同）
+               
+               
+               listArray.add(oneList);   // 多个表格导出就是多个 
+               listArray.add(twoList);   // 多个表格导出就是多个 
                return dataLists;
-           }       
+           }  
+           
+   1.1、sheetName：参数
    
+       需注意的是：如果是多表格导出、sheetName也要是多个值！
+       如上面有两个数据导出： String[] sheetNameList = new String[]{"表格一数据","表格二数据"};
+       excelUtils.setSheetName(sheetNameList);
+       
+       
+       
+       
    2、自定义列宽：参数 mapColumnWidth
    
        参数说明：
