@@ -79,7 +79,7 @@
         <counts>
           <entry key="class" value="3" />
           <entry key="java" value="17" />
-          <entry key="md" value="13" />
+          <entry key="md" value="14" />
           <entry key="png" value="2" />
           <entry key="pom" value="1" />
           <entry key="properties" value="3" />
@@ -93,7 +93,7 @@
           <entry key="CLASS" value="3" />
           <entry key="Image" value="2" />
           <entry key="JAVA" value="17" />
-          <entry key="Markdown" value="13" />
+          <entry key="Markdown" value="14" />
           <entry key="PLAIN_TEXT" value="2" />
           <entry key="Properties" value="3" />
           <entry key="XML" value="4" />
@@ -102,16 +102,16 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="java" value="591" />
-          <entry key="md" value="2790" />
-          <entry key="txt" value="54" />
+          <entry key="md" value="2844" />
+          <entry key="txt" value="58" />
           <entry key="xml" value="111" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="591" />
-          <entry key="Markdown" value="2790" />
-          <entry key="PLAIN_TEXT" value="54" />
+          <entry key="Markdown" value="2844" />
+          <entry key="PLAIN_TEXT" value="58" />
           <entry key="XML" value="111" />
         </counts>
       </usages-collector>
@@ -123,8 +123,8 @@
         <entry file="file://$PROJECT_DIR$/README-3.2.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="707">
-                <caret line="37" column="8" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
+              <first_editor relative-caret-position="-308">
+                <caret line="1" column="60" selection-start-line="1" selection-start-column="60" selection-end-line="1" selection-end-column="60" />
               </first_editor>
               <second_editor />
             </state>
@@ -186,8 +186,8 @@
         <option value="$PROJECT_DIR$/src/main/java/com/github/andyczy/java/excel/ExportExcel(1).java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/andyczy/java/excel/ExcelUtils.java" />
         <option value="$PROJECT_DIR$/pom.xml" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/README-2.0.md" />
+        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/README-3.2.md" />
       </list>
     </option>
@@ -286,7 +286,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548985919779" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1548986364353" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../czy-study-java-commons-utils" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -421,14 +421,7 @@
       <workItem from="1548918179084" duration="2669000" />
       <workItem from="1548922594562" duration="1502000" />
       <workItem from="1548983620516" duration="873000" />
-      <workItem from="1548985307849" duration="612000" />
-    </task>
-    <task id="LOCAL-00005" summary="Excel工具类">
-      <created>1542330829262</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1542330829262</updated>
+      <workItem from="1548985307849" duration="1012000" />
     </task>
     <task id="LOCAL-00006" summary="Excel工具类1">
       <created>1542959854079</created>
@@ -766,11 +759,18 @@
       <option name="project" value="LOCAL" />
       <updated>1548984084245</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="3.2.5 md">
+      <created>1548985996335</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1548985996335</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="94360000" />
+    <option name="totallyTimeSpent" value="94760000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -859,7 +859,8 @@
     <MESSAGE value="3.2.4" />
     <MESSAGE value="3.2.5 导入默认从第二行开始" />
     <MESSAGE value="3.2.5 导入默认从第二行开始获取数据" />
-    <option name="LAST_COMMIT_MESSAGE" value="3.2.5 导入默认从第二行开始获取数据" />
+    <MESSAGE value="3.2.5 md" />
+    <option name="LAST_COMMIT_MESSAGE" value="3.2.5 md" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/plugins" />
@@ -927,16 +928,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="330">
-            <caret line="15" column="26" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/release.properties">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="264">
@@ -961,11 +952,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="223">
+            <caret line="35" column="38" selection-start-line="35" selection-start-column="38" selection-end-line="35" selection-end-column="38" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README-3.2.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="707">
-            <caret line="37" column="8" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
+          <first_editor relative-caret-position="-308">
+            <caret line="1" column="60" selection-start-line="1" selection-start-column="60" selection-end-line="1" selection-end-column="60" />
           </first_editor>
           <second_editor />
         </state>
