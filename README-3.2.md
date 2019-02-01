@@ -14,7 +14,7 @@
         <dependency>        
             <groupId>com.github.andyczy</groupId>       
             <artifactId>java-excel-utils</artifactId>       
-            <version>3.2.5</version>      
+            <version>3.2.6</version>      
         </dependency> 
   [javadoc 文档](https://oss.sonatype.org/service/local/repositories/releases/archive/com/github/andyczy/java-excel-utils/3.2/java-excel-utils-3.2-javadoc.jar/!/com/github/andyczy/java/excel/ExcelUtils.html)
   [版本-3.X教程](https://github.com/andyczy/czy-nexus-commons-utils/blob/master/README-3.2.md)   
@@ -49,7 +49,7 @@
     单表超过百万数据、自动分表。      
     优化速度和内存溢出问题。       
             
-###  方式一：导出使用函数【推荐使用该方式】  ExcelUtils.exportForExcelsOptimize()
+###  方式一：导出使用函数【推荐使用该方式】  ExcelUtils.exportForExcelsOptimize()  【建议大数据量下不要过多设置样式】
              
         ExcelUtils excelUtils = ExcelUtils.initialization();
         // 必填项--导出数据（参数请看下面的格式）
@@ -89,7 +89,7 @@
         // 执行导出
         excelUtils.exportForExcelsOptimize();       
  
-###  方式三:导出函数 ExcelUtils.exportForExcelsNoStyle()  【无样式（行、列、单元格样式）推荐使用这个函数、提高速度】    
+###  方式三:导出函数 ExcelUtils.exportForExcelsNoStyle()  【无样式（行、列、单元格样式）推荐使用这个函数、样式设置过多会影响速度】    
         
 ###  方式四:导出函数 ExcelUtils.testLocalNoStyleNoResponse()
 

@@ -38,8 +38,10 @@ public class ExcelUtils {
     private static final String DataValidationError1 = "本Excel表格提醒：";
     private static final String DataValidationError2 = "数据不规范，请选择表格下拉列表中的数据！";
     private static final ThreadLocal<DecimalFormat> df = new ThreadLocal<>();
-    private static final String MESSAGE_FORMAT_df = "#.######";
     private static final ThreadLocal<ExcelUtils> UTILS_THREAD_LOCAL = new ThreadLocal<>();
+    private static final String MESSAGE_FORMAT_df = "#.######";
+    private static final Integer MAXROWSUM = 1048570;
+    private static final Integer MAXROWSYTLE =100000;
 
     private static final SimpleDateFormat getDateFormat() {
         SimpleDateFormat format = fmt.get();
@@ -287,7 +289,7 @@ public class ExcelUtils {
      *
      * @param book           Workbook对象（不可为空）
      * @param sheetName      多单元数据获取（不可为空）
-     * @param indexMap       多单元从第几行开始获取数据，默认从第二行开始获取（可为空，如 indexMap.put(1,3); 第一个表格从第三行开始获取）
+     * @param indexMap       多单元从第几行开始获取数据，默认从第一行开始获取（可为空，如 hashMapIndex.put(1,3); 第一个表格从第三行开始获取）
      * @param continueRowMap 多单元根据那些列为空来忽略行数据（可为空，如 mapContinueRow.put(1,new Integer[]{1, 3}); 第一个表格从1、3列为空就忽略）
      * @return
      */
@@ -306,7 +308,7 @@ public class ExcelUtils {
                 List<LinkedHashMap<String, String>> rowListValue = new ArrayList<>();
                 LinkedHashMap<String, String> cellHashMap = null;
 
-                int irow = 1;
+                int irow = 0;
                 //  第n个工作表:从开始获取数据、默认第一行开始获取。
                 if (indexMap != null && indexMap.get(k + 1) != null) {
                     irow = Integer.valueOf(indexMap.get(k + 1).toString()) - 1;
@@ -397,7 +399,7 @@ public class ExcelUtils {
             }
             //  自定义：每个表格固定表头（看该方法说明）。
             Integer pane = 1;
-            if (paneMap != null) {
+            if (paneMap != null && paneMap.get(k + 1) != null) {
                 pane = (Integer) paneMap.get(k + 1) + (labelName != null ? 1 : 0);
                 createFreezePane(sxssfSheet, pane);
             }
@@ -420,7 +422,9 @@ public class ExcelUtils {
             CellStyle row_style = null;
             CellStyle column_style = null;
             //  写入小标题与数据。
-            for (int i = 0; i < listRow.size(); i++) {
+            Integer SIZE = listRow.size() < MAXROWSUM ? listRow.size() : MAXROWSUM;
+            Integer MAXSYTLE = listRow.size() < MAXROWSYTLE ? listRow.size() : MAXROWSYTLE;
+            for (int i = 0; i < SIZE; i++) {
                 sxssfRow = sxssfSheet.createRow(jRow);
                 for (int j = 0; j < listRow.get(i).length; j++) {
                     Cell cell = createCell(sxssfRow, j, listRow.get(i)[j]);
@@ -428,21 +432,21 @@ public class ExcelUtils {
                     try {
                         //  自定义：每个表格每一列的样式（看该方法说明）。
                         //  样式过多会导致GC内存溢出！
-                        if (columnStyles != null && jRow >= pane && i <= 100000) {
+                        if (columnStyles != null && jRow >= pane && i <= MAXSYTLE) {
                             if (jRow == pane && j == 0) {
                                 column_style = cell.getRow().getSheet().getWorkbook().createCellStyle();
                             }
                             setExcelRowStyles(cell, column_style, wb, sxssfRow, (List) columnStyles.get(k + 1), j);
                         }
                         //  自定义：每个表格每一行的样式（看该方法说明）。
-                        if (rowStyles != null && i <= 100000) {
+                        if (rowStyles != null && i <= MAXSYTLE) {
                             if (i == 0 && j == 0) {
                                 row_style = cell.getRow().getSheet().getWorkbook().createCellStyle();
                             }
                             setExcelRowStyles(cell, row_style, wb, sxssfRow, (List) rowStyles.get(k + 1), jRow);
                         }
                         //  自定义：每一个单元格样式（看该方法说明）。
-                        if (styles != null && i <= 100000) {
+                        if (styles != null && i <= MAXSYTLE) {
                             if (i == 0) {
                                 cell_style = cell.getRow().getSheet().getWorkbook().createCellStyle();
                             }
@@ -500,7 +504,7 @@ public class ExcelUtils {
             }
             //  自定义：每个表格固定表头（看该方法说明）。
             Integer pane = 1;
-            if (paneMap != null) {
+            if (paneMap != null && paneMap.get(k + 1) != null) {
                 pane = (Integer) paneMap.get(k + 1) + (labelName != null ? 1 : 0);
                 createFreezePane(sxssfSheet, pane);
             }
@@ -520,7 +524,8 @@ public class ExcelUtils {
             setStyle(cellStyle, font);
 
             //  写入小标题与数据。
-            for (int i = 0; i < listRow.size(); i++) {
+            Integer SIZE = listRow.size() < MAXROWSUM ? listRow.size() : MAXROWSUM;
+            for (int i = 0; i < SIZE; i++) {
                 sxssfRow = sxssfSheet.createRow(jRow);
                 for (int j = 0; j < listRow.get(i).length; j++) {
                     Cell cell = createCell(sxssfRow, j, listRow.get(i)[j]);
