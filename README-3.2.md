@@ -155,7 +155,6 @@
        
        
        
-       
    2、自定义列宽：参数 mapColumnWidth
    
        参数说明：
@@ -179,13 +178,15 @@
    4、自定义合并单元格：参数 regionMap
    
         参数说明：
-        List<List<Integer[]>> regionMap = new ArrayList<>();
+        HashMap regionMap = new HashMap();                  
+        List<List<Integer[]>> region  = new ArrayList<>();
         List<Integer[]> regionList = new ArrayList<>();                  
         //代表起始行号，终止行号， 起始列号，终止列号进行合并。（注意：excel从零行开始数）
         regionList.add(new Integer[]{1, 1, 0, 10});
         regionList.add(new Integer[]{2, 3, 1, 1});
         //第一个表格设置。
-        regionMap.put(1, regionList);
+        region.add(regionList);             
+        regionMap.put(1, region);
                                       
         
    5、自定义每个表格第几行或者是第几列的样式：参数 rowStyles / columnStyles
