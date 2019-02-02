@@ -289,7 +289,7 @@ public class ExcelUtils {
      *
      * @param book           Workbook对象（不可为空）
      * @param sheetName      多单元数据获取（不可为空）
-     * @param indexMap       多单元从第几行开始获取数据，默认从第一行开始获取（可为空，如 hashMapIndex.put(1,3); 第一个表格从第三行开始获取）
+     * @param indexMap       多单元从第几行开始获取数据，默认从第二行开始获取（可为空，如 hashMapIndex.put(1,3); 第一个表格从第三行开始获取）
      * @param continueRowMap 多单元根据那些列为空来忽略行数据（可为空，如 mapContinueRow.put(1,new Integer[]{1, 3}); 第一个表格从1、3列为空就忽略）
      * @return
      */
@@ -308,7 +308,7 @@ public class ExcelUtils {
                 List<LinkedHashMap<String, String>> rowListValue = new ArrayList<>();
                 LinkedHashMap<String, String> cellHashMap = null;
 
-                int irow = 0;
+                int irow = 1;
                 //  第n个工作表:从开始获取数据、默认第一行开始获取。
                 if (indexMap != null && indexMap.get(k + 1) != null) {
                     irow = Integer.valueOf(indexMap.get(k + 1).toString()) - 1;
