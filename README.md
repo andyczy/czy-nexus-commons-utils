@@ -31,19 +31,18 @@
     修改注释                            
     新增函数【ExcelUtils.testLocalNoStyleNoResponse() 、本地测试：输出到本地路径】                  
     新增函数【ExcelUtils.exportForExcelsNoStyle()、无样式（行、列、单元格样式）推荐使用这个函数、提高速度】                
-    ExcelUtils.setExcelUtils() 更改为 ExcelUtils.initialization()          
     初始化函数：ExcelUtils.setExcelUtils() 更改为 ExcelUtils.initialization()          
     属性：columnMap 更改为 setMapColumnWidth
     
     目前导出速度：
     （单表）1万行、20列：1.6秒            
-    （单表）10万行、20列：12秒                 
-    （单表）20万行、20列：37秒     
+    （单表）10万行、20列：11秒                 
+    （单表）20万行、20列：27秒     
     （单表）104万行、20列：46秒            
     
     （4张表）1*4万行、20列：6秒           
-    （4张表）10*4万行、20列：35秒                     
-    （4张表）20*4万行、20列：66秒
+    （4张表）10*4万行、20列：33秒                     
+    （4张表）20*4万行、20列：61秒
     （4张表）100*4万行、20列：85秒
              
     
