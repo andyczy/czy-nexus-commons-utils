@@ -264,7 +264,7 @@
        
        参数说明：多单元根据那些列为空来忽略行数据（可为空)
        HashMap mapContinueRow = new HashMap();
-       mapContinueRow.put(1,3);  // 第一个表格从1、3列为空就忽略
+       mapContinueRow.put(1,3);  // 第一个表格第3列为空就忽略这行数据
                     
 ### License
 java-excel-utils is Open Source software released under the Apache 2.0 license.     
