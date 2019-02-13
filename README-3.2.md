@@ -253,10 +253,18 @@
        //第一个表格设置。
        dropDownMap.put(1,dropList); 
    
-   9、导入配置：
-        
-       @param indexMap 多单元从第几行开始获取数据，默认从第二行开始获取（可为空，如 hashMapIndex.put(1,3); 第一个表格从第三行开始获取）
-       @param continueRowMap 多单元根据那些列为空来忽略行数据（可为空，如 mapContinueRow.put(1,new Integer[]{1, 3}); 第一个表格从1、3列为空就忽略）
+   9、导入配置：(第几行开始获取数据)  参数 indexMap
+       
+       参数说明：多单元从第几行开始获取数据，默认从第二行开始获取（可为空)
+       HashMap hashMapIndex = new HashMap();
+       hashMapIndex.put(1,3);  //  第一个表格从第三行开始获取
+       
+  
+   10、导入配置：(列为空来忽略行数据)  参数 continueRowMap
+       
+       参数说明：多单元根据那些列为空来忽略行数据（可为空)
+       HashMap mapContinueRow = new HashMap();
+       mapContinueRow.put(1,3);  // 第一个表格从1、3列为空就忽略
                     
 ### License
 java-excel-utils is Open Source software released under the Apache 2.0 license.     
