@@ -270,7 +270,8 @@
         
         ExcelUtils excelUtils = ExcelUtils.initialization();
         excelUtils.setNumeralFormat("#.####");                  // (可为空)期望保留小数的位数（#.####）这样保留四位。
-        excelUtils.setDateFormatStr("yyyy年MM月dd日 HH时mm分");  // (可为空) （poi 只接受无中文的日期格式、如果你想转换别的格式，这个才参数要和导入表中日期格式一样）
+        // (可为空) （poi 只接受无中文的日期格式、如果你想转换别的格式，这个参数要和导入表中日期格式类似，如表格中为：2019年02月14日 12时12分）。
+        excelUtils.setDateFormatStr("yyyy年MM月dd日 HH时mm分"); 
         excelUtils.setExpectDateFormatStr("yyyy-MM-dd HH-mm");  // (可为空、默认的值是：dateFormatStr 参数值) 期望转换后的日期格式。
         // 执行导入函数   ExcelUtils.importForExcelData()
    
