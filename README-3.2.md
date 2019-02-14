@@ -23,7 +23,7 @@
   注:POI SXSSFWorkbook 最高限制1048576行,16384列               
     
 ### 更新日志
-### 3.2.5 
+### 3.2.7 
     单表百万数据量导出时样式设置过多，导致速度慢（行、列、单元格样式暂时控制10万行、超过无样式）                          
     大数据量情况下一般不会每个单元格设置样式、不然很难解决内存溢出等问题。                 
     修改输出流（只能输出一次、如 response 响应输出，则不会输出到本地路径的。）                                   
@@ -265,6 +265,18 @@
        参数说明：多单元根据那些列为空来忽略行数据（可为空)
        HashMap mapContinueRow = new HashMap();
        mapContinueRow.put(1,new Integer[]{1, 3});  // 第一个表格第1、3列为空就忽略这行数据
+       
+   11、导入时间格式（默认：yyyy-MM-dd）、导入数字保留的小数点（默认：#.###### 六位）
+        
+        ExcelUtils excelUtils = ExcelUtils.initialization();
+        excelUtils.setNumeralFormat("#.####");                  // (可为空)期望保留小数的位数（#.####）这样保留四位。
+        excelUtils.setDateFormatStr("yyyy年MM月dd日 HH时mm分");  // (可为空) （poi 只接受无中文的日期格式、如果你想转换别的格式，这个才参数要和导入表中日期格式一样）
+        excelUtils.setExpectDateFormatStr("yyyy-MM-dd HH-mm");  // (可为空、默认的值是：dateFormatStr 参数值) 期望转换后的日期格式。
+        // 执行导入函数   ExcelUtils.importForExcelData()
+   
+   
+   
+   
                     
 ### License
 java-excel-utils is Open Source software released under the Apache 2.0 license.     

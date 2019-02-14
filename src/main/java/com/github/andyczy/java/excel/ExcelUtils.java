@@ -31,31 +31,36 @@ import static org.apache.poi.ss.util.CellUtil.createCell;
  */
 public class ExcelUtils {
 
+
     private static Logger log = LoggerFactory.getLogger(ExcelUtils.class);
 
     private static final ThreadLocal<SimpleDateFormat> fmt = new ThreadLocal<>();
-    private static final String MESSAGE_FORMAT = "yyyy-MM-dd";
-    private static final String DataValidationError1 = "本Excel表格提醒：";
+    private static final String DataValidationError1 = "Excel表格提醒：";
     private static final String DataValidationError2 = "数据不规范，请选择表格下拉列表中的数据！";
     private static final ThreadLocal<DecimalFormat> df = new ThreadLocal<>();
     private static final ThreadLocal<ExcelUtils> UTILS_THREAD_LOCAL = new ThreadLocal<>();
-    private static final String MESSAGE_FORMAT_df = "#.######";
-    private static final Integer MAXROWSUM = 1048570;
-    private static final Integer MAXROWSYTLE =100000;
+    private static final Integer DATE_LENGTH = 10;
+    private static final Integer MAX_ROWSUM = 1048570;
+    private static final Integer MAX_ROWSYTLE = 100000;
 
-    private static final SimpleDateFormat getDateFormat() {
+    //    private static final String MESSAGE_FORMAT_df = "#.######";
+    //    private static final String MESSAGE_FORMAT = "yyyy-MM-dd";
+
+    private SimpleDateFormat getDateFormat() {
         SimpleDateFormat format = fmt.get();
         if (format == null) {
-            format = new SimpleDateFormat(MESSAGE_FORMAT, Locale.getDefault());
+            //默认格式日期： "yyyy-MM-dd"
+            format = new SimpleDateFormat(expectDateFormatStr, Locale.getDefault());
             fmt.set(format);
         }
         return format;
     }
 
-    private static final DecimalFormat getDecimalFormat() {
+    public DecimalFormat getDecimalFormat() {
         DecimalFormat format = df.get();
         if (format == null) {
-            format = new DecimalFormat(MESSAGE_FORMAT_df);
+            //默认数字格式： "#.######" 六位小数点
+            format = new DecimalFormat(numeralFormat);
             df.set(format);
         }
         return format;
@@ -85,6 +90,9 @@ public class ExcelUtils {
         rowStyles = this.getRowStyles();
         columnStyles = this.getColumnStyles();
         dropDownMap = this.getDropDownMap();
+        numeralFormat = this.getNumeralFormat();
+        dateFormatStr = this.getDateFormatStr();
+        expectDateFormatStr = this.getExpectDateFormatStr();
     }
 
 
@@ -422,8 +430,8 @@ public class ExcelUtils {
             CellStyle row_style = null;
             CellStyle column_style = null;
             //  写入小标题与数据。
-            Integer SIZE = listRow.size() < MAXROWSUM ? listRow.size() : MAXROWSUM;
-            Integer MAXSYTLE = listRow.size() < MAXROWSYTLE ? listRow.size() : MAXROWSYTLE;
+            Integer SIZE = listRow.size() < MAX_ROWSUM ? listRow.size() : MAX_ROWSUM;
+            Integer MAXSYTLE = listRow.size() < MAX_ROWSYTLE ? listRow.size() : MAX_ROWSYTLE;
             for (int i = 0; i < SIZE; i++) {
                 sxssfRow = sxssfSheet.createRow(jRow);
                 for (int j = 0; j < listRow.get(i).length; j++) {
@@ -524,7 +532,7 @@ public class ExcelUtils {
             setStyle(cellStyle, font);
 
             //  写入小标题与数据。
-            Integer SIZE = listRow.size() < MAXROWSUM ? listRow.size() : MAXROWSUM;
+            Integer SIZE = listRow.size() < MAX_ROWSUM ? listRow.size() : MAX_ROWSUM;
             for (int i = 0; i < SIZE; i++) {
                 sxssfRow = sxssfSheet.createRow(jRow);
                 for (int j = 0; j < listRow.get(i).length; j++) {
@@ -950,6 +958,43 @@ public class ExcelUtils {
         }
     }
 
+    /**
+     * 验证是否是日期
+     *
+     * @param strDate
+     * @return
+     */
+    public static boolean verificationDate(String strDate, String style) {
+        Date date = null;
+        if (style == null) {
+            style = "yyyy-MM-dd";
+        }
+        SimpleDateFormat formatter = new SimpleDateFormat(style);
+        try {
+            formatter.parse(strDate);
+        } catch (Exception e) {
+            return false;
+        }
+        return true;
+    }
+
+    public static String strToDateFormat(String strDate, String style, String expectDateFormatStr) {
+        Date date = null;
+        if (style == null) {
+            style = "yyyy-MM-dd";
+        }
+        // 日期字符串转成date类型
+        SimpleDateFormat formatter = new SimpleDateFormat(style);
+        try {
+            date = formatter.parse(strDate);
+        } catch (Exception e) {
+            return null;
+        }
+        // 转成指定的日期格式
+        SimpleDateFormat sdf = new SimpleDateFormat(expectDateFormatStr == null ? style : expectDateFormatStr);
+        String str = sdf.format(date);
+        return str;
+    }
 
     /**
      * 功能描述: 获取Excel单元格中的值并且转换java类型格式
@@ -960,17 +1005,21 @@ public class ExcelUtils {
     private static String getCellVal(Cell cell) {
         String val = null;
         if (cell != null) {
-            CellType cellType = cell.getCellTypeEnum();
+            CellType cellType = cell.getCellType();
             switch (cellType) {
                 case NUMERIC:
                     if (org.apache.poi.ss.usermodel.DateUtil.isCellDateFormatted(cell)) {
-                        val = getDateFormat().format(cell.getDateCellValue());
+                        val = ExcelUtils.initialization().getDateFormat().format(cell.getDateCellValue());
                     } else {
-                        val = getDecimalFormat().format(cell.getNumericCellValue());
+                        val = ExcelUtils.initialization().getDecimalFormat().format(cell.getNumericCellValue());
                     }
                     break;
                 case STRING:
-                    val = cell.getStringCellValue();
+                    if (cell.getStringCellValue().trim().length() >= DATE_LENGTH && verificationDate(cell.getStringCellValue(), ExcelUtils.initialization().dateFormatStr)) {
+                        val = strToDateFormat(cell.getStringCellValue(), ExcelUtils.initialization().dateFormatStr, ExcelUtils.initialization().expectDateFormatStr);
+                    } else {
+                        val = cell.getStringCellValue();
+                    }
                     break;
                 case BOOLEAN:
                     val = String.valueOf(cell.getBooleanCellValue());
@@ -996,6 +1045,7 @@ public class ExcelUtils {
         }
         return val;
     }
+
 
     /**
      * 导出数据必填
@@ -1053,6 +1103,64 @@ public class ExcelUtils {
      * 导出本地路径
      */
     private String filePath;
+
+    /**
+     * 导出数字格式化：默认是保留六位小数点
+     */
+    private String numeralFormat;
+
+
+    /**
+     * 导出日期格式化：默认是"yyyy-MM-dd"格式
+     */
+    private String dateFormatStr;
+    /**
+     * 期望转换后的日期格式：默认是 dateFormatStr
+     */
+    private String expectDateFormatStr;
+
+
+    public void setDateFormatStr(String dateFormatStr) {
+        if (dateFormatStr == null) {
+            dateFormatStr = "yyyy-MM-dd";
+        }
+        this.dateFormatStr = dateFormatStr;
+    }
+
+    public String getDateFormatStr() {
+        if (dateFormatStr == null) {
+            dateFormatStr = "yyyy-MM-dd";
+        }
+        return dateFormatStr;
+    }
+
+    public String getExpectDateFormatStr() {
+        if (expectDateFormatStr == null) {
+            expectDateFormatStr = dateFormatStr;
+        }
+        return expectDateFormatStr;
+    }
+
+    public void setExpectDateFormatStr(String expectDateFormatStr) {
+        if (expectDateFormatStr == null) {
+            expectDateFormatStr = dateFormatStr;
+        }
+        this.expectDateFormatStr = expectDateFormatStr;
+    }
+
+    public void setNumeralFormat(String numeralFormat) {
+        if (numeralFormat == null) {
+            numeralFormat = "#.######";
+        }
+        this.numeralFormat = numeralFormat;
+    }
+
+    public String getNumeralFormat() {
+        if (numeralFormat == null) {
+            numeralFormat = "#.######";
+        }
+        return numeralFormat;
+    }
 
 
     public List<List<String[]>> getDataLists() {
