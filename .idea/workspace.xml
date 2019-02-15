@@ -6,26 +6,7 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="70f792b6-87df-4c03-84b6-a38696c014ec" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Andyczy Excel0.5831496338324398.xlsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/andyczy/java/excel/CommonsUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/github/andyczy/java/excel/LocalExcelUtils.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README-2.0.md" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/README-3.2.md" beforeDir="false" afterPath="$PROJECT_DIR$/README-3.2.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/github.com.andyczy.java.excel.jar" beforeDir="false" afterPath="$PROJECT_DIR$/github.com.andyczy.java.excel.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/andyczy/java/excel/ExcelUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/andyczy/java/excel/ExcelUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/andyczy/java/excel/ExcelUtils$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/andyczy/java/excel/ExcelUtils$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/andyczy/java/excel/ExcelUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/andyczy/java/excel/ExcelUtils.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-    </list>
+    <list default="true" id="70f792b6-87df-4c03-84b6-a38696c014ec" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -120,7 +101,7 @@
         <counts>
           <entry key="dummy" value="10" />
           <entry key="java" value="1715" />
-          <entry key="md" value="3529" />
+          <entry key="md" value="3536" />
           <entry key="txt" value="76" />
           <entry key="xml" value="123" />
         </counts>
@@ -128,7 +109,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="1715" />
-          <entry key="Markdown" value="3529" />
+          <entry key="Markdown" value="3536" />
           <entry key="PLAIN_TEXT" value="86" />
           <entry key="XML" value="123" />
         </counts>
@@ -138,11 +119,11 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/README-3.2.md">
+        <entry file="file://$PROJECT_DIR$/README-Andyczy.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="550">
-                <caret line="25" column="71" selection-start-line="25" selection-start-column="56" selection-end-line="25" selection-end-column="71" />
+              <first_editor relative-caret-position="440">
+                <caret line="20" column="3" lean-forward="true" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
               </first_editor>
               <second_editor />
             </state>
@@ -162,8 +143,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="352">
-                <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" selection-end-column="56" />
+              <first_editor relative-caret-position="3">
+                <caret line="24" lean-forward="true" selection-end-line="55" selection-end-column="84" />
               </first_editor>
               <second_editor />
             </state>
@@ -283,6 +264,7 @@
         <option value="$PROJECT_DIR$/README-3.2.md" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/README-Andyczy.md" />
       </list>
     </option>
   </component>
@@ -399,7 +381,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550221029241" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550221417256" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../czy-private-project/bs/secondary-school/school-parent" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -577,28 +559,7 @@
       <workItem from="1550028440799" duration="263000" />
       <workItem from="1550104882629" duration="8589000" />
       <workItem from="1550129172735" duration="5792000" />
-      <workItem from="1550213953539" duration="6951000" />
-    </task>
-    <task id="LOCAL-00017" summary="version 2.0.1">
-      <created>1543301898453</created>
-      <option name="number" value="00017" />
-      <option name="presentableId" value="LOCAL-00017" />
-      <option name="project" value="LOCAL" />
-      <updated>1543301898453</updated>
-    </task>
-    <task id="LOCAL-00018" summary="version 2.0.1">
-      <created>1543302474758</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1543302474758</updated>
-    </task>
-    <task id="LOCAL-00019" summary="version 2.0.1">
-      <created>1543302896589</created>
-      <option name="number" value="00019" />
-      <option name="presentableId" value="LOCAL-00019" />
-      <option name="project" value="LOCAL" />
-      <updated>1543302896589</updated>
+      <workItem from="1550213953539" duration="7391000" />
     </task>
     <task id="LOCAL-00020" summary="version 2.0.1">
       <created>1543303010020</created>
@@ -922,11 +883,32 @@
       <option name="project" value="LOCAL" />
       <updated>1550129937233</updated>
     </task>
-    <option name="localTasksCounter" value="66" />
+    <task id="LOCAL-00066" summary="    【4.0】新增 LocalExcelUtils 对象、Test 本地测试、CommonsUtils工具类">
+      <created>1550220923352</created>
+      <option name="number" value="00066" />
+      <option name="presentableId" value="LOCAL-00066" />
+      <option name="project" value="LOCAL" />
+      <updated>1550220923353</updated>
+    </task>
+    <task id="LOCAL-00067" summary="    【4.0】新增 LocalExcelUtils 对象、Test 本地测试、CommonsUtils工具类">
+      <created>1550221024896</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1550221024896</updated>
+    </task>
+    <task id="LOCAL-00068" summary="    【4.0】新增 LocalExcelUtils 对象、Test 本地测试、CommonsUtils工具类">
+      <created>1550221121151</created>
+      <option name="number" value="00068" />
+      <option name="presentableId" value="LOCAL-00068" />
+      <option name="project" value="LOCAL" />
+      <updated>1550221121151</updated>
+    </task>
+    <option name="localTasksCounter" value="69" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121514000" />
+    <option name="totallyTimeSpent" value="121954000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -946,7 +928,7 @@
       <window_info anchor="bottom" id="TODO" order="5" />
       <window_info anchor="bottom" id="Version Control" order="6" show_stripe_button="false" weight="0.32960895" />
       <window_info anchor="bottom" id="Database Changes" order="7" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4989259" visible="true" weight="0.45139664" />
+      <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4989259" weight="0.45139664" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50053704" side_tool="true" weight="0.4" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32960895" />
       <window_info anchor="bottom" id="Run" order="11" sideWeight="0.49946293" weight="0.4" />
@@ -1019,7 +1001,8 @@
     <MESSAGE value="3.2.7 md 导入默认第二行开始获取数据" />
     <MESSAGE value="md" />
     <MESSAGE value="导入时间格式（默认：yyyy-MM-dd）、导入数字保留的小数点（默认：#.###### 六位）" />
-    <option name="LAST_COMMIT_MESSAGE" value="导入时间格式（默认：yyyy-MM-dd）、导入数字保留的小数点（默认：#.###### 六位）" />
+    <MESSAGE value="    【4.0】新增 LocalExcelUtils 对象、Test 本地测试、CommonsUtils工具类" />
+    <option name="LAST_COMMIT_MESSAGE" value="    【4.0】新增 LocalExcelUtils 对象、Test 本地测试、CommonsUtils工具类" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/plugins" />
@@ -1156,16 +1139,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README-3.2.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="550">
-            <caret line="25" column="71" selection-start-line="25" selection-start-column="56" selection-end-line="25" selection-end-column="71" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pom.xml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="176">
@@ -1173,11 +1146,21 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README-Andyczy.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="440">
+            <caret line="20" column="3" lean-forward="true" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="352">
-            <caret line="46" lean-forward="true" selection-start-line="46" selection-end-line="46" selection-end-column="56" />
+          <first_editor relative-caret-position="3">
+            <caret line="24" lean-forward="true" selection-end-line="55" selection-end-column="84" />
           </first_editor>
           <second_editor />
         </state>

@@ -15,8 +15,6 @@
             <artifactId>java-excel-utils</artifactId>       
             <version>4.0</version>      
         </dependency> 
-   
-  [javadoc 文档](https://oss.sonatype.org/service/local/repositories/releases/archive/com/github/andyczy/java-excel-utils/3.2/java-excel-utils-3.2-javadoc.jar/!/com/github/andyczy/java/excel/ExcelUtils.html)
  
   [教程说明](https://github.com/andyczy/czy-nexus-commons-utils/blob/master/README-Andyczy.md)   
   
