@@ -14,41 +14,17 @@
         <dependency>        
             <groupId>com.github.andyczy</groupId>       
             <artifactId>java-excel-utils</artifactId>       
-            <version>3.2.7</version>      
+            <version>4.0</version>      
         </dependency> 
   [javadoc 文档](https://oss.sonatype.org/service/local/repositories/releases/archive/com/github/andyczy/java-excel-utils/3.2/java-excel-utils-3.2-javadoc.jar/!/com/github/andyczy/java/excel/ExcelUtils.html)
   [版本-3.X教程](https://github.com/andyczy/czy-nexus-commons-utils/blob/master/README-3.2.md)   
   
   亲自测试：WPS、office 07、08、09、10、11、12、16 能正常打开。其他版本待测试！                       
   注:POI SXSSFWorkbook 最高限制1048576行,16384列               
-    
-### 更新日志
-### 3.2.7 
-    单表百万数据量导出时样式设置过多，导致速度慢（行、列、单元格样式暂时控制10万行、超过无样式）                          
-    大数据量情况下一般不会每个单元格设置样式、不然很难解决内存溢出等问题。                 
-    修改输出流（只能输出一次、如 response 响应输出，则不会输出到本地路径的。）                                   
-    修改注释                            
-    新增函数【ExcelUtils.testLocalNoStyleNoResponse() 、本地测试：输出到本地路径】                  
-    新增函数【ExcelUtils.exportForExcelsNoStyle()、无样式（行、列、单元格样式）推荐使用这个函数、提高速度】                
-    初始化函数：ExcelUtils.setExcelUtils() 更改为 ExcelUtils.initialization()          
-    属性：columnMap 更改为 setMapColumnWidth
-        
-    目前导出速度：
-    （单表）1万行、20列：1.6秒            
-    （单表）10万行、20列：11秒                 
-    （单表）20万行、20列：27秒     
-    （单表）104万行、20列：46秒            
-    
-    （4张表）1*4万行、20列：6秒           
-    （4张表）10*4万行、20列：33秒                     
-    （4张表）20*4万行、20列：61秒
-    （4张表）100*4万行、20列：85秒     
-    
-### 下次准备更新
-    单表超过百万数据、自动分表。      
-    优化速度和内存溢出问题。       
+   
             
-###  方式一：导出使用函数【推荐使用该方式】  ExcelUtils.exportForExcelsOptimize()  【建议大数据量下不要过多设置样式】
+###  方式一：导出使用函数 ExcelUtils.exportForExcelsOptimize() 和  LocalExcelUtils.exportForExcelsOptimize() 
+        //【推荐使用该方式】【建议大数据量下不要过多设置样式】
              
         ExcelUtils excelUtils = ExcelUtils.initialization();
         // 必填项--导出数据（参数请看下面的格式）
@@ -58,10 +34,10 @@
         // 文件名称(可为空，默认是：sheet 第一个名称)
         excelUtils.setFileName(excelName);
         
-        // web项目response响应输出流：必须填、有本地测试方法:ExcelUtils.testLocalNoStyleNoResponse()、输出地址为本地！
+        // web项目response响应输出流：必须填 【ExcelUtils 对象】
         excelUtils.setResponse(response);
         
-        // 有本地测试方法:ExcelUtils.testLocalNoStyleNoResponse()、输出地址为本地！
+        // 输出本地【LocalExcelUtils 对象】
         // excelUtils.setFilePath("F://test.xlsx");
 
         // 每个表格的大标题（可为空）
@@ -88,13 +64,25 @@
         // 执行导出
         excelUtils.exportForExcelsOptimize();       
  
-###  方式三:导出函数 ExcelUtils.exportForExcelsNoStyle()  【无样式（行、列、单元格样式）推荐使用这个函数、样式设置过多会影响速度】    
+###  方式三:导出函数 ExcelUtils.exportForExcelsNoStyle()  和  LocalExcelUtils.exportForExcelsNoStyle()  
+    无样式（行、列、单元格样式）推荐使用这个函数、样式设置过多会影响速度   
         
-###  方式四:导出函数 ExcelUtils.testLocalNoStyleNoResponse()
+       
+### 导入使用函数： ExcelUtils.importForExcelData(......)  和  LocalExcelUtils.importForExcelData(......)
+        * 获取多单元数据         
+        * 自定义：多单元从第几行开始获取数据【看本文最底下参数说明】            
+        * 自定义：多单元根据那些列为空来忽略行数据【看本文最底下参数说明】         
 
+  
+###  ExcelUtils 对象与 LocalExcelUtils 区别。
+    LocalExcelUtils：本地输出没 response
+    ExcelUtils：     web响应有  response
+    
+    
+###  Test 测试【新增本地测试】
 
-        
-###  方式四:导出函数 ExcelUtils.exportForExcel(......)
+ 
+###  方式四:导出函数 ExcelUtils.exportForExcel(......)   过期注解
         * 可提供模板下载           
         * 自定义下拉列表：对每个单元格自定义下拉列表         
         * 自定义列宽：对每个单元格自定义列宽         
@@ -104,18 +92,9 @@
         * 自定义：每个表格的大标题          
         * 自定义：对每个单元格固定表头    
 
-      
-### 导入使用函数： ExcelUtils.importForExcelData(......)
-        * 获取多单元数据         
-        * 自定义：多单元从第几行开始获取数据            
-        * 自定义：多单元根据那些列为空来忽略行数据         
 
-  
         
 ### 数据格式
-   [javadoc 文档](https://oss.sonatype.org/service/local/repositories/releases/archive/com/github/andyczy/java-excel-utils/3.2/java-excel-utils-3.2-javadoc.jar/!/com/github/andyczy/java/excel/ExcelUtils.html)
-
-    
    1、导出数据：参数 dataLists
    
         @Override

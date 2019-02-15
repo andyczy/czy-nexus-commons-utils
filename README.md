@@ -13,7 +13,7 @@
         <dependency>        
             <groupId>com.github.andyczy</groupId>       
             <artifactId>java-excel-utils</artifactId>       
-            <version>3.2.7</version>      
+            <version>4.0</version>      
         </dependency> 
    
   [javadoc 文档](https://oss.sonatype.org/service/local/repositories/releases/archive/com/github/andyczy/java-excel-utils/3.2/java-excel-utils-3.2-javadoc.jar/!/com/github/andyczy/java/excel/ExcelUtils.html)
@@ -24,7 +24,6 @@
   注:POI SXSSFWorkbook 最高限制1048576行,16384列
 
 ### 更新日志
-### 3.2.5 
     单表百万数据量导出时样式设置过多，导致速度慢（行、列、单元格样式暂时控制10万行、超过无样式）                          
     大数据量情况下一般不会每个单元格设置样式、不然很难解决内存溢出等问题。                 
     修改输出流（只能输出一次、如 response 响应输出，则不会输出到本地路径的。）                                   
@@ -45,6 +44,7 @@
     （4张表）20*4万行、20列：61秒
     （4张表）100*4万行、20列：85秒
              
+    【4.0】新增 LocalExcelUtils 对象、Test 本地测试、CommonsUtils工具类
     
 ### 下次准备更新
     单表超过百万数据、自动分表。      
