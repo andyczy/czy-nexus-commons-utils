@@ -9,7 +9,7 @@
           
          <!--
             maven：https://mvnrepository.com/artifact/com.github.andyczy/java-excel-utils
-            教程文档：https://github.com/andyczy/czy-nexus-commons-utils/blob/master/README-3.2.md
+            教程文档：https://github.com/andyczy/czy-nexus-commons-utils/blob/master/README-Andyczy.md
          -->
         <dependency>        
             <groupId>com.github.andyczy</groupId>       
@@ -76,8 +76,8 @@
 
   
 ###  ExcelUtils 对象与 LocalExcelUtils 区别。
-    LocalExcelUtils：本地输出没 response
     ExcelUtils：     web响应有  response
+    LocalExcelUtils：本地输出没 response
     
     
 ###  Test 测试【新增本地测试】
