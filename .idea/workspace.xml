@@ -7,11 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="70f792b6-87df-4c03-84b6-a38696c014ec" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/github.com.andyczy.java.excel.jar" beforeDir="false" afterPath="$PROJECT_DIR$/github.com.andyczy.java.excel.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Test.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/andyczy/java/excel/ExcelUtils.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/github/andyczy/java/excel/ExcelUtils.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -67,16 +66,16 @@
     <session id="-550198201">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="51" />
+          <entry key="project.closed" value="52" />
           <entry key="project.open.time.0" value="15" />
-          <entry key="project.open.time.1" value="15" />
+          <entry key="project.open.time.1" value="16" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.2" value="15" />
           <entry key="project.open.time.3" value="2" />
           <entry key="project.open.time.7" value="2" />
-          <entry key="project.opened" value="52" />
+          <entry key="project.opened" value="53" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -106,18 +105,18 @@
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
           <entry key="dummy" value="10" />
-          <entry key="java" value="1793" />
+          <entry key="java" value="1796" />
           <entry key="md" value="3543" />
-          <entry key="txt" value="76" />
-          <entry key="xml" value="126" />
+          <entry key="txt" value="78" />
+          <entry key="xml" value="130" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
-          <entry key="JAVA" value="1793" />
+          <entry key="JAVA" value="1796" />
           <entry key="Markdown" value="3543" />
-          <entry key="PLAIN_TEXT" value="86" />
-          <entry key="XML" value="126" />
+          <entry key="PLAIN_TEXT" value="88" />
+          <entry key="XML" value="130" />
         </counts>
       </usages-collector>
     </session>
@@ -128,8 +127,8 @@
         <entry file="file://$PROJECT_DIR$/README-Andyczy.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="417">
-                <caret line="67" column="9" lean-forward="true" selection-start-line="67" selection-start-column="9" selection-end-line="67" selection-end-column="9" />
+              <first_editor relative-caret-position="707">
+                <caret line="263" column="1" selection-start-line="263" selection-start-column="1" selection-end-line="263" selection-end-column="1" />
               </first_editor>
               <second_editor />
             </state>
@@ -139,8 +138,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/github/andyczy/java/excel/LocalExcelUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-106">
-              <caret line="221" column="35" lean-forward="true" selection-start-line="221" selection-start-column="35" selection-end-line="221" selection-end-column="35" />
+            <state relative-caret-position="22">
+              <caret line="221" column="35" selection-start-line="221" selection-start-column="35" selection-end-line="221" selection-end-column="35" />
               <folding>
                 <element signature="imports" expanded="true" />
                 <element signature="e#13051#13052#0" expanded="true" />
@@ -203,8 +202,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/pom.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1100">
-              <caret line="50" column="46" lean-forward="true" selection-start-line="50" selection-start-column="46" selection-end-line="50" selection-end-column="46" />
+            <state relative-caret-position="685">
+              <caret line="45" selection-start-line="45" selection-end-line="45" />
             </state>
           </provider>
         </entry>
@@ -213,8 +212,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="374">
-                <caret line="17" selection-start-line="17" selection-end-line="17" />
+              <first_editor relative-caret-position="1188">
+                <caret line="54" column="1" selection-start-line="54" selection-start-column="1" selection-end-line="54" selection-end-column="1" />
               </first_editor>
               <second_editor />
             </state>
@@ -224,8 +223,11 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/test/java/Test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-239">
-              <caret line="27" column="9" lean-forward="true" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
+            <state relative-caret-position="245">
+              <caret line="49" column="34" lean-forward="true" selection-start-line="49" selection-start-column="34" selection-end-line="49" selection-end-column="34" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -300,13 +302,13 @@
         <option value="$PROJECT_DIR$/src/main/java/com/github/andyczy/java/excel/NoResponseExcelUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/andyczy/java/excel/ExcelUtils.java" />
         <option value="$PROJECT_DIR$/README-3.2.md" />
-        <option value="$PROJECT_DIR$/README.md" />
-        <option value="$PROJECT_DIR$/README-Andyczy.md" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/andyczy/java/excel/CommonsUtils.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/github/andyczy/java/excel/ExcelPojo.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/github/andyczy/java/excel/LocalExcelUtils.java" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/README-Andyczy.md" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/test/java/Test.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/github/andyczy/java/excel/LocalExcelUtils.java" />
       </list>
     </option>
   </component>
@@ -365,8 +367,8 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -396,6 +398,14 @@
               <item name="github.com.andyczy.java.excel" type="b2602c69:ProjectViewProjectNode" />
               <item name="github.com.andyczy.java.excel" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="excel" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="github.com.andyczy.java.excel" type="b2602c69:ProjectViewProjectNode" />
+              <item name="github.com.andyczy.java.excel" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="test" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -409,20 +419,20 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scope" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550560979692" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550567015110" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../czy-private-project/bs/secondary-school/school-parent" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="project.structure.last.edited" value="Problems" />
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.15" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.language" />
+    <property name="settings.editor.selected.configurable" value="File.Encoding" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
@@ -596,14 +606,8 @@
       <workItem from="1550541867209" duration="11000" />
       <workItem from="1550541980515" duration="53000" />
       <workItem from="1550542081510" duration="103000" />
-      <workItem from="1550558015835" duration="2646000" />
-    </task>
-    <task id="LOCAL-00022" summary="version 2.0.1">
-      <created>1543304119258</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1543304119258</updated>
+      <workItem from="1550558015835" duration="3206000" />
+      <workItem from="1550566592919" duration="323000" />
     </task>
     <task id="LOCAL-00023" summary="version 2.0.1">
       <created>1543304342718</created>
@@ -941,17 +945,23 @@
       <option name="project" value="LOCAL" />
       <updated>1550221597273</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="md">
+      <created>1550561043763</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1550561043763</updated>
+    </task>
+    <option name="localTasksCounter" value="72" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="125419000" />
+    <option name="totallyTimeSpent" value="126302000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23523094" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23845327" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -969,7 +979,7 @@
       <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4989259" weight="0.45139664" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50053704" side_tool="true" weight="0.4" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32960895" />
-      <window_info anchor="bottom" id="Run" order="11" sideWeight="0.49946293" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="11" sideWeight="0.49946293" visible="true" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -1037,10 +1047,10 @@
     <MESSAGE value="3.2.5 md" />
     <MESSAGE value="3.2.6 md" />
     <MESSAGE value="3.2.7 md 导入默认第二行开始获取数据" />
-    <MESSAGE value="md" />
     <MESSAGE value="导入时间格式（默认：yyyy-MM-dd）、导入数字保留的小数点（默认：#.###### 六位）" />
     <MESSAGE value="    【4.0】新增 LocalExcelUtils 对象、Test 本地测试、CommonsUtils工具类" />
-    <option name="LAST_COMMIT_MESSAGE" value="    【4.0】新增 LocalExcelUtils 对象、Test 本地测试、CommonsUtils工具类" />
+    <MESSAGE value="md" />
+    <option name="LAST_COMMIT_MESSAGE" value="md" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1150,37 +1160,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pom.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1100">
-          <caret line="50" column="46" lean-forward="true" selection-start-line="50" selection-start-column="46" selection-end-line="50" selection-end-column="46" />
+    <entry file="file://$PROJECT_DIR$/README-Andyczy.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="707">
+            <caret line="263" column="1" selection-start-line="263" selection-start-column="1" selection-end-line="263" selection-end-column="1" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="374">
-            <caret line="17" selection-start-line="17" selection-end-line="17" />
+          <first_editor relative-caret-position="1188">
+            <caret line="54" column="1" selection-start-line="54" selection-start-column="1" selection-end-line="54" selection-end-column="1" />
           </first_editor>
           <second_editor />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README-Andyczy.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="417">
-            <caret line="67" column="9" lean-forward="true" selection-start-line="67" selection-start-column="9" selection-end-line="67" selection-end-column="9" />
-          </first_editor>
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/pom.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="685">
+          <caret line="45" selection-start-line="45" selection-end-line="45" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/github/andyczy/java/excel/LocalExcelUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-106">
-          <caret line="221" column="35" lean-forward="true" selection-start-line="221" selection-start-column="35" selection-end-line="221" selection-end-column="35" />
+        <state relative-caret-position="22">
+          <caret line="221" column="35" selection-start-line="221" selection-start-column="35" selection-end-line="221" selection-end-column="35" />
           <folding>
             <element signature="imports" expanded="true" />
             <element signature="e#13051#13052#0" expanded="true" />
@@ -1241,8 +1251,11 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/Test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-239">
-          <caret line="27" column="9" lean-forward="true" selection-start-line="27" selection-start-column="9" selection-end-line="27" selection-end-column="9" />
+        <state relative-caret-position="245">
+          <caret line="49" column="34" lean-forward="true" selection-start-line="49" selection-start-column="34" selection-end-line="49" selection-end-column="34" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
