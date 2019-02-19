@@ -19,11 +19,11 @@ public class Test {
         List<List<String[]>> dataList = new ArrayList<>();
         List<String[]> stringList = new ArrayList<>();
         String[] valueString = null;
-        String[] headers = {"No", "number", "time", "decimal", "if"};
+        String[] headers = {"No", "编码", "时间", "小数点", "是否"};
         stringList.add(headers);
         for (int i = 0; i < 1000; i++) {
             valueString = new String[]{(i + 1) + "", Math.random() * 10 + "", getNeededDateStyle(null, null),
-                    1 + Math.random() * 10 + "", i % 2 == 0 ? "1" : "2"};
+                    1 + Math.random() * 10 + "", i % 2 == 0 ? "是" : "否"};
             stringList.add(valueString);
         }
         dataList.add(stringList);
@@ -50,8 +50,8 @@ public class Test {
         noResponseExcelUtils.setDataLists(dataList);
         noResponseExcelUtils.setRowStyles(stylesRow);
         noResponseExcelUtils.setMapColumnWidth(mapColumnWidth);
-        noResponseExcelUtils.setSheetName(new String[]{"Andyczy Excel" + Math.random()});
-        noResponseExcelUtils.setFilePath("Andyczy Excel" + Math.random()+".xlsx");
+        noResponseExcelUtils.setSheetName(new String[]{"Andyczy Excel中文" + Math.random()});
+        noResponseExcelUtils.setFilePath("Andyczy Excel中文" + Math.random()+".xlsx");
 //        noResponseExcelUtils.localNoStyleNoResponse();
         noResponseExcelUtils.localNoResponse();
     }
