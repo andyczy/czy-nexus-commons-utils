@@ -45,14 +45,15 @@
              
     【4.0】新增 LocalExcelUtils 对象、Test 本地测试、CommonsUtils工具类
     
-### 下次准备更新
-    单表超过百万数据、自动分表。      
-    优化速度和内存溢出问题。                   
+                   
       
 
-# 支持一下呗
-![支持一下](https://github.com/andyczy/czy-study-java-commons-utils/blob/master/sqm.png)                
+# 支持一下呗、感谢你们（排名不分先后）
+蒙蒙的雨3元（微信）、阿星100元（支付宝）、李凯5元（微信）                 
+![支持一下](https://github.com/andyczy/czy-study-java-commons-utils/blob/master/sqm.png)                        
+![支持一下](https://github.com/andyczy/czy-study-java-commons-utils/blob/master/wx.jpg)                      
       
+       
    
 ### License
 java-excel-utils is Open Source software released under the Apache 2.0 license.     

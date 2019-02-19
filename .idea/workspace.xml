@@ -7,9 +7,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="70f792b6-87df-4c03-84b6-a38696c014ec" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/README-Local-Test.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README-Andyczy.md" beforeDir="false" afterPath="$PROJECT_DIR$/README-Andyczy.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -82,7 +80,7 @@
         <counts>
           <entry key="class" value="5" />
           <entry key="java" value="33" />
-          <entry key="md" value="19" />
+          <entry key="md" value="20" />
           <entry key="png" value="2" />
           <entry key="pom" value="1" />
           <entry key="properties" value="3" />
@@ -96,7 +94,7 @@
           <entry key="CLASS" value="5" />
           <entry key="Image" value="2" />
           <entry key="JAVA" value="33" />
-          <entry key="Markdown" value="19" />
+          <entry key="Markdown" value="20" />
           <entry key="PLAIN_TEXT" value="4" />
           <entry key="Properties" value="3" />
           <entry key="XML" value="7" />
@@ -106,16 +104,16 @@
         <counts>
           <entry key="dummy" value="10" />
           <entry key="java" value="1796" />
-          <entry key="md" value="3626" />
-          <entry key="txt" value="78" />
+          <entry key="md" value="3695" />
+          <entry key="txt" value="81" />
           <entry key="xml" value="130" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="1796" />
-          <entry key="Markdown" value="3626" />
-          <entry key="PLAIN_TEXT" value="88" />
+          <entry key="Markdown" value="3695" />
+          <entry key="PLAIN_TEXT" value="91" />
           <entry key="XML" value="130" />
         </counts>
       </usages-collector>
@@ -123,12 +121,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="375">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/README-Local-Test.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="44">
-                <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+              <first_editor relative-caret-position="66">
+                <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="597">
+                <caret line="51" column="12" lean-forward="true" selection-start-line="51" selection-start-column="12" selection-end-line="51" selection-end-column="12" />
               </first_editor>
               <second_editor />
             </state>
@@ -211,8 +221,8 @@
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/test/java/Test.java" />
         <option value="$PROJECT_DIR$/README-Andyczy.md" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/README-Local-Test.md" />
+        <option value="$PROJECT_DIR$/README.md" />
       </list>
     </option>
   </component>
@@ -329,7 +339,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550567360190" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1550567716151" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../czy-private-project/bs/secondary-school/school-parent" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -511,14 +521,7 @@
       <workItem from="1550541980515" duration="53000" />
       <workItem from="1550542081510" duration="103000" />
       <workItem from="1550558015835" duration="3206000" />
-      <workItem from="1550566592919" duration="759000" />
-    </task>
-    <task id="LOCAL-00024" summary="javadoc 文档">
-      <created>1543305141782</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1543305141782</updated>
+      <workItem from="1550566592919" duration="1121000" />
     </task>
     <task id="LOCAL-00025" summary="javadoc 文档">
       <created>1543373297265</created>
@@ -856,11 +859,18 @@
       <option name="project" value="LOCAL" />
       <updated>1550567042215</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="4.0">
+      <created>1550567445255</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1550567445255</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="126738000" />
+    <option name="totallyTimeSpent" value="127100000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -955,7 +965,8 @@
     <MESSAGE value="导入时间格式（默认：yyyy-MM-dd）、导入数字保留的小数点（默认：#.###### 六位）" />
     <MESSAGE value="    【4.0】新增 LocalExcelUtils 对象、Test 本地测试、CommonsUtils工具类" />
     <MESSAGE value="md" />
-    <option name="LAST_COMMIT_MESSAGE" value="md" />
+    <MESSAGE value="4.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="4.0" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1134,16 +1145,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="411">
-            <caret line="20" column="3" selection-start-line="20" selection-start-column="3" selection-end-line="20" selection-end-column="3" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/Test.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="528">
@@ -1167,8 +1168,18 @@
     <entry file="file://$PROJECT_DIR$/README-Local-Test.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="44">
-            <caret line="2" column="19" lean-forward="true" selection-start-line="2" selection-start-column="19" selection-end-line="2" selection-end-column="19" />
+          <first_editor relative-caret-position="66">
+            <caret line="3" column="21" selection-start-line="3" selection-start-column="21" selection-end-line="3" selection-end-column="21" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="597">
+            <caret line="51" column="12" lean-forward="true" selection-start-line="51" selection-start-column="12" selection-end-line="51" selection-end-column="12" />
           </first_editor>
           <second_editor />
         </state>
