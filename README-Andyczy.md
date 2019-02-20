@@ -21,8 +21,16 @@
   [本地输出测试](https://github.com/andyczy/czy-nexus-commons-utils/blob/master/README-Local-Test.md)   
    
   亲自测试：WPS、office 07、08、09、10、11、12、16 能正常打开。其他版本待测试！                       
-  注:POI SXSSFWorkbook 最高限制1048576行,16384列               
-   
+  注:POI SXSSFWorkbook 最高限制1048576行,16384列     
+            
+### 实现功能：
+    1、导入Excel文件，支持配置时间、小数点类型（支持单/多sheet）              
+    2、浏览器导出Excel文件、模板文件（支持单/多sheet）           
+    3、指定路径生成Excel文件（支持单/多sheet）           
+    4、样式自定义，行、列、某个单元格（字体大小、字体颜色、左右对齐、居中。支持单/多sheet）           
+    5、固定表头（支持单/多sheet）            
+    6、下拉列表值（支持单/多sheet）           
+    7、合并单元格、列宽、标题（支持单/多sheet）      
             
 ###  方式一：导出使用函数 ExcelUtils.exportForExcelsOptimize() 和  LocalExcelUtils.exportForExcelsOptimize() 
         //【推荐使用该方式】【建议大数据量下不要过多设置样式】
