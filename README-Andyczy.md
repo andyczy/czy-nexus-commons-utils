@@ -32,7 +32,7 @@
     6、自定义下拉列表值（支持单/多sheet）           
     7、自定义合并单元格、自定义列宽、自定义大标题（支持单/多sheet）      
             
-###  方式一：导出使用函数 ExcelUtils.exportForExcelsOptimize() 和  LocalExcelUtils.exportForExcelsOptimize() 
+###  方式一：导出使用函数 ExcelUtils.exportForExcelsOptimize() 和  LocalExcelUtils.localNoResponse() 
         //【推荐使用该方式】【建议大数据量下不要过多设置样式】
              
         ExcelUtils excelUtils = ExcelUtils.initialization();
@@ -73,7 +73,7 @@
         // 执行导出
         excelUtils.exportForExcelsOptimize();       
  
-###  方式三:导出函数 ExcelUtils.exportForExcelsNoStyle()  和  LocalExcelUtils.exportForExcelsNoStyle()  
+###  方式三:导出函数 ExcelUtils.exportForExcelsNoStyle()  和  LocalExcelUtils.localNoStyleNoResponse()  
     无样式（行、列、单元格样式）推荐使用这个函数、样式设置过多会影响速度   
         
        
