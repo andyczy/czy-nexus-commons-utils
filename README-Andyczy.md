@@ -20,8 +20,8 @@
   [教程说明](https://github.com/andyczy/czy-nexus-commons-utils/blob/master/README-Andyczy.md)   
   [本地输出测试](https://github.com/andyczy/czy-nexus-commons-utils/blob/master/README-Local-Test.md)   
    
-  亲自测试：WPS、office 07、08、09、10、11、12、16 能正常打开。其他版本待测试！                       
-  注:POI SXSSFWorkbook 最高限制1048576行,16384列     
+  亲自测试：WPS、office 07、08、09、10、11、12、16 能正常打开。其他版本待测试！                                  
+  注:POI SXSSFWorkbook 最高限制1048576行,16384列               
             
 ### 实现功能：
     1、导入Excel文件，支持配置时间、小数点类型（支持单/多sheet）              
