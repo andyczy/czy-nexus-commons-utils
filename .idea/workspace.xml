@@ -8,6 +8,8 @@
   <component name="ChangeListManager">
     <list default="true" id="70f792b6-87df-4c03-84b6-a38696c014ec" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sqm.png" beforeDir="false" afterPath="$PROJECT_DIR$/sqm.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/wx.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/wx.jpg" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -65,14 +67,14 @@
         <counts>
           <entry key="project.closed" value="54" />
           <entry key="project.open.time.0" value="15" />
-          <entry key="project.open.time.1" value="16" />
+          <entry key="project.open.time.1" value="17" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.11" value="1" />
           <entry key="project.open.time.12" value="1" />
           <entry key="project.open.time.2" value="16" />
           <entry key="project.open.time.3" value="2" />
           <entry key="project.open.time.7" value="2" />
-          <entry key="project.opened" value="54" />
+          <entry key="project.opened" value="55" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -103,16 +105,16 @@
         <counts>
           <entry key="dummy" value="10" />
           <entry key="java" value="1797" />
-          <entry key="md" value="3808" />
-          <entry key="txt" value="81" />
+          <entry key="md" value="3837" />
+          <entry key="txt" value="83" />
           <entry key="xml" value="130" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="1797" />
-          <entry key="Markdown" value="3808" />
-          <entry key="PLAIN_TEXT" value="91" />
+          <entry key="Markdown" value="3837" />
+          <entry key="PLAIN_TEXT" value="93" />
           <entry key="XML" value="130" />
         </counts>
       </usages-collector>
@@ -148,8 +150,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="484">
-                <caret line="22" column="52" selection-start-line="22" selection-start-column="52" selection-end-line="22" selection-end-column="52" />
+              <first_editor relative-caret-position="531">
+                <caret line="59" column="34" selection-start-line="59" selection-start-column="34" selection-end-line="59" selection-end-column="34" />
               </first_editor>
               <second_editor />
             </state>
@@ -159,11 +161,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/github/andyczy/java/excel/LocalExcelUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="597">
-              <caret line="328" column="7" lean-forward="true" selection-start-line="328" selection-start-column="7" selection-end-line="328" selection-end-column="7" />
+            <state relative-caret-position="6952">
+              <caret line="328" column="7" selection-start-line="328" selection-start-column="7" selection-end-line="328" selection-end-column="7" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <element signature="e#4937#4983#0" expanded="true" />
                 <element signature="e#13051#13052#0" expanded="true" />
                 <element signature="e#13083#13084#0" expanded="true" />
                 <element signature="e#13147#13148#0" expanded="true" />
@@ -224,8 +225,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/github/andyczy/java/excel/CommonsUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="792">
-              <caret line="144" column="32" lean-forward="true" selection-start-line="144" selection-start-column="32" selection-end-line="144" selection-end-column="32" />
+            <state relative-caret-position="2838">
+              <caret line="144" column="32" selection-start-line="144" selection-start-column="32" selection-end-line="144" selection-end-column="32" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -236,7 +237,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/Test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="528">
+            <state relative-caret-position="924">
               <caret line="48" column="23" selection-start-line="48" selection-start-column="8" selection-end-line="48" selection-end-column="23" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -381,7 +382,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="AndroidView" />
       <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -432,14 +435,12 @@
           <select />
         </subPane>
       </pane>
-      <pane id="AndroidView" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553764432181" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553764471257" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -623,20 +624,7 @@
       <workItem from="1550558015835" duration="3206000" />
       <workItem from="1550566592919" duration="1552000" />
       <workItem from="1550632485677" duration="945000" />
-    </task>
-    <task id="LOCAL-00032" summary="版本-3.0">
-      <created>1544068548743</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1544068548743</updated>
-    </task>
-    <task id="LOCAL-00033" summary="版本-3.1-- 修复异常bug">
-      <created>1544152710273</created>
-      <option name="number" value="00033" />
-      <option name="presentableId" value="LOCAL-00033" />
-      <option name="project" value="LOCAL" />
-      <updated>1544152710273</updated>
+      <workItem from="1553764323422" duration="363000" />
     </task>
     <task id="LOCAL-00034" summary="版本-3.1-- 修复异常bug">
       <created>1544152912960</created>
@@ -967,16 +955,30 @@
       <option name="project" value="LOCAL" />
       <updated>1550633407489</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="md">
+      <created>1553764397254</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1553764397255</updated>
+    </task>
+    <task id="LOCAL-00082" summary="md">
+      <created>1553764467942</created>
+      <option name="number" value="00082" />
+      <option name="presentableId" value="LOCAL-00082" />
+      <option name="project" value="LOCAL" />
+      <updated>1553764467942</updated>
+    </task>
+    <option name="localTasksCounter" value="83" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="128476000" />
+    <option name="totallyTimeSpent" value="128839000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24167562" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24543501" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -1064,9 +1066,9 @@
     <MESSAGE value="3.2.7 md 导入默认第二行开始获取数据" />
     <MESSAGE value="导入时间格式（默认：yyyy-MM-dd）、导入数字保留的小数点（默认：#.###### 六位）" />
     <MESSAGE value="    【4.0】新增 LocalExcelUtils 对象、Test 本地测试、CommonsUtils工具类" />
-    <MESSAGE value="md" />
     <MESSAGE value="4.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="4.0" />
+    <MESSAGE value="md" />
+    <option name="LAST_COMMIT_MESSAGE" value="md" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1173,6 +1175,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/README-Andyczy.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="506">
+            <caret line="23" column="56" selection-start-line="23" selection-start-column="56" selection-end-line="23" selection-end-column="56" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README-Local-Test.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
@@ -1183,33 +1195,12 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/test/java/Test.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="528">
-          <caret line="48" column="23" selection-start-line="48" selection-start-column="8" selection-end-line="48" selection-end-column="23" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/andyczy/java/excel/CommonsUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="792">
-          <caret line="144" column="32" lean-forward="true" selection-start-line="144" selection-start-column="32" selection-end-line="144" selection-end-column="32" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/github/andyczy/java/excel/LocalExcelUtils.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="597">
-          <caret line="328" column="7" lean-forward="true" selection-start-line="328" selection-start-column="7" selection-end-line="328" selection-end-column="7" />
+        <state relative-caret-position="6952">
+          <caret line="328" column="7" selection-start-line="328" selection-start-column="7" selection-end-line="328" selection-end-column="7" />
           <folding>
             <element signature="imports" expanded="true" />
-            <element signature="e#4937#4983#0" expanded="true" />
             <element signature="e#13051#13052#0" expanded="true" />
             <element signature="e#13083#13084#0" expanded="true" />
             <element signature="e#13147#13148#0" expanded="true" />
@@ -1266,21 +1257,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README-Andyczy.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="FIRST">
-          <first_editor relative-caret-position="506">
-            <caret line="23" column="56" selection-start-line="23" selection-start-column="56" selection-end-line="23" selection-end-column="56" />
-          </first_editor>
-          <second_editor />
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/andyczy/java/excel/CommonsUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2838">
+          <caret line="144" column="32" selection-start-line="144" selection-start-column="32" selection-end-line="144" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/test/java/Test.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="924">
+          <caret line="48" column="23" selection-start-line="48" selection-start-column="8" selection-end-line="48" selection-end-column="23" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="484">
-            <caret line="22" column="52" selection-start-line="22" selection-start-column="52" selection-end-line="22" selection-end-column="52" />
+          <first_editor relative-caret-position="531">
+            <caret line="59" column="34" selection-start-line="59" selection-start-column="34" selection-end-line="59" selection-end-column="34" />
           </first_editor>
           <second_editor />
         </state>
