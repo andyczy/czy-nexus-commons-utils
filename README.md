@@ -57,7 +57,7 @@
       
 
 # 支持一下呗、感谢你们（排名不分先后）
-蒙蒙的雨3元（微信）、阿星100元（支付宝）、李凯5元（微信）、biue5元（微信2019-03-08）                    
+蒙蒙的雨3元（微信）、阿星100元（支付宝）、李凯5元（微信）、blue5元（微信2019-03-08）                    
 ![支持一下](https://github.com/andyczy/czy-nexus-commons-utils/blob/master/sqm.png)                        
 ![支持一下](https://github.com/andyczy/czy-nexus-commons-utils/blob/master/wx.jpg)                      
         
