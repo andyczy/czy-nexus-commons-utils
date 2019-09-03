@@ -22,7 +22,7 @@ public class Test {
         String[] headers = {"No", "编码", "时间", "小数点", "是否"};
         stringList.add(headers);
         for (int i = 0; i < 1000; i++) {
-            valueString = new String[]{(i + 1) + "", Math.random() * 10 + "", getNeededDateStyle(null, null),
+            valueString = new String[]{(i + 1) + "", "'"+Math.random() * 10 + "'", getNeededDateStyle(null, null),
                     1 + Math.random() * 10 + "", i % 2 == 0 ? "是" : "否"};
             stringList.add(valueString);
         }

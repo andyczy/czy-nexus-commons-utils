@@ -103,7 +103,7 @@ public class CommonsUtils {
             for (int i = 0; i < SIZE; i++) {
                 sxssfRow = sxssfSheet.createRow(jRow);
                 for (int j = 0; j < listRow.get(i).length; j++) {
-                    Cell cell = createCell(sxssfRow, j, listRow.get(i)[j]);
+                    Cell cell = createCell(sxssfRow, j, listRow.get(i)[j].replaceAll("[']", ""));
                     cell.setCellStyle(cellStyle);
                     try {
                         //  自定义：每个表格每一列的样式（看该方法说明）。
@@ -284,7 +284,7 @@ public class CommonsUtils {
             for (int i = 0; i < SIZE; i++) {
                 sxssfRow = sxssfSheet.createRow(jRow);
                 for (int j = 0; j < listRow.get(i).length; j++) {
-                    Cell cell = createCell(sxssfRow, j, listRow.get(i)[j]);
+                    Cell cell = createCell(sxssfRow, j, listRow.get(i)[j].replaceAll("[']", ""));
                     cell.setCellStyle(cellStyle);
                 }
                 jRow++;
