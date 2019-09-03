@@ -8,10 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="70f792b6-87df-4c03-84b6-a38696c014ec" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/github/andyczy/java/excel/CommonsUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/andyczy/java/excel/CommonsUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/andyczy/java/excel/ExcelUtils$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/github/andyczy/java/excel/ExcelUtils.class" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
@@ -70,8 +67,8 @@
     <session id="-550198201">
       <usages-collector id="statistics.lifecycle.project">
         <counts>
-          <entry key="project.closed" value="66" />
-          <entry key="project.open.time.0" value="15" />
+          <entry key="project.closed" value="67" />
+          <entry key="project.open.time.0" value="16" />
           <entry key="project.open.time.1" value="22" />
           <entry key="project.open.time.10" value="1" />
           <entry key="project.open.time.11" value="1" />
@@ -80,7 +77,7 @@
           <entry key="project.open.time.3" value="2" />
           <entry key="project.open.time.4" value="1" />
           <entry key="project.open.time.7" value="2" />
-          <entry key="project.opened" value="66" />
+          <entry key="project.opened" value="67" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.extensions.open">
@@ -132,8 +129,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/github/andyczy/java/excel/CommonsUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="550">
-              <caret line="306" column="5" selection-start-line="306" selection-start-column="5" selection-end-line="306" selection-end-column="5" />
+            <state relative-caret-position="308">
+              <caret line="295" lean-forward="true" selection-start-line="295" selection-end-line="295" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -201,7 +198,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/com/github/andyczy/java/excel/ExcelUtils.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="330">
+            <state relative-caret-position="8250">
               <caret line="375" column="5" selection-start-line="327" selection-start-column="2" selection-end-line="375" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
@@ -410,8 +407,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="AndroidView" />
-      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -463,12 +458,14 @@
           <select />
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
+      <pane id="AndroidView" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1567475782383" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1567481584563" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -664,13 +661,7 @@
       <workItem from="1567476306024" duration="551000" />
       <workItem from="1567479866963" duration="405000" />
       <workItem from="1567481525099" duration="46000" />
-    </task>
-    <task id="LOCAL-00045" summary="修改md注释">
-      <created>1547694768881</created>
-      <option name="number" value="00045" />
-      <option name="presentableId" value="LOCAL-00045" />
-      <option name="project" value="LOCAL" />
-      <updated>1547694768881</updated>
+      <workItem from="1567481577988" duration="28000" />
     </task>
     <task id="LOCAL-00046" summary="修改md注释">
       <created>1547695043076</created>
@@ -1008,11 +999,18 @@
       <option name="project" value="LOCAL" />
       <updated>1567475284721</updated>
     </task>
-    <option name="localTasksCounter" value="94" />
+    <task id="LOCAL-00094" summary="添加.replaceAll(&quot;[']&quot;, &quot;&quot;) 方法。去掉字符串';如字符串'中国'  ==  中国">
+      <created>1567481595837</created>
+      <option name="number" value="00094" />
+      <option name="presentableId" value="LOCAL-00094" />
+      <option name="project" value="LOCAL" />
+      <updated>1567481595839</updated>
+    </task>
+    <option name="localTasksCounter" value="95" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="138872000" />
+    <option name="totallyTimeSpent" value="138900000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1027,7 +1025,7 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.20515575" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20515575" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -1201,6 +1199,16 @@
     <entry file="file://$PROJECT_DIR$/sqm.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/andyczy/java/excel/CommonsUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="308">
+          <caret line="295" lean-forward="true" selection-start-line="295" selection-end-line="295" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
@@ -1245,6 +1253,16 @@
             <caret line="10" selection-start-line="10" selection-end-line="10" />
           </first_editor>
           <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/andyczy/java/excel/ExcelUtils.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="8250">
+          <caret line="375" column="5" selection-start-line="327" selection-start-column="2" selection-end-line="375" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -1306,26 +1324,6 @@
             <element signature="e#15081#15082#0" expanded="true" />
             <element signature="e#15129#15130#0" expanded="true" />
             <element signature="e#15169#15170#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/andyczy/java/excel/ExcelUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="375" column="5" selection-start-line="327" selection-start-column="2" selection-end-line="375" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/github/andyczy/java/excel/CommonsUtils.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="550">
-          <caret line="306" column="5" selection-start-line="306" selection-start-column="5" selection-end-line="306" selection-end-column="5" />
-          <folding>
-            <element signature="imports" expanded="true" />
           </folding>
         </state>
       </provider>
