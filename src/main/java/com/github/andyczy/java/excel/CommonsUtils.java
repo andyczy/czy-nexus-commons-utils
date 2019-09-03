@@ -12,6 +12,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.OutputStream;
+import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -103,7 +104,7 @@ public class CommonsUtils {
             for (int i = 0; i < SIZE; i++) {
                 sxssfRow = sxssfSheet.createRow(jRow);
                 for (int j = 0; j < listRow.get(i).length; j++) {
-                    Cell cell = createCell(sxssfRow, j, listRow.get(i)[j].replaceAll("[']", ""));
+                    Cell cell = createCell(sxssfRow, j, toUNllStr(listRow.get(i)[j].replaceAll("[']", "")));
                     cell.setCellStyle(cellStyle);
                     try {
                         //  自定义：每个表格每一列的样式（看该方法说明）。
@@ -284,7 +285,7 @@ public class CommonsUtils {
             for (int i = 0; i < SIZE; i++) {
                 sxssfRow = sxssfSheet.createRow(jRow);
                 for (int j = 0; j < listRow.get(i).length; j++) {
-                    Cell cell = createCell(sxssfRow, j, listRow.get(i)[j].replaceAll("[']", ""));
+                    Cell cell = createCell(sxssfRow, j, toUNllStr(listRow.get(i)[j].replaceAll("[']", "")));
                     cell.setCellStyle(cellStyle);
                 }
                 jRow++;
@@ -294,6 +295,16 @@ public class CommonsUtils {
     }
 
 
+    public static String toUNllStr(Object str) {
+        if (str == null || str.equals("") || str.equals("null")
+                || str.equals(new BigDecimal("0.00")) || str.equals(new BigDecimal("0"))
+                || str.equals("0.00") || str.equals("0")
+        ) {
+            return " ";
+        } else {
+            return str.toString();
+        }
+    }
     public static void writeAndColse(SXSSFWorkbook sxssfWorkbook, OutputStream outputStream) throws Exception {
         try {
             if (outputStream != null) {
