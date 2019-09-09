@@ -104,37 +104,37 @@
 
         
 ### 数据格式
-   一、导出配置：
+   一、导出配置：                  
    1、参数 dataLists
    
-        @Override
-           public List<List<String[]>> exportData(String deviceNo,String snExt,Integer parentInstId,String startDate, String endDate){
-               List<List<String[]>> dataLists = new ArrayList<>();
-               List<String[]> oneList = new ArrayList<>();  // 表格一数据
-               PageInfo<BillInfo> pagePageInfo = getBillPage(1,10000,null,snExt,deviceNo,parentInstId,startDate,endDate);
-               String[] valueString = null;
- 
-               String[] headers = {"序号","标题一","标题一","标题二","标题三","标题四","标题五","标题六"};
-               String[] headersTwo = {" ","标题一小标题（合并用）","标题一小标题（合并用）"," "," "," "," "};
-               oneList.add(headers);
-               oneList.add(headersTwo);
-                
-               for (int i = 0; i < pagePageInfo.getList().size(); i++) {
-                   valueString = new String[]{(i + 1) + "", pagePageInfo.getList().get(i).getSnExt(),
-                           getNeededDateStyle(pagePageInfo.getList().get(i).getPayTime(),"yyyy-MM-dd hh:mm:ss"),
-                           pagePageInfo.getList().get(i).getInstName(),pagePageInfo.getList().get(i).getStatisticsPrice()+"",
-                           pagePageInfo.getList().get(i).getDeviceNo(),
-                           pagePageInfo.getList().get(i).getWarning()==1?"是":"否"};
-                   oneList.add(valueString);
-               }
-               
-               List<String[]> twoList = new ArrayList<>();  // 表格二数据格式与表一相同
-               
-               
-               listArray.add(oneList);   // 多个表格导出就是多个sheet 
-               listArray.add(twoList);   // 多个表格导出就是多个sheet 
-               return dataLists;
-           }  
+       @Override
+       public List<List<String[]>> exportData(String deviceNo,String snExt,Integer parentInstId,String startDate, String endDate){
+           List<List<String[]>> dataLists = new ArrayList<>();
+           List<String[]> oneList = new ArrayList<>();  // 表格一数据
+           PageInfo<BillInfo> pagePageInfo = getBillPage(1,10000,null,snExt,deviceNo,parentInstId,startDate,endDate);
+           String[] valueString = null;
+
+           String[] headers = {"序号","标题一","标题一","标题二","标题三","标题四","标题五","标题六"};
+           String[] headersTwo = {" ","标题一小标题（合并用）","标题一小标题（合并用）"," "," "," "," "};
+           oneList.add(headers);
+           oneList.add(headersTwo);
+            
+           for (int i = 0; i < pagePageInfo.getList().size(); i++) {
+               valueString = new String[]{(i + 1) + "", pagePageInfo.getList().get(i).getSnExt(),
+                       getNeededDateStyle(pagePageInfo.getList().get(i).getPayTime(),"yyyy-MM-dd hh:mm:ss"),
+                       pagePageInfo.getList().get(i).getInstName(),pagePageInfo.getList().get(i).getStatisticsPrice()+"",
+                       pagePageInfo.getList().get(i).getDeviceNo(),
+                       pagePageInfo.getList().get(i).getWarning()==1?"是":"否"};
+               oneList.add(valueString);
+           }
+           
+           List<String[]> twoList = new ArrayList<>();  // 表格二数据格式与表一相同
+           
+           
+           listArray.add(oneList);   // 多个表格导出就是多个sheet 
+           listArray.add(twoList);   // 多个表格导出就是多个sheet 
+           return dataLists;
+       }  
            
    2、参数：sheetName(每个sheet名称)、fileName(导出Excel文件名称)、labelName(每个sheet大标题，与sheetName格式一样)
    
