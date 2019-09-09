@@ -22,7 +22,7 @@ public class Test {
         String[] headers = {"No", "编码", "时间", "小数点", "是否"};
         stringList.add(headers);
         for (int i = 0; i < 1000; i++) {
-            valueString = new String[]{(i + 1) + "", "'"+Math.random() * 10 + "'", getNeededDateStyle(null, null),
+            valueString = new String[]{(i + 1) + "", "'" + Math.random() * 10 + "'", getNeededDateStyle(null, null),
                     1 + Math.random() * 10 + "", i % 2 == 0 ? "是" : "否"};
             stringList.add(valueString);
         }
@@ -38,20 +38,43 @@ public class Test {
         mapColumn.put(4, 15);
         mapColumnWidth.put(1, mapColumn);
 
-        HashMap stylesRow = new HashMap();
-        List listRow = new ArrayList();
         //第几行样式
-        listRow.add(new Boolean[]{true, false, false, false, true});
-        listRow.add(new Integer[]{0});
-        listRow.add(new Integer[]{10,14});
-        stylesRow.put(1, listRow);
+        HashMap columnStyles = new HashMap();
+        List list = new ArrayList();
+        //1、样式（是否居中？，是否右对齐？，是否左对齐？， 是否加粗？，是否有边框？ ）
+        list.add(new Boolean[]{false, true, false, true, true});
+        //2、第几行或者是第几列（注意：excel从零行开始数）
+        list.add(new Integer[]{1, 3});
+        //3、颜色值（8是黑色、10红色等） 、颜色、字体、行高？（可不设置）
+        list.add(new Integer[]{10, 14, null});
+        //第一表格
+        columnStyles.put(1, list);
+
+        HashMap notBorderMap = new HashMap();
+        //忽略边框（1行、5行）、默认是数据（除大标题外）是全部加边框的。
+        notBorderMap.put(1, new Integer[]{1, 5});
+
+        HashMap dropDownMap = new HashMap();
+        List<String[]> dropList = new ArrayList<>();
+        //必须放第一：设置下拉列表的列（excel从零行开始数）
+        String[] sheetDropData = new String[]{"1", "2" };
+        //下拉的值放在 sheetDropData 后面。
+        String[] sex = {"男,女"};
+        String[] city = {"北京","山东","海南","湖南"};
+        dropList.add(sheetDropData);
+        dropList.add(sex);
+        dropList.add(city);
+        //第一个表格设置。
+        dropDownMap.put(1, dropList);
 
         LocalExcelUtils noResponseExcelUtils = LocalExcelUtils.initialization();
         noResponseExcelUtils.setDataLists(dataList);
-        noResponseExcelUtils.setRowStyles(stylesRow);
+        noResponseExcelUtils.setDropDownMap(dropDownMap);
+        noResponseExcelUtils.setNotBorderMap(notBorderMap);
+        noResponseExcelUtils.setRowStyles(columnStyles);
         noResponseExcelUtils.setMapColumnWidth(mapColumnWidth);
         noResponseExcelUtils.setSheetName(new String[]{"Andyczy Excel中文" + Math.random()});
-        noResponseExcelUtils.setFilePath("Andyczy Excel中文" + Math.random()+".xlsx");
+        noResponseExcelUtils.setFilePath("Andyczy Excel中文" + Math.random() + ".xlsx");
 //        noResponseExcelUtils.localNoStyleNoResponse();
         noResponseExcelUtils.localNoResponse();
     }

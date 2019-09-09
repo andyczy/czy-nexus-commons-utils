@@ -12,7 +12,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.io.OutputStream;
-import java.math.BigDecimal;
 import java.text.SimpleDateFormat;
 import java.util.*;
 
@@ -36,9 +35,11 @@ public class CommonsUtils {
     /**
      * 设置数据：有样式（行、列、单元格样式）
      *
+     * @param wb
      * @param sxssfRow
      * @param dataLists
-     * @param notBorderMap
+     * @param notBorderRowMap
+     * @param notBorderRowMap
      * @param regionMap
      * @param columnMap
      * @param styles
@@ -48,8 +49,9 @@ public class CommonsUtils {
      * @param rowStyles
      * @param columnStyles
      * @param dropDownMap
+     * @throws Exception
      */
-    public static void setDataList(SXSSFWorkbook wb, SXSSFRow sxssfRow, List<List<String[]>> dataLists, HashMap notBorderMap,
+    public static void setDataList(SXSSFWorkbook wb, SXSSFRow sxssfRow, List<List<String[]>> dataLists, HashMap notBorderRowMap,
                                    HashMap regionMap, HashMap columnMap, HashMap styles, HashMap paneMap,
                                    String[] sheetName, String[] labelName, HashMap rowStyles, HashMap columnStyles, HashMap dropDownMap) throws Exception {
         if (dataLists == null) {
@@ -92,6 +94,7 @@ public class CommonsUtils {
             if (columnMap != null) {
                 setColumnWidth(sxssfSheet, (HashMap) columnMap.get(k + 1));
             }
+
             //  默认样式。
             setStyle(cellStyle, font);
 
@@ -104,11 +107,12 @@ public class CommonsUtils {
             for (int i = 0; i < SIZE; i++) {
                 sxssfRow = sxssfSheet.createRow(jRow);
                 for (int j = 0; j < listRow.get(i).length; j++) {
-                    Cell cell = createCell(sxssfRow, j, listRow.get(i)[j]);
-                    cell.setCellStyle(cellStyle);
+                    //  样式过多会导致GC内存溢出！
                     try {
+                        Cell cell = createCell(sxssfRow, j, listRow.get(i)[j]);
+                        cell.setCellStyle(cellStyle);
+
                         //  自定义：每个表格每一列的样式（看该方法说明）。
-                        //  样式过多会导致GC内存溢出！
                         if (columnStyles != null && jRow >= pane && i <= MAXSYTLE) {
                             if (jRow == pane && j == 0) {
                                 column_style = cell.getRow().getSheet().getWorkbook().createCellStyle();
@@ -295,7 +299,6 @@ public class CommonsUtils {
     }
 
 
-
     public static void writeAndColse(SXSSFWorkbook sxssfWorkbook, OutputStream outputStream) throws Exception {
         try {
             if (outputStream != null) {
@@ -397,6 +400,7 @@ public class CommonsUtils {
      * @param cellStyle
      * @param font
      * @return
+     * @Parm
      */
     public static void setStyle(CellStyle cellStyle, XSSFFont font) {
         cellStyle.setAlignment(HorizontalAlignment.CENTER);
@@ -404,8 +408,9 @@ public class CommonsUtils {
         font.setFontName("宋体");
         cellStyle.setFont(font);
         font.setFontHeight(12);
-        setBorder(cellStyle, true);
+//        setBorder(cellStyle, true);
     }
+
 
 
     /**

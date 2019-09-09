@@ -104,10 +104,11 @@
 
         
 ### 数据格式
-   1、导出数据：参数 dataLists
+   一、导出配置：
+   1、参数 dataLists
    
         @Override
-           public List<List<String[]>> exportBill(String deviceNo,String snExt,Integer parentInstId,String startDate, String endDate){
+           public List<List<String[]>> exportData(String deviceNo,String snExt,Integer parentInstId,String startDate, String endDate){
                List<List<String[]>> dataLists = new ArrayList<>();
                List<String[]> oneList = new ArrayList<>();  // 表格一数据
                PageInfo<BillInfo> pagePageInfo = getBillPage(1,10000,null,snExt,deviceNo,parentInstId,startDate,endDate);
@@ -127,25 +128,23 @@
                    oneList.add(valueString);
                }
                
-               List<String[]> twoList = new ArrayList<>();  // 表格二数据（和表一相同）
+               List<String[]> twoList = new ArrayList<>();  // 表格二数据格式与表一相同
                
                
-               listArray.add(oneList);   // 多个表格导出就是多个 
-               listArray.add(twoList);   // 多个表格导出就是多个 
+               listArray.add(oneList);   // 多个表格导出就是多个sheet 
+               listArray.add(twoList);   // 多个表格导出就是多个sheet 
                return dataLists;
            }  
            
-   1.1、sheetName：参数
+   2、参数：sheetName(每个sheet名称)、fileName(导出Excel文件名称)、labelName(每个sheet大标题，与sheetName格式一样)
    
        需注意的是：如果是多表格导出、sheetName也要是多个值！
-       如上面有两个数据导出： String[] sheetNameList = new String[]{"表格一数据","表格二数据"};
+       如上面有两个数据导出： 
+       String[] sheetNameList = new String[]{"表格一数据","表格二数据"};
        excelUtils.setSheetName(sheetNameList);
-       
-       
        
    2、自定义列宽：参数 mapColumnWidth
    
-       参数说明：
        HashMap<Integer, HashMap<Integer, Integer>> mapColumnWidth = new HashMap<>();
        HashMap<Integer, Integer> mapColumn = new HashMap<>();
        //第一列、宽度为 3[3的大小就是两个12号字体刚刚好的列宽]（注意：excel从零行开始数）
@@ -157,15 +156,13 @@
        
    3、自定义固定表头：参数 paneMap
    
-       参数说明：
        HashMap paneMap = new HashMap();
        //第一个表格、第一行开始固定表头
        paneMap.put(1, 1); 
        
    
    4、自定义合并单元格：参数 regionMap
-   
-        参数说明：
+
         HashMap regionMap = new HashMap();
         //合并单元格-代表起始行号，终止行号， 起始列号，终止列号进行合并。
         ArrayList<Integer[]> sheet1 = new ArrayList<>();
@@ -176,22 +173,43 @@
         //第一个表格设置。
         regionMap.put(1, sheet1);
                                       
-        
-   5、自定义每个表格第几行或者是第几列的样式：参数 rowStyles / columnStyles
+      
+   5、自定义下拉列表值：参数 dropDownMap
+      
+       HashMap dropDownMap = new HashMap();
+       List<String[]> dropList = new ArrayList<>();
+       //必须放第一：设置下拉列表的列（excel从零行开始数）
+       String[] sheetDropData = new String[]{"1", "2" };
+       
+       //下拉的值放在 sheetDropData 后面。
+       String[] sex = {"男,女"};                      //第一列显示的值
+       String[] city = {"北京","山东","海南","湖南"};  // 第二列显示的值
+       dropList.add(sheetDropData);
+       dropList.add(sex);
+       dropList.add(city);
+       //第一个表格设置。
+       dropDownMap.put(1, dropList);
+       
+       
+   6、自定义每个表格第几行或者是第几列的样式：参数 rowStyles / columnStyles、（忽略边框无效，待解决）
            
         参数说明：
         HashMap columnStyles = new HashMap();
         List list = new ArrayList();
+        
         //1、样式（是否居中？，是否右对齐？，是否左对齐？， 是否加粗？，是否有边框？ ）
         list.add(new Boolean[]{true, false, false, false, true}); 
+        
         //2、第几行或者是第几列（注意：excel从零行开始数）       
         list.add(new Integer[]{1, 3});   
+        
         //3、颜色值（8是黑色、10红色等） 、颜色、字体、行高？（可不设置）                                        
-        list.add(new Integer[]{10,14,null});    
+        list.add(new Integer[]{10,14,null});   
+         
         //第一表格                                 
         columnStyles.put(1,list);                                                     
         
-   6、自定义每一个单元格样式：参数 styles
+   7、自定义每一个单元格样式：参数 styles、、（忽略边框无效，待解决）
         
        参数说明：
        HashMap styles = new HashMap();
@@ -220,47 +238,46 @@
        styles.put(1, stylesList);                                             
              
    
-   7、自定义忽略边框：参数 notBorderMap
+   8、自定义忽略边框：参数 notBorderMap、（忽略边框无效，待解决）
    
        HashMap notBorderMap = new HashMap();
        //忽略边框（1行、5行）、默认是数据（除大标题外）是全部加边框的。
        notBorderMap.put(1, new Integer[]{1, 5});   
+
    
    
-   8、自定义下拉列表值：参数 dropDownMap
-      
-       参数说明：
-       HashMap dropDownMap = new HashMap();
-       List<String[]> dropList = new ArrayList<>();                  
-       //必须放第一：设置下拉列表的列（excel从零行开始数）
-       String[] sheetDropData = new String[]{"1", "2", "4"};
-       //下拉的值放在 sheetDropData 后面。        
-       String[] sex = {"男,女"};                                   
-       dropList.add(sheetDropData);
-       dropList.add(sex);
-       //第一个表格设置。
-       dropDownMap.put(1,dropList); 
    
-   9、导入配置：(第几行开始获取数据)  参数 indexMap
+   二、导入配置：
+   1、(第几行开始获取数据)  参数 indexMap
        
        参数说明：多单元从第几行开始获取数据，默认从第二行开始获取（可为空)
        HashMap hashMapIndex = new HashMap();
        hashMapIndex.put(1,3);  //  第一个表格从第三行开始获取
        
   
-   10、导入配置：(列为空来忽略行数据)  参数 continueRowMap
+   2、导入配置：(列为空来忽略行数据)  参数 continueRowMap
        
        参数说明：多单元根据那些列为空来忽略行数据（可为空)
        HashMap mapContinueRow = new HashMap();
-       mapContinueRow.put(1,new Integer[]{1, 3});  // 第一个表格第1、3列为空就忽略这行数据
+       // 第一个表格第1、3列为空就忽略这行数据
+       mapContinueRow.put(1,new Integer[]{1, 3});  
        
-   11、导入时间格式（默认：yyyy-MM-dd）、导入数字保留的小数点（默认：#.###### 六位）
+   
+   
+   3、数据格式
+        导入时间格式（默认：yyyy-MM-dd）
+        导入数字保留的小数点（默认：#.###### 六位）
         
         ExcelUtils excelUtils = ExcelUtils.initialization();
-        excelUtils.setNumeralFormat("#.####");                  // (可为空)期望保留小数的位数（#.####）这样保留四位。
-        // (可为空) （poi 只接受无中文的日期格式、如果你想转换别的格式，这个参数要和导入表中日期格式类似，如表格中为：2019年02月14日 12时12分）。
+        // (可为空、期望保留小数的位数，如（#.####）保留四位。
+        excelUtils.setNumeralFormat("#.####");     
+                   
+        // (可为空、将转换的时间格式) 
+        // (poi 只接受无中文的日期格式、如果你想转换别的格式，这个参数要和导入表中日期格式类似，如表格中为：2019年02月14日 12时12分)。
         excelUtils.setDateFormatStr("yyyy年MM月dd日 HH时mm分"); 
-        excelUtils.setExpectDateFormatStr("yyyy-MM-dd HH-mm");  // (可为空、默认的值是：dateFormatStr 参数值) 期望转换后的日期格式。
+        
+        //(可为空、期望转换后的日期格式) 
+        excelUtils.setExpectDateFormatStr("yyyy-MM-dd HH-mm");  // (可为空、默认的值是：dateFormatStr 参数值) 。
         // 执行导入函数   ExcelUtils.importForExcelData()
    
    
