@@ -8,11 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="70f792b6-87df-4c03-84b6-a38696c014ec" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Andyczy Excel中文0.8082654644314852.xlsx" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/README-Andyczy.md" beforeDir="false" afterPath="$PROJECT_DIR$/README-Andyczy.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/github.com.andyczy.java.excel.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/andyczy/java/excel/CommonsUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/andyczy/java/excel/CommonsUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/Test.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/Test.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -110,16 +106,16 @@
         <counts>
           <entry key="dummy" value="10" />
           <entry key="java" value="2189" />
-          <entry key="md" value="4164" />
-          <entry key="txt" value="109" />
+          <entry key="md" value="4178" />
+          <entry key="txt" value="127" />
           <entry key="xml" value="134" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="2189" />
-          <entry key="Markdown" value="4164" />
-          <entry key="PLAIN_TEXT" value="119" />
+          <entry key="Markdown" value="4178" />
+          <entry key="PLAIN_TEXT" value="137" />
           <entry key="XML" value="134" />
         </counts>
       </usages-collector>
@@ -155,8 +151,8 @@
         <entry file="file://$PROJECT_DIR$/README-Andyczy.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="-1409">
-                <caret line="110" column="49" selection-start-line="110" selection-start-column="49" selection-end-line="110" selection-end-column="49" />
+              <first_editor relative-caret-position="549">
+                <caret line="106" column="32" selection-start-line="106" selection-start-column="32" selection-end-line="106" selection-end-column="32" />
               </first_editor>
               <second_editor />
             </state>
@@ -175,8 +171,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/test/java/Test.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="66" column="18" lean-forward="true" selection-start-line="66" selection-start-column="18" selection-end-line="66" selection-end-column="18" />
+            <state relative-caret-position="330">
+              <caret line="49" column="14" lean-forward="true" selection-start-line="49" selection-start-column="14" selection-end-line="49" selection-end-column="14" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -466,7 +462,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1568018154508" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1568018237959" />
     <property name="last_opened_file_path" value="E:/xintou/bzf/bzf-parent" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -664,21 +660,7 @@
       <workItem from="1567481525099" duration="46000" />
       <workItem from="1567481577988" duration="28000" />
       <workItem from="1567499273259" duration="85000" />
-      <workItem from="1568009799514" duration="8181000" />
-    </task>
-    <task id="LOCAL-00047" summary="3.2.1">
-      <created>1548841444087</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1548841444087</updated>
-    </task>
-    <task id="LOCAL-00048" summary="3.2.1">
-      <created>1548841716558</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1548841716558</updated>
+      <workItem from="1568009799514" duration="8458000" />
     </task>
     <task id="LOCAL-00049" summary="3.2.2">
       <created>1548920462487</created>
@@ -1009,11 +991,25 @@
       <option name="project" value="LOCAL" />
       <updated>1567499351756</updated>
     </task>
-    <option name="localTasksCounter" value="96" />
+    <task id="LOCAL-00096" summary="1、修改教程说明，&#10;2、忽略边框无效，待解决">
+      <created>1568018096162</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1568018096163</updated>
+    </task>
+    <task id="LOCAL-00097" summary="1、修改教程说明，&#10;2、忽略边框无效，待解决">
+      <created>1568018185554</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1568018185555</updated>
+    </task>
+    <option name="localTasksCounter" value="98" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="147166000" />
+    <option name="totallyTimeSpent" value="147443000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1026,9 +1022,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.21106337" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.21106337" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -1076,7 +1071,7 @@
       <window_info anchor="bottom" id="Terminal" order="8" sideWeight="0.4989259" weight="0.45139664" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.50053704" side_tool="true" weight="0.4" />
       <window_info anchor="bottom" id="Messages" order="10" weight="0.32960895" />
-      <window_info anchor="bottom" id="Run" order="11" sideWeight="0.49946293" visible="true" weight="0.4" />
+      <window_info anchor="bottom" id="Run" order="11" sideWeight="0.49946293" weight="0.4" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -1095,7 +1090,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="version2.0" />
     <MESSAGE value="version 2.0.1" />
     <MESSAGE value="javadoc 文档" />
     <MESSAGE value="private" />
@@ -1120,7 +1114,8 @@
     <MESSAGE value="# 感谢支持（排名不分先后）" />
     <MESSAGE value="添加.replaceAll(&quot;[']&quot;, &quot;&quot;) 方法。去掉字符串';如字符串'中国'  ==  中国" />
     <MESSAGE value="修改合并例子，原来的数据有错。" />
-    <option name="LAST_COMMIT_MESSAGE" value="修改合并例子，原来的数据有错。" />
+    <MESSAGE value="1、修改教程说明，&#10;2、忽略边框无效，待解决" />
+    <option name="LAST_COMMIT_MESSAGE" value="1、修改教程说明，&#10;2、忽略边框无效，待解决" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/plugins" />
@@ -1331,8 +1326,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/test/java/Test.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="66" column="18" lean-forward="true" selection-start-line="66" selection-start-column="18" selection-end-line="66" selection-end-column="18" />
+        <state relative-caret-position="330">
+          <caret line="49" column="14" lean-forward="true" selection-start-line="49" selection-start-column="14" selection-end-line="49" selection-end-column="14" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
@@ -1342,8 +1337,8 @@
     <entry file="file://$PROJECT_DIR$/README-Andyczy.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="-1409">
-            <caret line="110" column="49" selection-start-line="110" selection-start-column="49" selection-end-line="110" selection-end-column="49" />
+          <first_editor relative-caret-position="549">
+            <caret line="106" column="32" selection-start-line="106" selection-start-column="32" selection-end-line="106" selection-end-column="32" />
           </first_editor>
           <second_editor />
         </state>
