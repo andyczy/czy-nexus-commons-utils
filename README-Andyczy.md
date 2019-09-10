@@ -22,15 +22,7 @@
    
   亲自测试：WPS、office 07、08、09、10、11、12、16 能正常打开。其他版本待测试！                                  
   注:POI SXSSFWorkbook 最高限制1048576行,16384列               
-            
-### 实现功能：
-    1、导入Excel文件，支持配置时间、小数点类型（支持单/多sheet）              
-    2、浏览器导出Excel文件、模板文件（支持单/多sheet）           
-    3、指定路径生成Excel文件（支持单/多sheet）           
-    4、自定义样式，行、列、某个单元格（字体大小、字体颜色、左右对齐、居中。支持单/多sheet）           
-    5、自定义固定表头（支持单/多sheet）            
-    6、自定义下拉列表值（支持单/多sheet）           
-    7、自定义合并单元格、自定义列宽、自定义大标题（支持单/多sheet）      
+ 
             
 ###  方式一：导出使用函数 ExcelUtils.exportForExcelsOptimize() 和  LocalExcelUtils.localNoResponse() 
         //【推荐使用该方式】【建议大数据量下不要过多设置样式】
@@ -67,8 +59,7 @@
                 
         // 自定义：对每个单元格自定义下拉列表（可为空）
         excelUtils.setDropDownMap(dropDownMap);
-        // 自定义：忽略边框(可为空：默认是有边框)
-        excelUtils.setNotBorderMap(notBorderMap);       
+             
             
         // 执行导出
         excelUtils.exportForExcelsOptimize();       
@@ -80,7 +71,8 @@
 ### 导入使用函数： ExcelUtils.importForExcelData(......)  和  LocalExcelUtils.importForExcelData(......)
         * 获取多单元数据         
         * 自定义：多单元从第几行开始获取数据【看本文最底下参数说明】            
-        * 自定义：多单元根据那些列为空来忽略行数据【看本文最底下参数说明】         
+        * 自定义：多单元根据那些列为空来忽略行数据【看本文最底下参数说明】                 
+        * 自定义：数据格式    
 
   
 ###  ExcelUtils 对象与 LocalExcelUtils 区别。
@@ -92,14 +84,7 @@
 
  
 ###  方式四:导出函数 ExcelUtils.exportForExcel(......)   过期注解
-        * 可提供模板下载           
-        * 自定义下拉列表：对每个单元格自定义下拉列表         
-        * 自定义列宽：对每个单元格自定义列宽         
-        * 自定义样式：对每个单元格自定义样式  
-        * 自定义样式：单元格自定义某一列或者某一行样式            
-        * 自定义单元格合并：对每个单元格合并 
-        * 自定义：每个表格的大标题          
-        * 自定义：对每个单元格固定表头    
+  
 
 
         
@@ -191,13 +176,13 @@
        dropDownMap.put(1, dropList);
        
        
-   6、自定义每个(sheet)表格第几行或者是第几列的样式：参数 rowStyles / columnStyles、（忽略边框无效，待解决）
+   6、自定义每个(sheet)表格第几行或者是第几列的样式：参数 rowStyles / columnStyles 
            
         参数说明：
         HashMap columnStyles = new HashMap();
         List list = new ArrayList();
         
-        //1、样式（是否居中？，是否右对齐？，是否左对齐？， 是否加粗？，是否有边框？ ）
+        //1、样式（是否居中？，是否右对齐？，是否左对齐？， 是否加粗？，是否忽略边框？ ）
         list.add(new Boolean[]{true, false, false, false, true}); 
         
         //2、第几行或者是第几列（注意：excel从零行开始数）       
@@ -209,7 +194,7 @@
         //第一表格                                 
         columnStyles.put(1,list);                                                     
         
-   7、自定义每一个单元格样式：参数 styles、、（忽略边框无效，待解决）
+   7、自定义每一个单元格样式：参数 styles 
         
        参数说明：
        HashMap styles = new HashMap();
@@ -217,7 +202,7 @@
        List<Object[]> stylesObj = new ArrayList<>();
        List<Object[]> stylesObjTwo = new ArrayList<>();
        
-       //1、样式一（是否居中？，是否右对齐？，是否左对齐？， 是否加粗？，是否有边框？ ）
+       //1、样式一（是否居中？，是否右对齐？，是否左对齐？， 是否加粗？，是否忽略边框？ ）
        stylesObj.add(new Boolean[]{true, false, false, false, true});      
        //1、颜色（8是黑色、10红色等） 、字体、行高（可不设置）（必须放第二）
        stylesObj.add(new Integer[]{10, 12});                             
@@ -231,13 +216,7 @@
        stylesList.add(stylesObj);
        //第一个表格所有自定义单元格样式 
        styles.put(1, stylesList);                                             
-             
-   
-   8、自定义忽略边框：参数 notBorderMap、（忽略边框无效，待解决）
-   
-       HashMap notBorderMap = new HashMap();
-       //忽略边框（1行、5行）、默认是数据（除大标题外）是全部加边框的。
-       notBorderMap.put(1, new Integer[]{1, 5});   
+ 
 
    
    

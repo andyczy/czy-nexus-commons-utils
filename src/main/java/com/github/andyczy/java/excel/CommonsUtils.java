@@ -39,7 +39,6 @@ public class CommonsUtils {
      * @param sxssfRow
      * @param dataLists
      * @param notBorderRowMap
-     * @param notBorderRowMap
      * @param regionMap
      * @param columnMap
      * @param styles
@@ -51,7 +50,7 @@ public class CommonsUtils {
      * @param dropDownMap
      * @throws Exception
      */
-    public static void setDataList(SXSSFWorkbook wb, SXSSFRow sxssfRow, List<List<String[]>> dataLists, HashMap notBorderRowMap,
+    public static void setDataList(SXSSFWorkbook wb, SXSSFRow sxssfRow, List<List<String[]>> dataLists,
                                    HashMap regionMap, HashMap columnMap, HashMap styles, HashMap paneMap,
                                    String[] sheetName, String[] labelName, HashMap rowStyles, HashMap columnStyles, HashMap dropDownMap) throws Exception {
         if (dataLists == null) {
@@ -245,7 +244,6 @@ public class CommonsUtils {
      * @param wb
      * @param sxssfRow
      * @param dataLists
-     * @param notBorderMap
      * @param regionMap
      * @param columnMap
      * @param paneMap
@@ -254,7 +252,7 @@ public class CommonsUtils {
      * @param dropDownMap
      * @throws Exception
      */
-    public static void setDataListNoStyle(SXSSFWorkbook wb, SXSSFRow sxssfRow, List<List<String[]>> dataLists, HashMap notBorderMap, HashMap regionMap,
+    public static void setDataListNoStyle(SXSSFWorkbook wb, SXSSFRow sxssfRow, List<List<String[]>> dataLists,  HashMap regionMap,
                                           HashMap columnMap, HashMap paneMap, String[] sheetName, String[] labelName, HashMap dropDownMap) throws Exception {
         if (dataLists == null) {
             log.debug("=== ===  === :Andyczy ExcelUtils Exception Message：Export data(type:List<List<String[]>>) cannot be empty!");

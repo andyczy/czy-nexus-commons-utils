@@ -69,7 +69,6 @@ public class ExcelUtils {
         filePath = this.getFilePath();
         dataLists = this.getDataLists();
         response = this.getResponse();
-        notBorderMap = this.getNotBorderMap();
         regionMap = this.getRegionMap();
         mapColumnWidth = this.getMapColumnWidth();
         styles = this.getStyles();
@@ -120,7 +119,7 @@ public class ExcelUtils {
         SXSSFRow sxssfRow = null;
         try {
             // 设置数据
-            setDataList(sxssfWorkbook, sxssfRow, dataLists, notBorderMap, regionMap, mapColumnWidth, styles, paneMap, sheetName, labelName, rowStyles, columnStyles, dropDownMap);
+            setDataList(sxssfWorkbook, sxssfRow, dataLists,  regionMap, mapColumnWidth, styles, paneMap, sheetName, labelName, rowStyles, columnStyles, dropDownMap);
             // io 响应
             setIo(sxssfWorkbook, outputStream, fileName, sheetName, response);
         } catch (Exception e) {
@@ -144,7 +143,7 @@ public class ExcelUtils {
         OutputStream outputStream = null;
         SXSSFRow sxssfRow = null;
         try {
-            setDataListNoStyle(sxssfWorkbook, sxssfRow, dataLists, notBorderMap, regionMap, mapColumnWidth, paneMap, sheetName, labelName, dropDownMap);
+            setDataListNoStyle(sxssfWorkbook, sxssfRow, dataLists,  regionMap, mapColumnWidth, paneMap, sheetName, labelName, dropDownMap);
             setIo(sxssfWorkbook, outputStream, fileName, sheetName, response);
         } catch (Exception e) {
             e.printStackTrace();
@@ -204,7 +203,7 @@ public class ExcelUtils {
         SXSSFRow sxssfRow = null;
         try {
             // 设置数据
-            setDataList(sxssfWorkbook, sxssfRow, dataLists, notBorderMap, regionMap, columnMap, styles, paneMap, sheetName, labelName, rowStyles, columnStyles, dropDownMap);
+            setDataList(sxssfWorkbook, sxssfRow, dataLists, regionMap, columnMap, styles, paneMap, sheetName, labelName, rowStyles, columnStyles, dropDownMap);
             // io 响应
             setIo(sxssfWorkbook, outputStream, fileName, sheetName, response);
         } catch (Exception e) {
@@ -310,10 +309,7 @@ public class ExcelUtils {
      * 页面响应
      */
     private HttpServletResponse response;
-    /**
-     * 忽略边框(默认是有边框)
-     */
-    private HashMap notBorderMap;
+
     /**
      * 自定义：单元格合并
      */
@@ -442,13 +438,6 @@ public class ExcelUtils {
         this.response = response;
     }
 
-    public HashMap getNotBorderMap() {
-        return notBorderMap;
-    }
-
-    public void setNotBorderMap(HashMap notBorderMap) {
-        this.notBorderMap = notBorderMap;
-    }
 
     public HashMap getRegionMap() {
         return regionMap;

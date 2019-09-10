@@ -65,7 +65,6 @@ public class LocalExcelUtils {
     public LocalExcelUtils() {
         filePath = this.getFilePath();
         dataLists = this.getDataLists();
-        notBorderMap = this.getNotBorderMap();
         regionMap = this.getRegionMap();
         mapColumnWidth = this.getMapColumnWidth();
         styles = this.getStyles();
@@ -94,7 +93,7 @@ public class LocalExcelUtils {
         SXSSFWorkbook sxssfWorkbook = new SXSSFWorkbook(1000);
         SXSSFRow sxssfRow = null;
         try {
-            setDataListNoStyle(sxssfWorkbook, sxssfRow, dataLists, notBorderMap, regionMap, mapColumnWidth, paneMap, sheetName, labelName, dropDownMap);
+            setDataListNoStyle(sxssfWorkbook, sxssfRow, dataLists,    regionMap, mapColumnWidth, paneMap, sheetName, labelName, dropDownMap);
             setIo(sxssfWorkbook, filePath);
         } catch (Exception e) {
             e.printStackTrace();
@@ -115,7 +114,7 @@ public class LocalExcelUtils {
         SXSSFWorkbook sxssfWorkbook = new SXSSFWorkbook(1000);
         SXSSFRow sxssfRow = null;
         try {
-            setDataList(sxssfWorkbook, sxssfRow, dataLists, notBorderMap, regionMap, mapColumnWidth, styles, paneMap, sheetName, labelName, rowStyles, columnStyles, dropDownMap);
+            setDataList(sxssfWorkbook, sxssfRow, dataLists,   regionMap, mapColumnWidth, styles, paneMap, sheetName, labelName, rowStyles, columnStyles, dropDownMap);
             setIo(sxssfWorkbook, filePath);
         } catch (Exception e) {
             e.printStackTrace();
@@ -299,10 +298,6 @@ public class LocalExcelUtils {
     private String[] labelName;
 
     /**
-     * 忽略边框(默认是有边框)
-     */
-    private HashMap notBorderMap;
-    /**
      * 自定义：单元格合并
      */
     private HashMap regionMap;
@@ -422,13 +417,6 @@ public class LocalExcelUtils {
         this.labelName = labelName;
     }
 
-    public HashMap getNotBorderMap() {
-        return notBorderMap;
-    }
-
-    public void setNotBorderMap(HashMap notBorderMap) {
-        this.notBorderMap = notBorderMap;
-    }
 
     public HashMap getRegionMap() {
         return regionMap;
