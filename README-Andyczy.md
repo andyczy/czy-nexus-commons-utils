@@ -191,7 +191,7 @@
        dropDownMap.put(1, dropList);
        
        
-   6、自定义每个表格第几行或者是第几列的样式：参数 rowStyles / columnStyles、（忽略边框无效，待解决）
+   6、自定义每个(sheet)表格第几行或者是第几列的样式：参数 rowStyles / columnStyles、（忽略边框无效，待解决）
            
         参数说明：
         HashMap columnStyles = new HashMap();
@@ -203,7 +203,7 @@
         //2、第几行或者是第几列（注意：excel从零行开始数）       
         list.add(new Integer[]{1, 3});   
         
-        //3、颜色值（8是黑色、10红色等） 、颜色、字体、行高？（可不设置）                                        
+        //3、颜色（8是黑色、10红色等） 、字体、行高（可不设置）                                       
         list.add(new Integer[]{10,14,null});   
          
         //第一表格                                 
@@ -219,21 +219,16 @@
        
        //1、样式一（是否居中？，是否右对齐？，是否左对齐？， 是否加粗？，是否有边框？ ）
        stylesObj.add(new Boolean[]{true, false, false, false, true});      
-       //1、颜色值（8是黑色、10红色等） 、颜色、字体、行高？（可不设置）（必须放第二）
+       //1、颜色（8是黑色、10红色等） 、字体、行高（可不设置）（必须放第二）
        stylesObj.add(new Integer[]{10, 12});                             
        //1、第五行、第一列（注意：excel从一开始算）
        stylesObj.add(new Integer[]{5, 1});                                  
        stylesObj.add(new Integer[]{6, 1});                                
        
-       //2、样式二（必须放第一）
-       stylesObjTwo.add(new Boolean[]{false, false, false, true, true}); 
-       //2、颜色值（8是黑色、10红色等） 、颜色、字体、行高？（可不设置）（必须放第二）  
-       stylesObjTwo.add(new Integer[]{10, 12,null});    
-       //2、第二行第一列（注意：excel从一开始算）                 
-       stylesObjTwo.add(new Integer[]{2, 1});                              
+       //样式二
+       //样式三                          
        
        stylesList.add(stylesObj);
-       stylesList.add(stylesObjTwo);
        //第一个表格所有自定义单元格样式 
        styles.put(1, stylesList);                                             
              
