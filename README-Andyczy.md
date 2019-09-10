@@ -89,7 +89,7 @@
 
         
 ### 数据格式
-#### 一、导出配置(默认带边框)                                   
+#### 一、导出配置                                             
    1、参数 dataLists
    
        @Override
@@ -167,7 +167,7 @@
        String[] sheetDropData = new String[]{"1", "2" };
        
        //下拉的值放在 sheetDropData 后面。
-       String[] sex = {"男,女"};                      //第一列显示的值
+       String[] sex = {"男,女"};                      // 第一列显示的值
        String[] city = {"北京","山东","海南","湖南"};  // 第二列显示的值
        dropList.add(sheetDropData);
        dropList.add(sex);
@@ -176,7 +176,7 @@
        dropDownMap.put(1, dropList);
        
        
-   6、自定义每个(sheet)表格第几行或者是第几列的样式：参数 rowStyles / columnStyles 
+   6、自定义每个(sheet)表格第几行或者是第几列的样式：参数 rowStyles / columnStyles (默认带边框)       
            
         参数说明：
         HashMap columnStyles = new HashMap();
@@ -194,7 +194,7 @@
         //第一表格                                 
         columnStyles.put(1,list);                                                     
         
-   7、自定义每一个单元格样式：参数 styles 
+   7、自定义每一个单元格样式：参数 styles (默认带边框)       
         
        参数说明：
        HashMap styles = new HashMap();
@@ -203,9 +203,11 @@
        List<Object[]> stylesObjTwo = new ArrayList<>();
        
        //1、样式一（是否居中？，是否右对齐？，是否左对齐？， 是否加粗？，是否忽略边框？ ）
-       stylesObj.add(new Boolean[]{true, false, false, false, true});      
+       stylesObj.add(new Boolean[]{true, false, false, false, true});    
+         
        //1、颜色（8是黑色、10红色等） 、字体、行高（可不设置）（必须放第二）
-       stylesObj.add(new Integer[]{10, 12});                             
+       stylesObj.add(new Integer[]{10, 12});         
+                           
        //1、第五行、第一列（注意：excel从一开始算）
        stylesObj.add(new Integer[]{5, 1});                                  
        stylesObj.add(new Integer[]{6, 1});                                

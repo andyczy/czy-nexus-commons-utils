@@ -3,18 +3,29 @@ package com.github.andyczy.java.excel;
 import org.apache.poi.ss.usermodel.*;
 import org.apache.poi.ss.util.CellRangeAddress;
 import org.apache.poi.ss.util.CellRangeAddressList;
+import org.apache.poi.xssf.streaming.SXSSFDrawing;
 import org.apache.poi.xssf.streaming.SXSSFRow;
 import org.apache.poi.xssf.streaming.SXSSFSheet;
 import org.apache.poi.xssf.streaming.SXSSFWorkbook;
+import org.apache.poi.xssf.usermodel.XSSFClientAnchor;
 import org.apache.poi.xssf.usermodel.XSSFDataValidation;
 import org.apache.poi.xssf.usermodel.XSSFFont;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.text.SimpleDateFormat;
 import java.util.*;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
+import static org.apache.poi.ss.usermodel.ClientAnchor.AnchorType.DONT_MOVE_AND_RESIZE;
 import static org.apache.poi.ss.util.CellUtil.createCell;
 
 /**
@@ -38,7 +49,6 @@ public class CommonsUtils {
      * @param wb
      * @param sxssfRow
      * @param dataLists
-     * @param notBorderRowMap
      * @param regionMap
      * @param columnMap
      * @param styles
@@ -66,6 +76,8 @@ public class CommonsUtils {
             wb.setSheetName(k, sheetName[k]);
             CellStyle cellStyle = wb.createCellStyle();
             XSSFFont font = (XSSFFont) wb.createFont();
+            SXSSFDrawing sxssfDrawing = sxssfSheet.createDrawingPatriarch();
+
             int jRow = 0;
 
             //  自定义：大标题（看该方法说明）。
@@ -89,7 +101,6 @@ public class CommonsUtils {
             if (columnMap != null) {
                 setColumnWidth(sxssfSheet, (HashMap) columnMap.get(k + 1));
             }
-
             //  默认样式。
             setStyle(cellStyle, font);
 
@@ -104,7 +115,14 @@ public class CommonsUtils {
                 for (int j = 0; j < listRow.get(i).length; j++) {
                     //  样式过多会导致GC内存溢出！
                     try {
-                        Cell cell = createCell(sxssfRow, j, listRow.get(i)[j]);
+                        Cell cell = null;
+                        if (patternIsImg(listRow.get(i)[j])) {
+                            cell = createCell(sxssfRow, j, " ");
+                            drawPicture(wb, sxssfDrawing, listRow.get(i)[j], j,jRow);
+                        } else {
+                            cell = createCell(sxssfRow, j, listRow.get(i)[j]);
+                        }
+
                         cell.setCellStyle(cellStyle);
 
                         //  自定义：每个表格每一列的样式（看该方法说明）。
@@ -211,11 +229,86 @@ public class CommonsUtils {
         }
     }
 
+    /**
+     * 画图片
+     * @param wb
+     * @param sxssfSheet
+     * @param pictureUrl
+     * @param rowIndex
+     */
+    /**
+     * 画图片
+     *
+     * @param wb
+     * @param sxssfDrawing
+     * @param pictureUrl
+     * @param rowIndex
+     */
+    private static void drawPicture(SXSSFWorkbook wb, SXSSFDrawing sxssfDrawing, String pictureUrl, int colIndex, int rowIndex) {
+        //rowIndex代表当前行
+        try {
+            if (pictureUrl != null) {
+                URL url = new URL(pictureUrl);
+                //打开链接
+                HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+                conn.setRequestMethod("GET");
+                conn.setConnectTimeout(5 * 1000);
+                InputStream inStream = conn.getInputStream();
+                byte[] data = readInputStream(inStream);
+                //设置图片大小，
+                XSSFClientAnchor anchor = new XSSFClientAnchor(0, 0, 50, 50, colIndex, rowIndex, colIndex+1, rowIndex+1);
+                anchor.setAnchorType(DONT_MOVE_AND_RESIZE);
+                sxssfDrawing.createPicture(anchor, wb.addPicture(data, XSSFWorkbook.PICTURE_TYPE_JPEG));
+            }
+        } catch (IOException e) {
+            e.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
+
+    /**
+     * 是否是图片
+     *
+     * @param str
+     * @return
+     */
+    public static Boolean patternIsImg(String str) {
+        String reg = ".+(.JPEG|.jpeg|.JPG|.jpg|.png|.gif)$";
+        Pattern pattern = Pattern.compile(reg);
+        Matcher matcher = pattern.matcher(str);
+        Boolean temp = matcher.find();
+        return temp;
+    }
+
+
+    /**
+     * @param inStream
+     * @return
+     * @throws Exception
+     */
+    private static byte[] readInputStream(InputStream inStream) throws Exception {
+        ByteArrayOutputStream outStream = new ByteArrayOutputStream();
+        //创建一个Buffer字符串
+        byte[] buffer = new byte[1024];
+        //每次读取的字符串长度，如果为-1，代表全部读取完毕
+        int len = 0;
+        //使用一个输入流从buffer里把数据读取出来
+        while ((len = inStream.read(buffer)) != -1) {
+            //用输出流往buffer里写入数据，中间参数代表从哪个位置开始读，len代表读取的长度
+            outStream.write(buffer, 0, len);
+        }
+        //关闭输入流
+        inStream.close();
+        //把outStream里的数据写入内存
+        return outStream.toByteArray();
+    }
 
 
     /**
      * 自定义：大标题
+     *
      * @param jRow
      * @param k
      * @param wb
@@ -252,7 +345,7 @@ public class CommonsUtils {
      * @param dropDownMap
      * @throws Exception
      */
-    public static void setDataListNoStyle(SXSSFWorkbook wb, SXSSFRow sxssfRow, List<List<String[]>> dataLists,  HashMap regionMap,
+    public static void setDataListNoStyle(SXSSFWorkbook wb, SXSSFRow sxssfRow, List<List<String[]>> dataLists, HashMap regionMap,
                                           HashMap columnMap, HashMap paneMap, String[] sheetName, String[] labelName, HashMap dropDownMap) throws Exception {
         if (dataLists == null) {
             log.debug("=== ===  === :Andyczy ExcelUtils Exception Message：Export data(type:List<List<String[]>>) cannot be empty!");

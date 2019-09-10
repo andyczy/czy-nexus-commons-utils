@@ -1,14 +1,24 @@
 package com.github.andyczy.java.excel;
 
 
+import org.apache.poi.hssf.usermodel.HSSFClientAnchor;
+import org.apache.poi.hssf.usermodel.HSSFPatriarch;
+import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.streaming.SXSSFPicture;
 import org.apache.poi.xssf.streaming.SXSSFRow;
+import org.apache.poi.xssf.streaming.SXSSFSheet;
 import org.apache.poi.xssf.streaming.SXSSFWorkbook;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.servlet.http.HttpServletResponse;
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.io.OutputStream;
+import java.net.HttpURLConnection;
+import java.net.URL;
 import java.net.URLEncoder;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
@@ -119,7 +129,7 @@ public class ExcelUtils {
         SXSSFRow sxssfRow = null;
         try {
             // 设置数据
-            setDataList(sxssfWorkbook, sxssfRow, dataLists,  regionMap, mapColumnWidth, styles, paneMap, sheetName, labelName, rowStyles, columnStyles, dropDownMap);
+            setDataList(sxssfWorkbook, sxssfRow, dataLists, regionMap, mapColumnWidth, styles, paneMap, sheetName, labelName, rowStyles, columnStyles, dropDownMap);
             // io 响应
             setIo(sxssfWorkbook, outputStream, fileName, sheetName, response);
         } catch (Exception e) {
@@ -143,7 +153,7 @@ public class ExcelUtils {
         OutputStream outputStream = null;
         SXSSFRow sxssfRow = null;
         try {
-            setDataListNoStyle(sxssfWorkbook, sxssfRow, dataLists,  regionMap, mapColumnWidth, paneMap, sheetName, labelName, dropDownMap);
+            setDataListNoStyle(sxssfWorkbook, sxssfRow, dataLists, regionMap, mapColumnWidth, paneMap, sheetName, labelName, dropDownMap);
             setIo(sxssfWorkbook, outputStream, fileName, sheetName, response);
         } catch (Exception e) {
             e.printStackTrace();
@@ -214,8 +224,6 @@ public class ExcelUtils {
     }
 
 
-
-
     /**
      * response 响应
      *
@@ -241,6 +249,8 @@ public class ExcelUtils {
             e.getSuppressed();
         }
     }
+
+
 
 
     /**
