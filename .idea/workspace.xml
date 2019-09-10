@@ -8,12 +8,7 @@
   <component name="ChangeListManager">
     <list default="true" id="70f792b6-87df-4c03-84b6-a38696c014ec" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README-Andyczy.md" beforeDir="false" afterPath="$PROJECT_DIR$/README-Andyczy.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/github.com.andyczy.java.excel.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/andyczy/java/excel/CommonsUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/andyczy/java/excel/CommonsUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/github/andyczy/java/excel/ExcelUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/github/andyczy/java/excel/ExcelUtils.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -112,16 +107,16 @@
         <counts>
           <entry key="dummy" value="10" />
           <entry key="java" value="2991" />
-          <entry key="md" value="4354" />
-          <entry key="txt" value="141" />
+          <entry key="md" value="4404" />
+          <entry key="txt" value="183" />
           <entry key="xml" value="145" />
         </counts>
       </usages-collector>
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="JAVA" value="2991" />
-          <entry key="Markdown" value="4354" />
-          <entry key="PLAIN_TEXT" value="151" />
+          <entry key="Markdown" value="4404" />
+          <entry key="PLAIN_TEXT" value="193" />
           <entry key="XML" value="145" />
         </counts>
       </usages-collector>
@@ -145,8 +140,8 @@
         <entry file="file://$PROJECT_DIR$/README.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="685">
-                <caret line="55" column="48" selection-start-line="55" selection-start-column="6" selection-end-line="55" selection-end-column="48" />
+              <first_editor relative-caret-position="333">
+                <caret line="48" column="6" selection-start-line="48" selection-start-column="6" selection-end-line="48" selection-end-column="6" />
               </first_editor>
               <second_editor />
             </state>
@@ -382,7 +377,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1568109245647" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1568109291673" />
     <property name="last_opened_file_path" value="E:/xintou/bzf/bzf-parent" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -581,21 +576,7 @@
       <workItem from="1567481577988" duration="28000" />
       <workItem from="1567499273259" duration="85000" />
       <workItem from="1568009799514" duration="8826000" />
-      <workItem from="1568084361454" duration="13989000" />
-    </task>
-    <task id="LOCAL-00053" summary="3.2.5 导入默认从第二行开始获取数据">
-      <created>1548984084245</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1548984084245</updated>
-    </task>
-    <task id="LOCAL-00054" summary="3.2.5 md">
-      <created>1548985996335</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1548985996335</updated>
+      <workItem from="1568084361454" duration="14265000" />
     </task>
     <task id="LOCAL-00055" summary="3.2.5 md">
       <created>1548986476316</created>
@@ -926,11 +907,25 @@
       <option name="project" value="LOCAL" />
       <updated>1568100533706</updated>
     </task>
-    <option name="localTasksCounter" value="102" />
+    <task id="LOCAL-00102" summary="1、导出图片、图片地址和数据一样，只要是能访问的图片都可以导出（有需求、图片大小待解决）&#10;2、修复之前的bug:是否添加边框改为是否忽略边框？默认数据都在边框">
+      <created>1568109153643</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1568109153643</updated>
+    </task>
+    <task id="LOCAL-00103" summary="最新提交日志">
+      <created>1568109279534</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1568109279534</updated>
+    </task>
+    <option name="localTasksCounter" value="104" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="161800000" />
+    <option name="totallyTimeSpent" value="162076000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -1011,8 +1006,6 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="javadoc 文档" />
-    <MESSAGE value="private" />
     <MESSAGE value="版本-3.0 Exception" />
     <MESSAGE value="版本-3.0" />
     <MESSAGE value="版本-3.1-- 修复异常bug" />
@@ -1036,7 +1029,9 @@
     <MESSAGE value="修改合并例子，原来的数据有错。" />
     <MESSAGE value="1、修改教程说明，&#10;2、忽略边框无效，待解决" />
     <MESSAGE value="1、修改教程说明，&#10;2、忽略边框无效，已经解决。&#10;3、缩减代码。" />
-    <option name="LAST_COMMIT_MESSAGE" value="1、修改教程说明，&#10;2、忽略边框无效，已经解决。&#10;3、缩减代码。" />
+    <MESSAGE value="1、导出图片、图片地址和数据一样，只要是能访问的图片都可以导出（有需求、图片大小待解决）&#10;2、修复之前的bug:是否添加边框改为是否忽略边框？默认数据都在边框" />
+    <MESSAGE value="最新提交日志" />
+    <option name="LAST_COMMIT_MESSAGE" value="最新提交日志" />
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/plugins" />
@@ -1332,8 +1327,8 @@
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="685">
-            <caret line="55" column="48" selection-start-line="55" selection-start-column="6" selection-end-line="55" selection-end-column="48" />
+          <first_editor relative-caret-position="333">
+            <caret line="48" column="6" selection-start-line="48" selection-start-column="6" selection-end-line="48" selection-end-column="6" />
           </first_editor>
           <second_editor />
         </state>
