@@ -6,7 +6,7 @@
 
     <groupId>com.github.andyczy</groupId>
     <artifactId>java-excel-utils</artifactId>
-    <version>4.0</version>
+    <version>4.1</version>
 
     <parent>
         <groupId>org.sonatype.oss</groupId>
@@ -32,16 +32,6 @@
     </properties>
 
     <dependencies>
-
-        <!--
-         maven：https://mvnrepository.com/artifact/com.github.andyczy/java-excel-utils
-         教程文档：https://github.com/andyczy/czy-nexus-commons-utils/blob/master/README-3.2.md
-        -->
-        <dependency>
-            <groupId>com.github.andyczy</groupId>
-            <artifactId>java-excel-utils</artifactId>
-            <version>4.0</version>
-        </dependency>
 
 
         <!--servlet-->
