@@ -13,7 +13,7 @@
         <dependency>        
             <groupId>com.github.andyczy</groupId>       
             <artifactId>java-excel-utils</artifactId>       
-            <version>4.1</version>      
+            <version>4.0</version>      
         </dependency> 
  
   [教程说明](https://github.com/andyczy/czy-nexus-commons-utils/blob/master/README-Andyczy.md)   
@@ -47,8 +47,8 @@
          
             
 ### 最新日志：                   
-    1、是否添加边框改为是否忽略边框？默认数据都在边框。          
-    2、添加导出图片。  
+    1、是否添加边框改为是否忽略边框？默认数据都在边框。       4.0版本没有、4.1没有上传到maven   
+    2、添加导出图片。  4.0版本没有、4.1没有上传到maven
     
      
 ### 实现功能：

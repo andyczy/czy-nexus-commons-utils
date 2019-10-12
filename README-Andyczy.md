@@ -14,7 +14,7 @@
         <dependency>        
             <groupId>com.github.andyczy</groupId>       
             <artifactId>java-excel-utils</artifactId>       
-            <version>4.1</version>      
+            <version>最新版本</version>      
         </dependency> 
 
   [教程说明](https://github.com/andyczy/czy-nexus-commons-utils/blob/master/README-Andyczy.md)   
