@@ -13,10 +13,7 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import javax.servlet.http.HttpServletResponse;
-import java.io.ByteArrayOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
+import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLEncoder;
@@ -136,7 +133,7 @@ public class ExcelUtils {
             e.printStackTrace();
         }
         log.info("=== ===  === :Excel tool class export run time:" + (System.currentTimeMillis() - startTime) + " ms!");
-        return true;
+        return null;
     }
 
 
@@ -159,7 +156,7 @@ public class ExcelUtils {
             e.printStackTrace();
         }
         log.info("=== ===  === :Excel tool class export run time:" + (System.currentTimeMillis() - startTime) + " ms!");
-        return true;
+        return null;
     }
 
 
@@ -220,7 +217,7 @@ public class ExcelUtils {
             e.printStackTrace();
         }
         log.info("=== ===  === :Excel tool class export run time:" + (System.currentTimeMillis() - startTime) + " ms!");
-        return true;
+        return null;
     }
 
 
@@ -240,7 +237,11 @@ public class ExcelUtils {
                 response.setHeader("Charset", "UTF-8");
                 response.setHeader("Content-Type", "application/force-download");
                 response.setHeader("Content-Type", "application/vnd.ms-excel");
-                response.setHeader("Content-disposition", "attachment; filename=" + URLEncoder.encode(fileName == null ? sheetName[0] : fileName, "utf8") + ".xlsx");
+//                response.setHeader("Content-disposition", "attachment; filename=" + URLEncoder.encode(fileName == null ? sheetName[0] : fileName, "utf8") + ".xlsx");
+                String headerValue = "attachment;";
+                headerValue += " filename=\"" + encodeURIComponent(fileName) +"\";";
+                headerValue += " filename*=utf-8''" + encodeURIComponent(fileName == null ? sheetName[0] : fileName)+ ".xlsx";
+                response.setHeader("Content-Disposition", headerValue);
                 response.flushBuffer();
                 outputStream = response.getOutputStream();
             }
@@ -250,6 +251,23 @@ public class ExcelUtils {
         }
     }
 
+    /**
+     * <pre>
+     * 符合 RFC 3986 标准的“百分号URL编码”
+     * 在这个方法里，空格会被编码成%20，而不是+
+     * 和浏览器的encodeURIComponent行为一致
+     * </pre>
+     * @param value
+     * @return
+     */
+    public static String encodeURIComponent(String value) {
+        try {
+            return URLEncoder.encode(value, "UTF-8").replaceAll("\\+", "%20");
+        } catch (UnsupportedEncodingException e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
 
 
 
