@@ -92,6 +92,8 @@ public class ExcelUtils {
         numeralFormat = this.getNumeralFormat();
         dateFormatStr = this.getDateFormatStr();
         expectDateFormatStr = this.getExpectDateFormatStr();
+        defaultColumnWidth = this.getDefaultColumnWidth();
+        fontSize = this.getFontSize();
     }
 
 
@@ -129,7 +131,7 @@ public class ExcelUtils {
         SXSSFRow sxssfRow = null;
         try {
             // 设置数据
-            setDataList(sxssfWorkbook, sxssfRow, dataLists, regionMap, mapColumnWidth, styles, paneMap, sheetName, labelName, rowStyles, columnStyles, dropDownMap);
+            setDataList(sxssfWorkbook, sxssfRow, dataLists, regionMap, mapColumnWidth, styles, paneMap, sheetName, labelName, rowStyles, columnStyles, dropDownMap,defaultColumnWidth,fontSize);
             // io 响应
             setIo(sxssfWorkbook, outputStream, fileName, sheetName, response);
         } catch (Exception e) {
@@ -153,7 +155,7 @@ public class ExcelUtils {
         OutputStream outputStream = null;
         SXSSFRow sxssfRow = null;
         try {
-            setDataListNoStyle(sxssfWorkbook, sxssfRow, dataLists, regionMap, mapColumnWidth, paneMap, sheetName, labelName, dropDownMap);
+            setDataListNoStyle(sxssfWorkbook, sxssfRow, dataLists, regionMap, mapColumnWidth, paneMap, sheetName, labelName, dropDownMap,defaultColumnWidth,fontSize);
             setIo(sxssfWorkbook, outputStream, fileName, sheetName, response);
         } catch (Exception e) {
             e.printStackTrace();
@@ -164,63 +166,86 @@ public class ExcelUtils {
 
 
     /**
-     * 功能描述: excel 数据导出、导出模板
+     * 功能描述:
+     * 1.excel 模板数据导入。
      * <p>
      * 更新日志:
-     * 1.response.reset();注释掉reset，否在会出现跨域错误。[2018-05-18]
-     * 2.新增导出多个单元。[2018-08-08]
-     * 3.poi官方建议大数据量解决方案：SXSSFWorkbook。[2018-08-08]
-     * 4.自定义下拉列表：对每个单元格自定义下拉列表。[2018-08-08]
-     * 5.数据遍历方式换成数组(效率较高)。[2018-08-08]
-     * 6.可提供模板下载。[2018-08-08]
-     * 7.每个表格的大标题[2018-09-14]
-     * 8.自定义列宽：对每个单元格自定义列宽[2018-09-18]
-     * 9.自定义样式：对每个单元格自定义样式[2018-10-22]
-     * 10.自定义单元格合并：对每个单元格合并[2018-10-22]
-     * 11.固定表头[2018-10-23]
-     * 12.自定义样式：单元格自定义某一列或者某一行样式[2018-11-12]
-     * 13.忽略边框(默认是有边框)[2018-11-15]
-     * 14.函数式编程换成面向对象编程[2018-12-06-5]
-     * 15.单表百万数据量导出时样式设置过多，导致速度慢（行、列、单元格样式暂时去掉）[2019-01-30]
+     * 1.共用获取Excel表格数据。
+     * 2.多单元数据获取。
+     * 3.多单元从第几行开始获取数据[2018-09-20]
+     * 4.多单元根据那些列为空来忽略行数据[2018-10-22]
      * <p>
      * 版  本:
      * 1.apache poi 3.17
      * 2.apache poi-ooxml  3.17
      *
-     * @param response
-     * @param dataLists    导出的数据(不可为空：如果只有标题就导出模板)
-     * @param sheetName    sheet名称（不可为空）
-     * @param columnMap    自定义：对每个单元格自定义列宽（可为空）
-     * @param dropDownMap  自定义：对每个单元格自定义下拉列表（可为空）
-     * @param styles       自定义：每一个单元格样式（可为空）
-     * @param rowStyles    自定义：某一行样式（可为空）
-     * @param columnStyles 自定义：某一列样式（可为空）
-     * @param regionMap    自定义：单元格合并（可为空）
-     * @param paneMap      固定表头（可为空）
-     * @param labelName    每个表格的大标题（可为空）
-     * @param fileName     文件名称(可为空，默认是：sheet 第一个名称)
-     * @param notBorderMap 忽略边框(默认是有边框)
+     * @param book           Workbook对象（不可为空）
+     * @param sheetName      多单元数据获取（不可为空）
+     * @param indexMap       多单元从第几行开始获取数据，默认从第二行开始获取（可为空，如 hashMapIndex.put(1,3); 第一个表格从第三行开始获取）
+     * @param continueRowMap 多单元根据那些列为空来忽略行数据（可为空，如 mapContinueRow.put(1,new Integer[]{1, 3}); 第一个表格从1、3列为空就忽略）
      * @return
      */
-    @Deprecated
-    public static Boolean exportForExcel(HttpServletResponse response, List<List<String[]>> dataLists, HashMap notBorderMap,
-                                         HashMap regionMap, HashMap columnMap, HashMap styles, HashMap paneMap, String fileName,
-                                         String[] sheetName, String[] labelName, HashMap rowStyles, HashMap columnStyles, HashMap dropDownMap) {
+    @SuppressWarnings({"deprecation", "rawtypes"})
+    public static List<List<LinkedHashMap<String, String>>> importForExcelData(Workbook book, String[] sheetName, HashMap indexMap, HashMap continueRowMap) {
         long startTime = System.currentTimeMillis();
         log.info("=== ===  === :Excel tool class export start run!");
-        SXSSFWorkbook sxssfWorkbook = new SXSSFWorkbook(1000);
-        OutputStream outputStream = null;
-        SXSSFRow sxssfRow = null;
         try {
-            // 设置数据
-            setDataList(sxssfWorkbook, sxssfRow, dataLists, regionMap, columnMap, styles, paneMap, sheetName, labelName, rowStyles, columnStyles, dropDownMap);
-            // io 响应
-            setIo(sxssfWorkbook, outputStream, fileName, sheetName, response);
+            List<List<LinkedHashMap<String, String>>> returnDataList = new ArrayList<>();
+            for (int k = 0; k <= sheetName.length - 1; k++) {
+                //  得到第K个工作表对象、得到第K个工作表中的总行数。
+                Sheet sheet = book.getSheetAt(k);
+                int rowCount = sheet.getLastRowNum() + 1;
+                Row valueRow = null;
+
+                List<LinkedHashMap<String, String>> rowListValue = new ArrayList<>();
+                LinkedHashMap<String, String> cellHashMap = null;
+
+                int irow = 1;
+                //  第n个工作表:从开始获取数据、默认第一行开始获取。
+                if (indexMap != null && indexMap.get(k + 1) != null) {
+                    irow = Integer.valueOf(indexMap.get(k + 1).toString()) - 1;
+                }
+                //  第n个工作表:数据获取。
+                for (int i = irow; i < rowCount; i++) {
+                    valueRow = sheet.getRow(i);
+                    if (valueRow == null) {
+                        continue;
+                    }
+
+                    //  第n个工作表:从开始列忽略数据、为空就跳过。
+                    if (continueRowMap != null && continueRowMap.get(k + 1) != null) {
+                        int continueRowCount = 0;
+                        Integer[] continueRow = (Integer[]) continueRowMap.get(k + 1);
+                        for (int w = 0; w <= continueRow.length - 1; w++) {
+                            Cell valueRowCell = valueRow.getCell(continueRow[w] - 1);
+                            if (valueRowCell == null || isBlank(valueRowCell.toString())) {
+                                continueRowCount = continueRowCount + 1;
+                            }
+                        }
+                        if (continueRowCount == continueRow.length) {
+                            continue;
+                        }
+                    }
+
+                    cellHashMap = new LinkedHashMap<>();
+
+                    //  第n个工作表:获取列数据。
+                    for (int j = 0; j < valueRow.getLastCellNum(); j++) {
+                        cellHashMap.put(Integer.toString(j), getCellVal(valueRow.getCell(j)));
+                    }
+                    if (cellHashMap.size() > 0) {
+                        rowListValue.add(cellHashMap);
+                    }
+                }
+                returnDataList.add(rowListValue);
+            }
+            log.info("=== ===  === :Excel tool class export run time:" + (System.currentTimeMillis() - startTime) + " ms!");
+            return returnDataList;
         } catch (Exception e) {
+            log.debug("=== ===  === :Andyczy ExcelUtils Exception Message：Excel tool class export exception !");
             e.printStackTrace();
+            return null;
         }
-        log.info("=== ===  === :Excel tool class export run time:" + (System.currentTimeMillis() - startTime) + " ms!");
-        return true;
     }
 
 
@@ -362,7 +387,6 @@ public class ExcelUtils {
      */
     private String numeralFormat;
 
-
     /**
      * 导出日期格式化：默认是"yyyy-MM-dd"格式
      */
@@ -372,6 +396,35 @@ public class ExcelUtils {
      */
     private String expectDateFormatStr;
 
+    /**
+     * 默认列宽大小：默认16
+     */
+    private Integer defaultColumnWidth;
+    /**
+     * 默认字体大小：默认12号字体
+     */
+    private Integer fontSize;
+
+    public Integer getFontSize() {
+        if (fontSize == null) {
+            fontSize = 12;
+        }
+        return fontSize;
+    }
+
+    public void setFontSize(Integer fontSize) {
+        this.fontSize = fontSize;
+    }
+    public Integer getDefaultColumnWidth() {
+        if (defaultColumnWidth == null) {
+            defaultColumnWidth = 16;
+        }
+        return defaultColumnWidth;
+    }
+
+    public void setDefaultColumnWidth(Integer defaultColumnWidth) {
+        this.defaultColumnWidth = defaultColumnWidth;
+    }
 
     public void setDateFormatStr(String dateFormatStr) {
         if (dateFormatStr == null) {

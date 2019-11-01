@@ -62,7 +62,7 @@ public class CommonsUtils {
      */
     public static void setDataList(SXSSFWorkbook wb, SXSSFRow sxssfRow, List<List<String[]>> dataLists,
                                    HashMap regionMap, HashMap columnMap, HashMap styles, HashMap paneMap,
-                                   String[] sheetName, String[] labelName, HashMap rowStyles, HashMap columnStyles, HashMap dropDownMap) throws Exception {
+                                   String[] sheetName, String[] labelName, HashMap rowStyles, HashMap columnStyles, HashMap dropDownMap, Integer defaultColumnWidth,Integer fontSize) throws Exception {
         if (dataLists == null) {
             log.debug("=== ===  === :Andyczy ExcelUtils Exception Message：Export data(type:List<List<String[]>>) cannot be empty!");
         }
@@ -72,7 +72,7 @@ public class CommonsUtils {
         int k = 0;
         for (List<String[]> listRow : dataLists) {
             SXSSFSheet sxssfSheet = wb.createSheet();
-            sxssfSheet.setDefaultColumnWidth((short) 16);
+            sxssfSheet.setDefaultColumnWidth(defaultColumnWidth);
             wb.setSheetName(k, sheetName[k]);
             CellStyle cellStyle = wb.createCellStyle();
             XSSFFont font = (XSSFFont) wb.createFont();
@@ -102,7 +102,7 @@ public class CommonsUtils {
                 setColumnWidth(sxssfSheet, (HashMap) columnMap.get(k + 1));
             }
             //  默认样式。
-            setStyle(cellStyle, font);
+            setStyle(cellStyle, font,fontSize);
 
             CellStyle cell_style = null;
             CellStyle row_style = null;
@@ -118,7 +118,7 @@ public class CommonsUtils {
                         Cell cell = null;
                         if (patternIsImg(listRow.get(i)[j])) {
                             cell = createCell(sxssfRow, j, " ");
-                            drawPicture(wb, sxssfDrawing, listRow.get(i)[j], j,jRow);
+                            drawPicture(wb, sxssfDrawing, listRow.get(i)[j], j, jRow);
                         } else {
                             cell = createCell(sxssfRow, j, listRow.get(i)[j]);
                         }
@@ -256,7 +256,7 @@ public class CommonsUtils {
                 InputStream inStream = conn.getInputStream();
                 byte[] data = readInputStream(inStream);
                 //设置图片大小，
-                XSSFClientAnchor anchor = new XSSFClientAnchor(0, 0, 50, 50, colIndex, rowIndex, colIndex+1, rowIndex+1);
+                XSSFClientAnchor anchor = new XSSFClientAnchor(0, 0, 50, 50, colIndex, rowIndex, colIndex + 1, rowIndex + 1);
                 anchor.setAnchorType(DONT_MOVE_AND_RESIZE);
                 sxssfDrawing.createPicture(anchor, wb.addPicture(data, XSSFWorkbook.PICTURE_TYPE_JPEG));
             }
@@ -346,7 +346,7 @@ public class CommonsUtils {
      * @throws Exception
      */
     public static void setDataListNoStyle(SXSSFWorkbook wb, SXSSFRow sxssfRow, List<List<String[]>> dataLists, HashMap regionMap,
-                                          HashMap columnMap, HashMap paneMap, String[] sheetName, String[] labelName, HashMap dropDownMap) throws Exception {
+                                          HashMap columnMap, HashMap paneMap, String[] sheetName, String[] labelName, HashMap dropDownMap,Integer defaultColumnWidth,Integer fontSize) throws Exception {
         if (dataLists == null) {
             log.debug("=== ===  === :Andyczy ExcelUtils Exception Message：Export data(type:List<List<String[]>>) cannot be empty!");
         }
@@ -356,6 +356,7 @@ public class CommonsUtils {
         int k = 0;
         for (List<String[]> listRow : dataLists) {
             SXSSFSheet sxssfSheet = wb.createSheet();
+            sxssfSheet.setDefaultColumnWidth(defaultColumnWidth);
             wb.setSheetName(k, sheetName[k]);
             CellStyle cellStyle = wb.createCellStyle();
             XSSFFont font = (XSSFFont) wb.createFont();
@@ -383,7 +384,7 @@ public class CommonsUtils {
                 setColumnWidth(sxssfSheet, (HashMap) columnMap.get(k + 1));
             }
             //  默认样式。
-            setStyle(cellStyle, font);
+            setStyle(cellStyle, font,fontSize);
 
             //  写入小标题与数据。
             Integer SIZE = listRow.size() < MAX_ROWSUM ? listRow.size() : MAX_ROWSUM;
@@ -485,12 +486,12 @@ public class CommonsUtils {
      * @return
      * @Parm
      */
-    public static void setStyle(CellStyle cellStyle, XSSFFont font) {
+    public static void setStyle(CellStyle cellStyle, XSSFFont font,Integer fontSize) {
         cellStyle.setAlignment(HorizontalAlignment.CENTER);
         cellStyle.setVerticalAlignment(VerticalAlignment.CENTER);
         font.setFontName("宋体");
         cellStyle.setFont(font);
-        font.setFontHeight(12);
+        font.setFontHeight(fontSize);
         setBorder(cellStyle, true);
     }
 

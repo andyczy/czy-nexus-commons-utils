@@ -78,6 +78,8 @@ public class LocalExcelUtils {
         numeralFormat = this.getNumeralFormat();
         dateFormatStr = this.getDateFormatStr();
         expectDateFormatStr = this.getExpectDateFormatStr();
+        defaultColumnWidth = this.getDefaultColumnWidth();
+        fontSize = this.getFontSize();
     }
 
 
@@ -93,7 +95,7 @@ public class LocalExcelUtils {
         SXSSFWorkbook sxssfWorkbook = new SXSSFWorkbook(1000);
         SXSSFRow sxssfRow = null;
         try {
-            setDataListNoStyle(sxssfWorkbook, sxssfRow, dataLists,    regionMap, mapColumnWidth, paneMap, sheetName, labelName, dropDownMap);
+            setDataListNoStyle(sxssfWorkbook, sxssfRow, dataLists, regionMap, mapColumnWidth, paneMap, sheetName, labelName, dropDownMap, defaultColumnWidth,fontSize);
             setIo(sxssfWorkbook, filePath);
         } catch (Exception e) {
             e.printStackTrace();
@@ -114,7 +116,7 @@ public class LocalExcelUtils {
         SXSSFWorkbook sxssfWorkbook = new SXSSFWorkbook(1000);
         SXSSFRow sxssfRow = null;
         try {
-            setDataList(sxssfWorkbook, sxssfRow, dataLists,   regionMap, mapColumnWidth, styles, paneMap, sheetName, labelName, rowStyles, columnStyles, dropDownMap);
+            setDataList(sxssfWorkbook, sxssfRow, dataLists, regionMap, mapColumnWidth, styles, paneMap, sheetName, labelName, rowStyles, columnStyles, dropDownMap, defaultColumnWidth,fontSize);
             setIo(sxssfWorkbook, filePath);
         } catch (Exception e) {
             e.printStackTrace();
@@ -339,7 +341,6 @@ public class LocalExcelUtils {
      */
     private String numeralFormat;
 
-
     /**
      * 导出日期格式化：默认是"yyyy-MM-dd"格式
      */
@@ -348,7 +349,36 @@ public class LocalExcelUtils {
      * 期望转换后的日期格式：默认是 dateFormatStr
      */
     private String expectDateFormatStr;
+    /**
+     * 默认列宽大小：默认16
+     */
+    private Integer defaultColumnWidth;
+    /**
+     * 默认字体大小：默认12号字体
+     */
+    private Integer fontSize;
 
+    public Integer getFontSize() {
+        if (fontSize == null) {
+            fontSize = 12;
+        }
+        return fontSize;
+    }
+
+    public void setFontSize(Integer fontSize) {
+        this.fontSize = fontSize;
+    }
+
+    public Integer getDefaultColumnWidth() {
+        if (defaultColumnWidth == null) {
+            defaultColumnWidth = 16;
+        }
+        return defaultColumnWidth;
+    }
+
+    public void setDefaultColumnWidth(Integer defaultColumnWidth) {
+        this.defaultColumnWidth = defaultColumnWidth;
+    }
 
     public void setDateFormatStr(String dateFormatStr) {
         if (dateFormatStr == null) {

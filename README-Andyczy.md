@@ -59,8 +59,13 @@
                 
         // 自定义：对每个单元格自定义下拉列表（可为空）
         excelUtils.setDropDownMap(dropDownMap);
-             
-            
+        
+        // 自定义：设置默认单元格列宽（可为空、默认16） 
+        excelUtils.setDefaultColumnWidth(8);
+                     
+        // 自定义：设置默认字体（可为空、默认12号） 
+        excelUtils.setFontSize(16);
+        
         // 执行导出
         excelUtils.exportForExcelsOptimize();       
  
@@ -83,7 +88,7 @@
 ###  Test 测试【新增本地测试】
 
  
-###  方式四:导出函数 ExcelUtils.exportForExcel(......)   过期注解
+###  方式四:导出函数 ExcelUtils.exportForExcel(......)   过期注解（已经删除）
   
 
 
